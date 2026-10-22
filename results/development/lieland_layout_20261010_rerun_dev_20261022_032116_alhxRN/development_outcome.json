@@ -1,0 +1,29 @@
+{
+  "experiment_class": "development",
+  "run_id": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+  "cube_layout_seed": 20261010,
+  "classification": "failed_before_execution",
+  "failure_stage": "perception_pose_validation",
+  "elapsed_seconds": 326,
+  "pipeline_exit_status": 1,
+  "detected_objects": 6,
+  "planned_picks": 0,
+  "physical_execution_attempted": false,
+  "execution_report_present": false,
+  "verified_pickups": null,
+  "verified_placements": null,
+  "observations": [
+    "Blue detection 3: image-measured yaw -36.0864 degrees; Cosmos reply 14.2 degrees.",
+    "Square-symmetry yaw disagreement 39.7136 degrees exceeded the existing 3-degree gate.",
+    "Saved pose confidence was zero and edge endpoints were null.",
+    "Planner skipped all six detections; no physical pickups were attempted.",
+    "Original yaw and physics retained; validation gates unchanged."
+  ],
+  "evidence": [
+    "run_config.json",
+    "detections.json",
+    "sort_plan.json",
+    "cube_pose_crops/cube_3.txt",
+    "cube_pose_crops/cube_3_measurement.json"
+  ]
+}

@@ -1,0 +1,1 @@
+The object nearest the CENTRE is a cube. It is red. So the answer is {"category":"cube","colour":"red","confidence":0.9}.
