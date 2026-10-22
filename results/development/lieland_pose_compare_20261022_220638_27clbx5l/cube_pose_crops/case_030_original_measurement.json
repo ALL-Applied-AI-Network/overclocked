@@ -1,0 +1,35 @@
+{
+  "input_measurement": {
+    "expected_colour": "yellow",
+    "position_world_m": [
+      0.4194561975351426,
+      0.17898375303683062,
+      0.8999
+    ],
+    "yaw_deg": 28.0709,
+    "roll_deg": 0,
+    "pitch_deg": 0,
+    "silhouette_iou": 0.9559471365638766,
+    "source": "calibrated_image_silhouette_fit",
+    "yaw_symmetry_deg": 90
+  },
+  "result": {
+    "case_id": "case_030",
+    "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+    "cube": "cube_1",
+    "variant": "original",
+    "validation": {
+      "accepted": true,
+      "checks": {
+        "category": true,
+        "colour": true,
+        "confidence": true,
+        "yaw": true
+      },
+      "square_yaw_disagreement_deg": 0.0009000000000014552,
+      "reported_yaw_deg": 28.07,
+      "reported_confidence": 0.9
+    },
+    "raw_reply_file": "cube_pose_crops/case_030_original.txt"
+  }
+}

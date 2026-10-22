@@ -1,0 +1,35 @@
+{
+  "input_measurement": {
+    "expected_colour": "blue",
+    "position_world_m": [
+      0.36334423162652507,
+      0.2713937853646494,
+      0.8999
+    ],
+    "yaw_deg": -35.8843,
+    "roll_deg": 0,
+    "pitch_deg": 0,
+    "silhouette_iou": 0.9706632653061225,
+    "source": "calibrated_image_silhouette_fit",
+    "yaw_symmetry_deg": 90
+  },
+  "result": {
+    "case_id": "case_038",
+    "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1",
+    "cube": "cube_3",
+    "variant": "candidate",
+    "validation": {
+      "accepted": true,
+      "checks": {
+        "category": true,
+        "colour": true,
+        "confidence": true,
+        "yaw": true
+      },
+      "square_yaw_disagreement_deg": 0.0,
+      "reported_yaw_deg": -35.8843,
+      "reported_confidence": 0.97
+    },
+    "raw_reply_file": "cube_pose_crops/case_038_candidate.txt"
+  }
+}

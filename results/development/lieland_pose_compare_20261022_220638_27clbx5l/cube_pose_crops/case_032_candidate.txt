@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "blue",
+  "yaw_deg": -35.8984,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small blue cube with a clear top face, positioned upright on a flat surface. The measured yaw angle of approximately -36 degrees aligns with the cube's orientation relative to the camera, and the high silhouette IoU confirms accurate detection."
+}
+```

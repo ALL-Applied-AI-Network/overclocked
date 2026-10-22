@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "blue",
+  "yaw_deg": -36.0864,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small blue cube with a clear top face, positioned upright on a flat surface. The measured yaw angle and high silhouette IoU confirm its orientation and shape consistency with a cube."
+}
+```

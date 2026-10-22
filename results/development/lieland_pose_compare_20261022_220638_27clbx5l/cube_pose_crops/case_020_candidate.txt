@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "blue",
+  "yaw_deg": 11.0043,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small blue cube with a matte finish, positioned upright on a flat surface. Its top face is oriented at approximately 11 degrees relative to the camera's forward axis, consistent with the measured yaw. The cube appears stable and does not exhibit any signs of tilting or rolling, confirming a confident pose assessment."
+}
+```

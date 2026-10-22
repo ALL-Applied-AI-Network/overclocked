@@ -1,0 +1,1026 @@
+{
+  "schema_version": 1,
+  "experiment_class": "development",
+  "condition": "saved_crop_pose_prompt_comparison",
+  "run_id": "lieland_pose_compare_20261022_220638_27clbx5l",
+  "started_at_utc": "2026-10-22T22:06:38.691105+00:00",
+  "source_sha256": {
+    "perceive.py": "41f4eaaf46d8d3844ab3d89a4974bca25bf5e9b2617f8c490f5aa5af09156f74",
+    "cube_pose.py": "d49f9d25aecbfefbb3a090f916b214a5c7614a5c679286e66c0afe655fd794bc",
+    "compare_pose_prompts.py": "2a15a173bf701790cee620667700cd5dd5fc0dc069dfb9e20cef10e7c8f4ec93"
+  },
+  "prompts": {
+    "original": "Inspect the small cube in this camera crop and report its\ncolour and tabletop pose. A calibrated image-geometry front end has measured\nits top-face orientation and centre from this SAME image, using the known cube\nsize and table camera calibration. These measurements are image-derived, not\nsimulator object coordinates. Use the supplied measurements for quantitative\npose; do not guess a new angle or regress pixel corners from this blurry crop.\nCheck that the object is a cube of the expected colour. If inconsistent or\nambiguous, report unknown and low confidence. Square yaw is modulo 90 degrees;\nroll and pitch are constrained by the cube resting upright on the table.\nReturn only JSON: {\"category\":\"cube\",\"colour\":\"blue\",\"yaw_deg\":14.2,\n\"pose_confidence\":0.9,\"reason\":\"visible cube geometry and colour\"}.\nUse the measured yaw value from this query, not the example value above.",
+    "candidate": "Inspect the small cube in this camera crop and report its\ncolour and tabletop pose. A calibrated image-geometry front end has measured\nits top-face orientation and centre from this SAME image, using the known cube\nsize and table camera calibration. These measurements are image-derived, not\nsimulator object coordinates. Use the supplied measurements for quantitative\npose; do not guess a new angle or regress pixel corners from this blurry crop.\nCheck that the object is a cube of the expected colour. If inconsistent or\nambiguous, report unknown and low confidence. Square yaw is modulo 90 degrees;\nroll and pitch are constrained by the cube resting upright on the table.\nReturn only one JSON object with these fields:\n- category: cube or unknown, based on the image.\n- colour: yellow, blue, red, or unknown, based on the image.\n- yaw_deg: a JSON number equal to the supplied measured yaw_deg, including its sign.\n- pose_confidence: a JSON number from 0 to 1 reflecting your assessment.\n- reason: a brief explanation of your visual assessment.\nUse the measured yaw value from THIS query. Do not invent an angle or confidence."
+  },
+  "suffix": "\nMeasured image geometry for THIS cube:\n",
+  "max_new_tokens": 400,
+  "gpu": 0,
+  "case_count": 40,
+  "inference_calls": 80,
+  "cases": [
+    {
+      "case_id": "case_000",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_0",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_0.png",
+      "image_sha256": "bf23b4dcf6a2ab0f117fb0eb68fd34a0f79c82c6100238683780345fd8dcef4d",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_0_measurement.json",
+      "measurement_sha256": "d7022f624a7ea4853e2a23d7dc1f2ba0ca6e7c4f9c97bc6454e1ab7666ecdfd4",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_0.txt",
+      "historical_reply_sha256": "ae2a37dba7718b7467b959ef169bba8a485138618087a1a91f04f8af3a9e128f",
+      "measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.45715071683135555,
+          -0.0989308780639553,
+          0.8999
+        ],
+        "yaw_deg": -35.204,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9589189189189189,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_001",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_1",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_1.png",
+      "image_sha256": "f206585903316ef7cbf47f66078b5cfe9c742bd508891f89b9eb35fe0c11f41d",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_1_measurement.json",
+      "measurement_sha256": "dcb4d19bd0e5da2b2741ced8d2d52b04194ea33a8cd67b00d0e2de4fff24551e",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_1.txt",
+      "historical_reply_sha256": "59f3501a649aa01b912db95b28ba96d078aead8bc813d0d5a3db685c688f5a0b",
+      "measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.2669413904757321,
+          0.02593117663409793,
+          0.8999
+        ],
+        "yaw_deg": 13.2795,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9652777777777778,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_002",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_2",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_2.png",
+      "image_sha256": "7bb1e5bb2afa994f9eb8dc2cb8de001419d031089fb8bb67cdb83ce9908ee3ff",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_2_measurement.json",
+      "measurement_sha256": "5a40cf8824e97e0a61d042a84b5e7abb2155e6227f20ffc8db57c28cd5082de6",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_2.txt",
+      "historical_reply_sha256": "48bce30078c0ab1c089ec81ada88890eca15aa6da14b87900308ea21b3da9d06",
+      "measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.3658668297274786,
+          0.07268480593542913,
+          0.8999
+        ],
+        "yaw_deg": -1.9267,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9653846153846154,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_003",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_3",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_3.png",
+      "image_sha256": "712ff7cfc4e3b30b011e6499f193e56e035d45bcf7c7716a37444ff52e6fda23",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_3_measurement.json",
+      "measurement_sha256": "6c04e91ab00e68e1f9bef3af9bcf8a13764bd95a55b665470391b6eb3126ba45",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_3.txt",
+      "historical_reply_sha256": "0b7ff6a13efb958841e192defee1acc78d6543ef0745d6fc680d140adfb3f47a",
+      "measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.4194555316687729,
+          0.17897424574449608,
+          0.8999
+        ],
+        "yaw_deg": 28.1391,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9526431718061674,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_004",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_4",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_4.png",
+      "image_sha256": "698d9380997f6ad532131085a61215dbe97ac8217349c78e0e9ad42758958c13",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_4_measurement.json",
+      "measurement_sha256": "362b8ff724b15dd6d1259843c9a5a8081cfb2142f595b51ad6f4382f65610db5",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_4.txt",
+      "historical_reply_sha256": "7e5e10e5cae0941e06afc6f4644b3a965230f949251fdb510543bc660c6f9256",
+      "measurement": {
+        "expected_colour": "red",
+        "position_world_m": [
+          0.2606737619408428,
+          0.1995777601782475,
+          0.8999
+        ],
+        "yaw_deg": -23.0777,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9702380952380952,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_005",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_5",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_5.png",
+      "image_sha256": "d67ebe57be4be8aac2e5bf523061897cdc28d40f4657c1306d31d11467d1ab64",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_5_measurement.json",
+      "measurement_sha256": "7db932505bc7b4b40f4d1fbb6b04a17586ca8aa1b224b0065e521c6ffba635a0",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_baseline_retry_dev_20261020_175604_DAoCi5/cube_pose_crops/cube_5.txt",
+      "historical_reply_sha256": "e0a6a2ef13707611fb3f38b786a8ec1b046d7ef7ad161a8554b1d7a95dd1ecfc",
+      "measurement": {
+        "expected_colour": "red",
+        "position_world_m": [
+          0.3579666255193344,
+          0.20431094836610125,
+          0.8999
+        ],
+        "yaw_deg": 35.2777,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9655172413793104,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_006",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_0",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_0.png",
+      "image_sha256": "843451979ea650fca1274c273e7f6ee4704d2e95185674b961c8340cd528beed",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_0_measurement.json",
+      "measurement_sha256": "5bffa38ee5032241560460fadeac48e260aca5b79bb6d149558ed9624bc008e9",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_0.txt",
+      "historical_reply_sha256": "ae2a37dba7718b7467b959ef169bba8a485138618087a1a91f04f8af3a9e128f",
+      "measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.4571570530096883,
+          -0.09893016975566056,
+          0.8999
+        ],
+        "yaw_deg": -35.2167,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9589189189189189,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_007",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_1",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_1.png",
+      "image_sha256": "707a3dbcd3026dcebdec7e6f5f1fc9b52673878714fe0b46ba5a4e274c86cfb8",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_1_measurement.json",
+      "measurement_sha256": "cbc046adba7524d4af8d4844e694cca8aeaf28c5c1e71bb456519a6e35429f15",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_1.txt",
+      "historical_reply_sha256": "246dd1c3943e496153c94b79ea307a6b85136538d506dca92f98ec63ae19fb1d",
+      "measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.26688974660286713,
+          0.026003975115173664,
+          0.8999
+        ],
+        "yaw_deg": 11.9748,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9653259361997226,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_008",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_2",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_2.png",
+      "image_sha256": "4bd16fad2ee9fd343fb30ea6b12ad69efe0f9f93381ee98cc0b7c9c3d4ae7af3",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_2_measurement.json",
+      "measurement_sha256": "4abe82f689821956c71a25523fa67232e2f796987e07e924f7394290e6cea3de",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_2.txt",
+      "historical_reply_sha256": "129bab5cab785f7d8ba29bb64d4fee6f5a140264b385b1777e3745f31c35309b",
+      "measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.3658607293851609,
+          0.07268579923067871,
+          0.8999
+        ],
+        "yaw_deg": -1.9323,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9641025641025641,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_009",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_3",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_3.png",
+      "image_sha256": "dd43e5a14e4294c3307f16527875d0f1c988c9eb71596c4074573c9330c0a9bc",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_3_measurement.json",
+      "measurement_sha256": "be460e0000a1fba833b9a1366fef469f865ea364865d73392f3b5a01c5b8dd05",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_3.txt",
+      "historical_reply_sha256": "6f726b137fb9a60aadafcc0b17e30a16fdb354c01555641a63879f414f38c6da",
+      "measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.41943995584798643,
+          0.17898856487283232,
+          0.8999
+        ],
+        "yaw_deg": 28.0968,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9559471365638766,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_010",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_4",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_4.png",
+      "image_sha256": "5acdb06176d36d38077e861119ca016895eccd9c4220706cc4327b2df280b150",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_4_measurement.json",
+      "measurement_sha256": "3e769e2a4d7cf134541d820aa9bbc9045b0060dd938522790a7e38b75547148a",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_4.txt",
+      "historical_reply_sha256": "5ccc13e0451d366bff88d5750d800744790887af9dc19e3ac5b4fceaf987da2d",
+      "measurement": {
+        "expected_colour": "red",
+        "position_world_m": [
+          0.2604751535778022,
+          0.19962761895224554,
+          0.8999
+        ],
+        "yaw_deg": -22.7258,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9687034277198212,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_011",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_5",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_5.png",
+      "image_sha256": "a8aef95210191b08aa2eab31325e741b2d6e217045d4a16ef3e05a490f643071",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_5_measurement.json",
+      "measurement_sha256": "7db932505bc7b4b40f4d1fbb6b04a17586ca8aa1b224b0065e521c6ffba635a0",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_default_updated_dev_20261021_205228_1E2CX4/cube_pose_crops/cube_5.txt",
+      "historical_reply_sha256": "e0a6a2ef13707611fb3f38b786a8ec1b046d7ef7ad161a8554b1d7a95dd1ecfc",
+      "measurement": {
+        "expected_colour": "red",
+        "position_world_m": [
+          0.3579666255193344,
+          0.20431094836610125,
+          0.8999
+        ],
+        "yaw_deg": 35.2777,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9655172413793104,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_012",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_0",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_0.png",
+      "image_sha256": "6932367f0c68e23cb22052b5152f5fc070bfd85be64008b233f05e9b5e3b5ea4",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_0_measurement.json",
+      "measurement_sha256": "69d6d0ecb451f886fb16762d66fba30b921bbd2c85a99d0a8108a78837d3c629",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_0.txt",
+      "historical_reply_sha256": "1593ddf12d63fce0af3f2be8acebdefa0158fe59abdcaf1b7510ffbd97837729",
+      "measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.3658915527866002,
+          0.07269385996823985,
+          0.8999
+        ],
+        "yaw_deg": -1.6779,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9628205128205128,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_013",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_1",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_1.png",
+      "image_sha256": "4be2c9a157e1a668615850aadd7ea7553a58c6748a153765448dfa717314c543",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_1_measurement.json",
+      "measurement_sha256": "b12c4e4cd3f5d5324f2f4fe9c9fcfcd3df098f43158bf9fd258462d0de6e03b9",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_1.txt",
+      "historical_reply_sha256": "6c6886e231c5974918ead16f7ac68576d5e6724d0fc4cd47b4d3bc5dd671ca76",
+      "measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.41950041297618834,
+          0.17884862292301124,
+          0.8999
+        ],
+        "yaw_deg": 28.1663,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9548954895489549,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_014",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_2",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_2.png",
+      "image_sha256": "62f5a5f5c0432cdd7c07a3f061d6ff7656f18f8679a010233d9aa18b2fee1dc4",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_2_measurement.json",
+      "measurement_sha256": "e3cfb9fc29c5404888d9127624929ce6399e90e91ad7d286cf7c76f2d15a9268",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_2.txt",
+      "historical_reply_sha256": "be08f55b4985ced425277102088fa7347e4bd3375f2b5ded7380d2e4787b26e5",
+      "measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.3397572735483681,
+          0.18785405256795218,
+          0.8999
+        ],
+        "yaw_deg": 10.2115,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9500594530321046,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_015",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_3",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_3.png",
+      "image_sha256": "4cb1b292ec3e655b5083d53ebf4c847409db81b7766b65fbe172b04f0e97277b",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_3_measurement.json",
+      "measurement_sha256": "d6174a6d7b92e00655568d8a22ea8701715dec715db34da118f09a6b52a16fbb",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_3.txt",
+      "historical_reply_sha256": "59f3501a649aa01b912db95b28ba96d078aead8bc813d0d5a3db685c688f5a0b",
+      "measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.3634344921824138,
+          0.2713247074026673,
+          0.8999
+        ],
+        "yaw_deg": -36.0864,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9693877551020408,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_016",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_4",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_4.png",
+      "image_sha256": "5b2051f9e9c085a533540a7b9fe7db15981e18ae111ffb6c89155f67f0c76311",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_4_measurement.json",
+      "measurement_sha256": "c5538a56878d33f02fafa8ca39e7301f2a17ece211453f93eaa2a95bdc1a3d5f",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_4.txt",
+      "historical_reply_sha256": "3ffbff4db4219807d9db7366742389d0346db609a8d5a2dbd21ad7a534cdcba6",
+      "measurement": {
+        "expected_colour": "red",
+        "position_world_m": [
+          0.24930608575473787,
+          0.20754251350498584,
+          0.8999
+        ],
+        "yaw_deg": 36.5686,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9559412550066756,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_017",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_5",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_5.png",
+      "image_sha256": "49f4aa0e463bd161baaaee9beed705c99088eaaec33a8c4386436deb0ef05978",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_5_measurement.json",
+      "measurement_sha256": "b7368fb76212f5534f661e321797cf21ac9ab57c9dea50c31b0f8b5fcd0a850b",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN/cube_pose_crops/cube_5.txt",
+      "historical_reply_sha256": "9ccfb0aefe9fb9e7ec746cf33d68e1c3ed0743bf7b4532e668a89b15bbbc833e",
+      "measurement": {
+        "expected_colour": "red",
+        "position_world_m": [
+          0.27827940085741465,
+          0.018789756122858117,
+          0.8999
+        ],
+        "yaw_deg": -21.7947,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9664804469273743,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_018",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
+      "cube": "cube_0",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y/cube_pose_crops/cube_0.png",
+      "image_sha256": "e28f3c91f06d7b939ea97697254570e44c8e58f6d5809e65b24795d3effe6a46",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y/cube_pose_crops/cube_0_measurement.json",
+      "measurement_sha256": "5a40cf8824e97e0a61d042a84b5e7abb2155e6227f20ffc8db57c28cd5082de6",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y/cube_pose_crops/cube_0.txt",
+      "historical_reply_sha256": "129bab5cab785f7d8ba29bb64d4fee6f5a140264b385b1777e3745f31c35309b",
+      "measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.3658668297274786,
+          0.07268480593542913,
+          0.8999
+        ],
+        "yaw_deg": -1.9267,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9653846153846154,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_019",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
+      "cube": "cube_1",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y/cube_pose_crops/cube_1.png",
+      "image_sha256": "5323b0304330a52aa2706cdb3535cdd293f4a5997c4047e9aead63ed7a31ba43",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y/cube_pose_crops/cube_1_measurement.json",
+      "measurement_sha256": "1770b5609cbc0fc802d371673350600e0864bd08912566017294f9b75e2a1413",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y/cube_pose_crops/cube_1.txt",
+      "historical_reply_sha256": "21aaa38391e17ed7dd67e86034212c626af7c91d1289b3bf1d9ac051eaeebf72",
+      "measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.41945287296381617,
+          0.17898575224722413,
+          0.8999
+        ],
+        "yaw_deg": 28.0725,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9548458149779736,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_020",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
+      "cube": "cube_2",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y/cube_pose_crops/cube_2.png",
+      "image_sha256": "0ddc7c38bb434d1677d87e26d2de471a8e707270c12c6ff2bd946d312c852202",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y/cube_pose_crops/cube_2_measurement.json",
+      "measurement_sha256": "a897dc337ef184a09996eafbcd3e73c21b914d24c68b02efbd33dfab29cf70c0",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y/cube_pose_crops/cube_2.txt",
+      "historical_reply_sha256": "3cb48a0c7dba67ba0a50bbb5537ce4ea81691231e56f6d89cee163cdcf2b2663",
+      "measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.33968515614106637,
+          0.18782439617971322,
+          0.8999
+        ],
+        "yaw_deg": 11.0043,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9511904761904761,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_021",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
+      "cube": "cube_3",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y/cube_pose_crops/cube_3.png",
+      "image_sha256": "d2cdfdbe2441c75133916b5ba88c89eccedd4e0cd777e75f2a7197d8a3c0f8e1",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y/cube_pose_crops/cube_3_measurement.json",
+      "measurement_sha256": "7b074fa6ead3933dca42de974939ec4dce2e542a7eea7376acba0497cd4f20b7",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y/cube_pose_crops/cube_3.txt",
+      "historical_reply_sha256": "59f3501a649aa01b912db95b28ba96d078aead8bc813d0d5a3db685c688f5a0b",
+      "measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.3633429141436931,
+          0.27138005143377875,
+          0.8999
+        ],
+        "yaw_deg": -35.945,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9719387755102041,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_022",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
+      "cube": "cube_4",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y/cube_pose_crops/cube_4.png",
+      "image_sha256": "bfd8cd17003dd35f23c972c2c842c3064db6ae6cbf34c8c5f9757d722ff355ed",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y/cube_pose_crops/cube_4_measurement.json",
+      "measurement_sha256": "67a43c9bc52e7299d7e4db0a5dce562abbeba35944360ad3c57f3eeb6e3564cb",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y/cube_pose_crops/cube_4.txt",
+      "historical_reply_sha256": "cfb83d04cc3ef4d27fce9d03f7c6d0d5e06fd13c3ef98bff2a94967f4d7e233f",
+      "measurement": {
+        "expected_colour": "red",
+        "position_world_m": [
+          0.24934312920812965,
+          0.20753910472214254,
+          0.8999
+        ],
+        "yaw_deg": 35.2957,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.953519256308101,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_023",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_0",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_0.png",
+      "image_sha256": "d4872aa2c277c7868858bcddd523d3bfcb9672a76eeca0bcf6a66dd402ae97b8",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_0_measurement.json",
+      "measurement_sha256": "2025f61ea7019c0864fd3987b39981d03362ba6fe1795f668887c2c5a92f4f8b",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_0.txt",
+      "historical_reply_sha256": "573175fec24663cc88fae1c6925d1c42b3dd1053c0ae1c1abe5d2d4b75616ecb",
+      "measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.3658892268485616,
+          0.07268075422895551,
+          0.8999
+        ],
+        "yaw_deg": -2.0046,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9615384615384616,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_024",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_1",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_1.png",
+      "image_sha256": "a103b9f0fb6c94f4c0a1ca09fd610a3f64ff5a06295ba0c09957f9af4b421862",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_1_measurement.json",
+      "measurement_sha256": "d9cef1ee1ef313939a1c0e7a2ec09e23e5b35c5427f4984a89a746dc377343b1",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_1.txt",
+      "historical_reply_sha256": "d28faa73aeac142aad106eb17f0747e7d057c03069da317a4d7089d945ca873f",
+      "measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.41950096598144393,
+          0.17885612507415324,
+          0.8999
+        ],
+        "yaw_deg": 28.1649,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9548954895489549,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_025",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_2",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_2.png",
+      "image_sha256": "665bf51b6e7e05fce98f37670f8f940f98ee31fe35c8670472280cf8d4f78f65",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_2_measurement.json",
+      "measurement_sha256": "e3cfb9fc29c5404888d9127624929ce6399e90e91ad7d286cf7c76f2d15a9268",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_2.txt",
+      "historical_reply_sha256": "be08f55b4985ced425277102088fa7347e4bd3375f2b5ded7380d2e4787b26e5",
+      "measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.3397572735483681,
+          0.18785405256795218,
+          0.8999
+        ],
+        "yaw_deg": 10.2115,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9500594530321046,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_026",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_3",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_3.png",
+      "image_sha256": "2bced81af8b6641dc653ed8636b7d64bb3613c32d091e02dc0754a5e12f39aba",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_3_measurement.json",
+      "measurement_sha256": "909a5e3ea1f0578c0b718620edec01a94d3ecc83efdecdbc34420fa6cf706fa4",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_3.txt",
+      "historical_reply_sha256": "59f3501a649aa01b912db95b28ba96d078aead8bc813d0d5a3db685c688f5a0b",
+      "measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.363334406636278,
+          0.27137935762403986,
+          0.8999
+        ],
+        "yaw_deg": -35.9013,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9681122448979592,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_027",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_4",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_4.png",
+      "image_sha256": "933024e35394eb80cb1461434e25939c3971aff373c27f82d99d40870bb5bc2b",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_4_measurement.json",
+      "measurement_sha256": "b4c85a9c948a25dd93acaaf043b6e1e15ee8f5401fa2b87691282f5f13fd03d2",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_4.txt",
+      "historical_reply_sha256": "ad32c5851d61b3d9638af587e3ab87c248cb739e53d5f9bef3d44d833ff69bfa",
+      "measurement": {
+        "expected_colour": "red",
+        "position_world_m": [
+          0.24934099276109425,
+          0.20757325926451317,
+          0.8999
+        ],
+        "yaw_deg": 36.6615,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9584450402144772,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_028",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_5",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_5.png",
+      "image_sha256": "8636cb46d8e9ab6dec3b71a59d42041555595d070e3beea46714354ec6557a35",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_5_measurement.json",
+      "measurement_sha256": "f5d7b5b54f2a9e035caf8f4898f5208fbef649f8016ceef321101d5b06540e30",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG/cube_pose_crops/cube_5.txt",
+      "historical_reply_sha256": "d24aac1ec2c206e966f2d8d0c23569a38c5291ea8eeab1834b0635bb1a620886",
+      "measurement": {
+        "expected_colour": "red",
+        "position_world_m": [
+          0.27814895935523387,
+          0.01881898439694366,
+          0.8999
+        ],
+        "yaw_deg": -21.6476,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.965034965034965,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_029",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_0",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_0.png",
+      "image_sha256": "cd968e1422192d7177536ec280475eb55521e8eab577366e5fa39f652514c81c",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_0_measurement.json",
+      "measurement_sha256": "8b1b35c9a85072a97620d8cae2bd1280b94e13a2dc785b7d210ca4a419f59b18",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_0.txt",
+      "historical_reply_sha256": "90789e4fe70d117ae4006055de3ad96e60e87803e3dc0790c1e4855ada0dd1c7",
+      "measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.36588424371473766,
+          0.07268574642448158,
+          0.8999
+        ],
+        "yaw_deg": -1.9259,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9628205128205128,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_030",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_1",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_1.png",
+      "image_sha256": "97f49ce3750ff3c9063ee659d70f7e885c8d78ba8c31a8683aff385253b51a95",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_1_measurement.json",
+      "measurement_sha256": "9b7fc28973eab90de218c6d1e562856b1af0eaf0ba1574b97e9e379907dd8839",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_1.txt",
+      "historical_reply_sha256": "21aaa38391e17ed7dd67e86034212c626af7c91d1289b3bf1d9ac051eaeebf72",
+      "measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.4194561975351426,
+          0.17898375303683062,
+          0.8999
+        ],
+        "yaw_deg": 28.0709,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9559471365638766,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_031",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_2",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_2.png",
+      "image_sha256": "c496fe38b7e940517f1e78a3f0f4cc7520d8d2022cc3a29e3ee80741874dc33f",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_2_measurement.json",
+      "measurement_sha256": "4f0192b91076377737da23d5ff6f4ab95926270eb80a838ac29cb5cca3bf1056",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_2.txt",
+      "historical_reply_sha256": "e8f8cb3cd9dc53b8f52720b5e884b3140d964da28518ddacd2130de54fa9a6fa",
+      "measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.33975869382993085,
+          0.18784883308122377,
+          0.8999
+        ],
+        "yaw_deg": 10.0982,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9511904761904761,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_032",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_3",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_3.png",
+      "image_sha256": "f06643c6d6a9af4d1b4cb5a5bde717ace12d317f0c54cbe660eff9490c7867b4",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_3_measurement.json",
+      "measurement_sha256": "455087dd7c360b54f2c7f3634283205063e611fcd7fd8617660f28eb8e89cdd2",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_3.txt",
+      "historical_reply_sha256": "59f3501a649aa01b912db95b28ba96d078aead8bc813d0d5a3db685c688f5a0b",
+      "measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.36333972929205616,
+          0.2713860689908751,
+          0.8999
+        ],
+        "yaw_deg": -35.8984,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9694267515923567,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_033",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_4",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_4.png",
+      "image_sha256": "be9452b31da0b673c145986f42d2045f2dc76d5bff5b65f6fbc8e4b24b67360b",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_4_measurement.json",
+      "measurement_sha256": "2a4be4290855acd8241ba9362831b76a46cc869972b99e94a71bf4b5c8942bce",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_4.txt",
+      "historical_reply_sha256": "9bbf29b2c7be9197cc7bcab339d59b90f4da6831e5a14fb94e3fc4bc18b6dc04",
+      "measurement": {
+        "expected_colour": "red",
+        "position_world_m": [
+          0.24935047317157763,
+          0.20758090416223376,
+          0.8999
+        ],
+        "yaw_deg": 36.6634,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9571045576407506,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_034",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_5",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_5.png",
+      "image_sha256": "d472cbe3dfad2d690cf8c60cbcd791c0265bd28c2022ee52e98b90896bb6b562",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_5_measurement.json",
+      "measurement_sha256": "a4d45b7e95f2e0cd977f43c07f10f3e5c7b00fbfea371daa650a68c3f90ffae1",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7/cube_pose_crops/cube_5.txt",
+      "historical_reply_sha256": "e9cd6935896bd2560989b0156aa16abb11faf9c0d79b776b32b2a60045455c91",
+      "measurement": {
+        "expected_colour": "red",
+        "position_world_m": [
+          0.2782147509270722,
+          0.01882569600275492,
+          0.8999
+        ],
+        "yaw_deg": -21.3154,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9635854341736695,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_035",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1",
+      "cube": "cube_0",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1/cube_pose_crops/cube_0.png",
+      "image_sha256": "9fccc4beef31024b37aa6db033fdfc378ad0e0bc05308626a769fa0c51773f35",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1/cube_pose_crops/cube_0_measurement.json",
+      "measurement_sha256": "0064c2b164a2ea158e13a118237fd0c0ab671c55a814d4161022938d3a0e9eaf",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1/cube_pose_crops/cube_0.txt",
+      "historical_reply_sha256": "0086271f32a28292c3686a609b529f80d0082bc0e29c6cfe87d745ed4b7dd152",
+      "measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.3658948826042351,
+          0.07268048072530639,
+          0.8999
+        ],
+        "yaw_deg": -1.9215,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9666666666666667,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_036",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1",
+      "cube": "cube_1",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1/cube_pose_crops/cube_1.png",
+      "image_sha256": "087b084d66f1c10f33cfb95dfd4a62c6c72f1718a67c7894aaadd8cb9adf6995",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1/cube_pose_crops/cube_1_measurement.json",
+      "measurement_sha256": "d119e2b685a401c9e9f4d44d08631b3a2be2632600469a81d3e331f61da01c10",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1/cube_pose_crops/cube_1.txt",
+      "historical_reply_sha256": "d37e4b061d40d88439f4663e3b4377f1b56848c6a3d98381439f5b2e9830f3b2",
+      "measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.4194972331594506,
+          0.1788465793863801,
+          0.8999
+        ],
+        "yaw_deg": 28.0948,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9526952695269527,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_037",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1",
+      "cube": "cube_2",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1/cube_pose_crops/cube_2.png",
+      "image_sha256": "464e7fec34f072fb9368fba8b01998792c95334d001b4acb3a7d72049eadc8e3",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1/cube_pose_crops/cube_2_measurement.json",
+      "measurement_sha256": "19807ce956aabe15c1ca6d5c9ff2532f658d200e2379152aca77fd60dd1ade5a",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1/cube_pose_crops/cube_2.txt",
+      "historical_reply_sha256": "354dce4ab9d897bda94884ba97b300d963ef430a1c7b79ad4db6614200010c8e",
+      "measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.33969493439133197,
+          0.18782146292210733,
+          0.8999
+        ],
+        "yaw_deg": 10.9171,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9475566150178785,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_038",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1",
+      "cube": "cube_3",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1/cube_pose_crops/cube_3.png",
+      "image_sha256": "76842f00859df083da5368af07ae0c506520beab76f83bf544cec6f275e54e1a",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1/cube_pose_crops/cube_3_measurement.json",
+      "measurement_sha256": "ee65bcb4ad0bba02c5f873249e2cc373b86836a3450abde19816d3aab8014e35",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1/cube_pose_crops/cube_3.txt",
+      "historical_reply_sha256": "59f3501a649aa01b912db95b28ba96d078aead8bc813d0d5a3db685c688f5a0b",
+      "measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.36334423162652507,
+          0.2713937853646494,
+          0.8999
+        ],
+        "yaw_deg": -35.8843,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9706632653061225,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "case_id": "case_039",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1",
+      "cube": "cube_4",
+      "image": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1/cube_pose_crops/cube_4.png",
+      "image_sha256": "2ff599252bc3f970440175fad1f677aa5b9cd6977e8e8a1ee18ad2b2cd38531d",
+      "measurement_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1/cube_pose_crops/cube_4_measurement.json",
+      "measurement_sha256": "4df8c06666f2c2854d314cb4df7d6fc411d5cd9f623acd83c59ac801a62c23a1",
+      "historical_reply_file": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1/cube_pose_crops/cube_4.txt",
+      "historical_reply_sha256": "c36db4b7bf3348b7df78661cb28cf3b3491429cbbc074baadc0ad5135bd938c9",
+      "measurement": {
+        "expected_colour": "red",
+        "position_world_m": [
+          0.24934988286151735,
+          0.20758186688560412,
+          0.8999
+        ],
+        "yaw_deg": 36.6858,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9571045576407506,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      }
+    }
+  ],
+  "excluded": [],
+  "comparison_order": "Alternate original-first and candidate-first by case index.",
+  "limits": "One paired comparison per crop; correlated development examples, not a formal success rate. No physics or grasp commands. Ground truth not read."
+}

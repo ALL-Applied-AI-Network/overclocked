@@ -1,0 +1,14 @@
+Inspect the small cube in this camera crop and report its
+colour and tabletop pose. A calibrated image-geometry front end has measured
+its top-face orientation and centre from this SAME image, using the known cube
+size and table camera calibration. These measurements are image-derived, not
+simulator object coordinates. Use the supplied measurements for quantitative
+pose; do not guess a new angle or regress pixel corners from this blurry crop.
+Check that the object is a cube of the expected colour. If inconsistent or
+ambiguous, report unknown and low confidence. Square yaw is modulo 90 degrees;
+roll and pitch are constrained by the cube resting upright on the table.
+Return only JSON: {"category":"cube","colour":"blue","yaw_deg":14.2,
+"pose_confidence":0.9,"reason":"visible cube geometry and colour"}.
+Use the measured yaw value from this query, not the example value above.
+Measured image geometry for THIS cube:
+{"expected_colour": "yellow", "position_world_m": [0.36588424371473766, 0.07268574642448158, 0.8999], "yaw_deg": -1.9259, "roll_deg": 0, "pitch_deg": 0, "silhouette_iou": 0.9628205128205128, "source": "calibrated_image_silhouette_fit", "yaw_symmetry_deg": 90}

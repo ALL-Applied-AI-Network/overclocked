@@ -1,0 +1,1538 @@
+{
+  "schema_version": 1,
+  "experiment_class": "development",
+  "run_id": "lieland_pose_compare_20261022_220638_27clbx5l",
+  "outcome": "saved_crop_comparison_complete",
+  "started_at_utc": "2026-10-22T22:08:25.711462+00:00",
+  "updated_at_utc": "2026-10-22T22:20:08.603827+00:00",
+  "case_count": 40,
+  "planned_calls": 80,
+  "completed_calls": 80,
+  "results": [
+    {
+      "case_id": "case_000",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_0",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.003999999999997783,
+        "reported_yaw_deg": -35.2,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_000_original.txt"
+    },
+    {
+      "case_id": "case_000",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_0",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -35.204,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_000_candidate.txt"
+    },
+    {
+      "case_id": "case_001",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_1",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 13.2795,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_001_candidate.txt"
+    },
+    {
+      "case_id": "case_001",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_1",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.920499999999997,
+        "reported_yaw_deg": 14.2,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_001_original.txt"
+    },
+    {
+      "case_id": "case_002",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_2",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0033000000000029672,
+        "reported_yaw_deg": -1.93,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_002_original.txt"
+    },
+    {
+      "case_id": "case_002",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_2",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -1.9267,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_002_candidate.txt"
+    },
+    {
+      "case_id": "case_003",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_3",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 28.1391,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_003_candidate.txt"
+    },
+    {
+      "case_id": "case_003",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_3",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.03909999999999769,
+        "reported_yaw_deg": 28.1,
+        "reported_confidence": 0.99
+      },
+      "raw_reply_file": "cube_pose_crops/case_003_original.txt"
+    },
+    {
+      "case_id": "case_004",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_4",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -23.0777,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_004_original.txt"
+    },
+    {
+      "case_id": "case_004",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_4",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -23.0777,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_004_candidate.txt"
+    },
+    {
+      "case_id": "case_005",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_5",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 35.2777,
+        "reported_confidence": 0.98
+      },
+      "raw_reply_file": "cube_pose_crops/case_005_candidate.txt"
+    },
+    {
+      "case_id": "case_005",
+      "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+      "cube": "cube_5",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 35.2777,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_005_original.txt"
+    },
+    {
+      "case_id": "case_006",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_0",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.01670000000000016,
+        "reported_yaw_deg": -35.2,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_006_original.txt"
+    },
+    {
+      "case_id": "case_006",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_0",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -35.2167,
+        "reported_confidence": 0.98
+      },
+      "raw_reply_file": "cube_pose_crops/case_006_candidate.txt"
+    },
+    {
+      "case_id": "case_007",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_1",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.004800000000003024,
+        "reported_yaw_deg": 11.97,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_007_candidate.txt"
+    },
+    {
+      "case_id": "case_007",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_1",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.004800000000003024,
+        "reported_yaw_deg": 11.97,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_007_original.txt"
+    },
+    {
+      "case_id": "case_008",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_2",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0022999999999981924,
+        "reported_yaw_deg": -1.93,
+        "reported_confidence": 0.99
+      },
+      "raw_reply_file": "cube_pose_crops/case_008_original.txt"
+    },
+    {
+      "case_id": "case_008",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_2",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -1.9323,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_008_candidate.txt"
+    },
+    {
+      "case_id": "case_009",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_3",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 28.0968,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_009_candidate.txt"
+    },
+    {
+      "case_id": "case_009",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_3",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 28.0968,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_009_original.txt"
+    },
+    {
+      "case_id": "case_010",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_4",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.02580000000000382,
+        "reported_yaw_deg": -22.7,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_010_original.txt"
+    },
+    {
+      "case_id": "case_010",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_4",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -22.7258,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_010_candidate.txt"
+    },
+    {
+      "case_id": "case_011",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_5",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 35.2777,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_011_candidate.txt"
+    },
+    {
+      "case_id": "case_011",
+      "source_run": "lieland_default_updated_dev_20261021_205228_1E2CX4",
+      "cube": "cube_5",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 35.2777,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_011_original.txt"
+    },
+    {
+      "case_id": "case_012",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_0",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -1.6779,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_012_original.txt"
+    },
+    {
+      "case_id": "case_012",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_0",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -1.6779,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_012_candidate.txt"
+    },
+    {
+      "case_id": "case_013",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_1",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 28.1663,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_013_candidate.txt"
+    },
+    {
+      "case_id": "case_013",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_1",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 28.1663,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_013_original.txt"
+    },
+    {
+      "case_id": "case_014",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_2",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.011499999999998067,
+        "reported_yaw_deg": 10.2,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_014_original.txt"
+    },
+    {
+      "case_id": "case_014",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_2",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 10.2115,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_014_candidate.txt"
+    },
+    {
+      "case_id": "case_015",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_3",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -36.0864,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_015_candidate.txt"
+    },
+    {
+      "case_id": "case_015",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_3",
+      "variant": "original",
+      "validation": {
+        "accepted": false,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": false
+        },
+        "square_yaw_disagreement_deg": 39.7136,
+        "reported_yaw_deg": 14.2,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_015_original.txt"
+    },
+    {
+      "case_id": "case_016",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_4",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0013999999999967372,
+        "reported_yaw_deg": 36.57,
+        "reported_confidence": 0.99
+      },
+      "raw_reply_file": "cube_pose_crops/case_016_original.txt"
+    },
+    {
+      "case_id": "case_016",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_4",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 36.5686,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_016_candidate.txt"
+    },
+    {
+      "case_id": "case_017",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_5",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -21.7947,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_017_candidate.txt"
+    },
+    {
+      "case_id": "case_017",
+      "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+      "cube": "cube_5",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.004699999999999704,
+        "reported_yaw_deg": -21.79,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_017_original.txt"
+    },
+    {
+      "case_id": "case_018",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
+      "cube": "cube_0",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0033000000000029672,
+        "reported_yaw_deg": -1.93,
+        "reported_confidence": 0.99
+      },
+      "raw_reply_file": "cube_pose_crops/case_018_original.txt"
+    },
+    {
+      "case_id": "case_018",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
+      "cube": "cube_0",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -1.9267,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_018_candidate.txt"
+    },
+    {
+      "case_id": "case_019",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
+      "cube": "cube_1",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 28.0725,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_019_candidate.txt"
+    },
+    {
+      "case_id": "case_019",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
+      "cube": "cube_1",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0024999999999977263,
+        "reported_yaw_deg": 28.07,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_019_original.txt"
+    },
+    {
+      "case_id": "case_020",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
+      "cube": "cube_2",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.004300000000000637,
+        "reported_yaw_deg": 11.0,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_020_original.txt"
+    },
+    {
+      "case_id": "case_020",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
+      "cube": "cube_2",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 11.0043,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_020_candidate.txt"
+    },
+    {
+      "case_id": "case_021",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
+      "cube": "cube_3",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -35.945,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_021_candidate.txt"
+    },
+    {
+      "case_id": "case_021",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
+      "cube": "cube_3",
+      "variant": "original",
+      "validation": {
+        "accepted": false,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": false
+        },
+        "square_yaw_disagreement_deg": 39.855000000000004,
+        "reported_yaw_deg": 14.2,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_021_original.txt"
+    },
+    {
+      "case_id": "case_022",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
+      "cube": "cube_4",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.004300000000000637,
+        "reported_yaw_deg": 35.3,
+        "reported_confidence": 0.99
+      },
+      "raw_reply_file": "cube_pose_crops/case_022_original.txt"
+    },
+    {
+      "case_id": "case_022",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
+      "cube": "cube_4",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 35.2957,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_022_candidate.txt"
+    },
+    {
+      "case_id": "case_023",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_0",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -2.0046,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_023_candidate.txt"
+    },
+    {
+      "case_id": "case_023",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_0",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -2.0046,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_023_original.txt"
+    },
+    {
+      "case_id": "case_024",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_1",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.004899999999999238,
+        "reported_yaw_deg": 28.16,
+        "reported_confidence": 0.99
+      },
+      "raw_reply_file": "cube_pose_crops/case_024_original.txt"
+    },
+    {
+      "case_id": "case_024",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_1",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 28.1649,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_024_candidate.txt"
+    },
+    {
+      "case_id": "case_025",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_2",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 10.2115,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_025_candidate.txt"
+    },
+    {
+      "case_id": "case_025",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_2",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.011499999999998067,
+        "reported_yaw_deg": 10.2,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_025_original.txt"
+    },
+    {
+      "case_id": "case_026",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_3",
+      "variant": "original",
+      "validation": {
+        "accepted": false,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": false
+        },
+        "square_yaw_disagreement_deg": 39.898700000000005,
+        "reported_yaw_deg": 14.2,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_026_original.txt"
+    },
+    {
+      "case_id": "case_026",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_3",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -35.9013,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_026_candidate.txt"
+    },
+    {
+      "case_id": "case_027",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_4",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 36.6615,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_027_candidate.txt"
+    },
+    {
+      "case_id": "case_027",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_4",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0015000000000000568,
+        "reported_yaw_deg": 36.66,
+        "reported_confidence": 0.99
+      },
+      "raw_reply_file": "cube_pose_crops/case_027_original.txt"
+    },
+    {
+      "case_id": "case_028",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_5",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.04760000000000275,
+        "reported_yaw_deg": -21.6,
+        "reported_confidence": 0.99
+      },
+      "raw_reply_file": "cube_pose_crops/case_028_original.txt"
+    },
+    {
+      "case_id": "case_028",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_2_TEKcxG",
+      "cube": "cube_5",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -21.6476,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_028_candidate.txt"
+    },
+    {
+      "case_id": "case_029",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_0",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -1.9259,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_029_candidate.txt"
+    },
+    {
+      "case_id": "case_029",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_0",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -1.9259,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_029_original.txt"
+    },
+    {
+      "case_id": "case_030",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_1",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0009000000000014552,
+        "reported_yaw_deg": 28.07,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_030_original.txt"
+    },
+    {
+      "case_id": "case_030",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_1",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 28.0709,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_030_candidate.txt"
+    },
+    {
+      "case_id": "case_031",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_2",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 10.0982,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_031_candidate.txt"
+    },
+    {
+      "case_id": "case_031",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_2",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0018000000000029104,
+        "reported_yaw_deg": 10.1,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_031_original.txt"
+    },
+    {
+      "case_id": "case_032",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_3",
+      "variant": "original",
+      "validation": {
+        "accepted": false,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": false
+        },
+        "square_yaw_disagreement_deg": 39.9016,
+        "reported_yaw_deg": 14.2,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_032_original.txt"
+    },
+    {
+      "case_id": "case_032",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_3",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -35.8984,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_032_candidate.txt"
+    },
+    {
+      "case_id": "case_033",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_4",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 36.6634,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_033_candidate.txt"
+    },
+    {
+      "case_id": "case_033",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_4",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.003400000000006287,
+        "reported_yaw_deg": 36.66,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_033_original.txt"
+    },
+    {
+      "case_id": "case_034",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_5",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.015399999999999636,
+        "reported_yaw_deg": -21.3,
+        "reported_confidence": 0.99
+      },
+      "raw_reply_file": "cube_pose_crops/case_034_original.txt"
+    },
+    {
+      "case_id": "case_034",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_3_d1VVB7",
+      "cube": "cube_5",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -21.3154,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_034_candidate.txt"
+    },
+    {
+      "case_id": "case_035",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1",
+      "cube": "cube_0",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -1.9215,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_035_candidate.txt"
+    },
+    {
+      "case_id": "case_035",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1",
+      "cube": "cube_0",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0015000000000000568,
+        "reported_yaw_deg": -1.92,
+        "reported_confidence": 0.99
+      },
+      "raw_reply_file": "cube_pose_crops/case_035_original.txt"
+    },
+    {
+      "case_id": "case_036",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1",
+      "cube": "cube_1",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.004800000000003024,
+        "reported_yaw_deg": 28.09,
+        "reported_confidence": 0.99
+      },
+      "raw_reply_file": "cube_pose_crops/case_036_original.txt"
+    },
+    {
+      "case_id": "case_036",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1",
+      "cube": "cube_1",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 28.0948,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_036_candidate.txt"
+    },
+    {
+      "case_id": "case_037",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1",
+      "cube": "cube_2",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 10.9171,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_037_candidate.txt"
+    },
+    {
+      "case_id": "case_037",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1",
+      "cube": "cube_2",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.017099999999999227,
+        "reported_yaw_deg": 10.9,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_037_original.txt"
+    },
+    {
+      "case_id": "case_038",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1",
+      "cube": "cube_3",
+      "variant": "original",
+      "validation": {
+        "accepted": false,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": false
+        },
+        "square_yaw_disagreement_deg": 39.9157,
+        "reported_yaw_deg": 14.2,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_038_original.txt"
+    },
+    {
+      "case_id": "case_038",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1",
+      "cube": "cube_3",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": -35.8843,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_038_candidate.txt"
+    },
+    {
+      "case_id": "case_039",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1",
+      "cube": "cube_4",
+      "variant": "candidate",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 36.6858,
+        "reported_confidence": 0.97
+      },
+      "raw_reply_file": "cube_pose_crops/case_039_candidate.txt"
+    },
+    {
+      "case_id": "case_039",
+      "source_run": "lieland_seed_20261010_dev_20261022_042332_13174_4_bpoCg1",
+      "cube": "cube_4",
+      "variant": "original",
+      "validation": {
+        "accepted": true,
+        "checks": {
+          "category": true,
+          "colour": true,
+          "confidence": true,
+          "yaw": true
+        },
+        "square_yaw_disagreement_deg": 0.0,
+        "reported_yaw_deg": 36.6858,
+        "reported_confidence": 0.9
+      },
+      "raw_reply_file": "cube_pose_crops/case_039_original.txt"
+    }
+  ],
+  "error": null,
+  "task_complete": null,
+  "verified_pickups": null,
+  "verified_placements": null,
+  "limits": "One paired comparison per crop; correlated development examples, not a formal success rate. No physics or grasp commands. Ground truth not read."
+}

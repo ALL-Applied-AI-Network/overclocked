@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "blue",
+  "yaw_deg": -35.9013,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small blue cube with a clear top face, positioned upright on a flat surface. The measured yaw angle of approximately -35.9 degrees indicates a slight rotation around the vertical axis, consistent with the cube's orientation in the image. The high silhouette IoU (0.968) confirms the object's shape matches a cube, and the color is clearly blue."
+}
+```

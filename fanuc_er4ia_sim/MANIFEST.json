@@ -18,6 +18,11 @@
       "sha256": "40e83cbfef0adacc1996c9698d1b44f2543ab2f1119cf6ca1f9e7fe7cc64a4c2"
     },
     {
+      "path": "POSE_PROMPT_COMPARISON.md",
+      "size_bytes": 4205,
+      "sha256": "d3e17c46b369fa2543d316fec138617fda91ba47ca1267a75e013f4bdfadd93d"
+    },
+    {
       "path": "README.md",
       "size_bytes": 2403,
       "sha256": "8fe3e9cc5a1aadf0b8012136a36d962aff5231015a07f8d16487d33d05d2fc9f"
@@ -83,6 +88,11 @@
       "sha256": "cfde65b149d4c87add24793734d65d968b79ea70563c169e2f46b458b32a4260"
     },
     {
+      "path": "compare_pose_prompts.py",
+      "size_bytes": 11462,
+      "sha256": "2a15a173bf701790cee620667700cd5dd5fc0dc069dfb9e20cef10e7c8f4ec93"
+    },
+    {
       "path": "cube_pose.py",
       "size_bytes": 4799,
       "sha256": "d49f9d25aecbfefbb3a090f916b214a5c7614a5c679286e66c0afe655fd794bc"
@@ -129,8 +139,8 @@
     },
     {
       "path": "package_hackathon.py",
-      "size_bytes": 3377,
-      "sha256": "b28c90e09505cc6bf583270491607b8aa6138b02929edbbd1a898287274c425f"
+      "size_bytes": 3476,
+      "sha256": "98bf7798fc0b5cc54807a8d3b3cf2984ed3632d27bee621688f2188e91a195ad"
     },
     {
       "path": "perceive.py",
@@ -201,6 +211,11 @@
       "path": "test_cube_pose.py",
       "size_bytes": 9345,
       "sha256": "f4e6af7acc464a5f6da86d5a28110f39ae47da7472350b5843dac6055fa1ecd3"
+    },
+    {
+      "path": "test_pose_prompt_compare.py",
+      "size_bytes": 4849,
+      "sha256": "c8dd78a1c9d60e2d12a2ecd454dc3399e9195930508aa446c25a1e00f5138f5a"
     },
     {
       "path": "test_runtime_config.py",

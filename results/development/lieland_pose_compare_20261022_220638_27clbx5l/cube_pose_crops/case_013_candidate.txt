@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "yellow",
+  "yaw_deg": 28.1663,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small yellow cube with a matte finish, positioned upright on a flat surface. The measured yaw angle of approximately 28 degrees indicates a slight rotation around the vertical axis, consistent with the cube's orientation in the image. The high silhouette IoU (0.95) confirms the cube's shape is well-defined and matches the expected geometry."
+}
+```

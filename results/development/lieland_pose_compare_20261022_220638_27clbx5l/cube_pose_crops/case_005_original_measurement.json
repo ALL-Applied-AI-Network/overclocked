@@ -1,0 +1,35 @@
+{
+  "input_measurement": {
+    "expected_colour": "red",
+    "position_world_m": [
+      0.3579666255193344,
+      0.20431094836610125,
+      0.8999
+    ],
+    "yaw_deg": 35.2777,
+    "roll_deg": 0,
+    "pitch_deg": 0,
+    "silhouette_iou": 0.9655172413793104,
+    "source": "calibrated_image_silhouette_fit",
+    "yaw_symmetry_deg": 90
+  },
+  "result": {
+    "case_id": "case_005",
+    "source_run": "lieland_baseline_retry_dev_20261020_175604_DAoCi5",
+    "cube": "cube_5",
+    "variant": "original",
+    "validation": {
+      "accepted": true,
+      "checks": {
+        "category": true,
+        "colour": true,
+        "confidence": true,
+        "yaw": true
+      },
+      "square_yaw_disagreement_deg": 0.0,
+      "reported_yaw_deg": 35.2777,
+      "reported_confidence": 0.9
+    },
+    "raw_reply_file": "cube_pose_crops/case_005_original.txt"
+  }
+}

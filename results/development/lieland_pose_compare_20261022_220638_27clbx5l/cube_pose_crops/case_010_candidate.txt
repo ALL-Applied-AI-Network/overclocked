@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "red",
+  "yaw_deg": -22.7258,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small red cube with a matte finish, positioned upright on a flat surface. Its top face is oriented at a slight angle relative to the camera, consistent with the measured yaw. The cube's edges are sharp and well-defined, confirming its cubic shape."
+}
+```

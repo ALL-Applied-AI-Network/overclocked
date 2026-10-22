@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "blue",
+  "yaw_deg": -35.8843,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small blue cube with a clear top face, consistent with the provided measurements and the expected color."
+}
+```

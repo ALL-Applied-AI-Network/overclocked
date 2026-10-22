@@ -1,0 +1,35 @@
+{
+  "input_measurement": {
+    "expected_colour": "red",
+    "position_world_m": [
+      0.27827940085741465,
+      0.018789756122858117,
+      0.8999
+    ],
+    "yaw_deg": -21.7947,
+    "roll_deg": 0,
+    "pitch_deg": 0,
+    "silhouette_iou": 0.9664804469273743,
+    "source": "calibrated_image_silhouette_fit",
+    "yaw_symmetry_deg": 90
+  },
+  "result": {
+    "case_id": "case_017",
+    "source_run": "lieland_layout_20261010_rerun_dev_20261022_032116_alhxRN",
+    "cube": "cube_5",
+    "variant": "original",
+    "validation": {
+      "accepted": true,
+      "checks": {
+        "category": true,
+        "colour": true,
+        "confidence": true,
+        "yaw": true
+      },
+      "square_yaw_disagreement_deg": 0.004699999999999704,
+      "reported_yaw_deg": -21.79,
+      "reported_confidence": 0.9
+    },
+    "raw_reply_file": "cube_pose_crops/case_017_original.txt"
+  }
+}
