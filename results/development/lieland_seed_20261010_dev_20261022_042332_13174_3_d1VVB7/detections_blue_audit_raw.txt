@@ -1,0 +1,6 @@
+```json
+[
+    {"label": "blue cube", "category": "cube", "colour": "blue", "center": [617, 654], "bbox": [612, 642, 628, 666], "graspable": true},
+    {"label": "blue cube", "category": "cube", "colour": "blue", "center": [670, 679], "bbox": [664, 669, 680, 693], "graspable": true}
+]
+```

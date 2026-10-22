@@ -32,6 +32,8 @@ CODE = (
     "test_support.py",
     "package_hackathon.py",
     "run_sort_pipeline.sh",
+    "run_stress_batch.sh",
+    "STRESS_BATCH.md",
     "share.sh",
     "requirements.txt",
     "requirements-cosmos.txt",

@@ -1,0 +1,264 @@
+{
+  "objects": [
+    {
+      "label": "yellow cube",
+      "category": "cube",
+      "colour": "yellow",
+      "center": [
+        0.553,
+        0.673
+      ],
+      "bbox": [
+        0.548,
+        0.664,
+        0.56,
+        0.684
+      ],
+      "graspable": true,
+      "pose_source": "Cosmos_reports_calibrated_image_pose",
+      "image_pose_measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.3658668297274786,
+          0.07268480593542913,
+          0.8999
+        ],
+        "yaw_deg": -1.9267,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9653846153846154,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      },
+      "pose_confidence": 0.99,
+      "top_edge_endpoints": [
+        [
+          0.5513754993463177,
+          0.6682654812412775
+        ],
+        [
+          0.5514120937643606,
+          0.6779694269144227
+        ]
+      ],
+      "pose_reason": "The cube is yellow and sits upright on the table with a slight rotation.",
+      "cosmos_reported_yaw_deg": -1.93,
+      "pose_world": {
+        "position_m": [
+          0.3658668297274786,
+          0.07268480593542913,
+          0.8999
+        ],
+        "yaw_deg": -1.9299999999999997,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "label": "yellow cube",
+      "category": "cube",
+      "colour": "yellow",
+      "center": [
+        0.619,
+        0.732
+      ],
+      "bbox": [
+        0.615,
+        0.723,
+        0.626,
+        0.742
+      ],
+      "graspable": true,
+      "pose_source": "Cosmos_reports_calibrated_image_pose",
+      "image_pose_measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.41945287296381617,
+          0.17898575224722413,
+          0.8999
+        ],
+        "yaw_deg": 28.0725,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9548458149779736,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      },
+      "pose_confidence": 0.9,
+      "top_edge_endpoints": [
+        [
+          0.6178074111044362,
+          0.7292426338179652
+        ],
+        [
+          0.6213876520874123,
+          0.7387038845300339
+        ]
+      ],
+      "pose_reason": "visible cube geometry and colour",
+      "cosmos_reported_yaw_deg": 28.07,
+      "pose_world": {
+        "position_m": [
+          0.41945287296381617,
+          0.17898575224722413,
+          0.8999
+        ],
+        "yaw_deg": 28.069999999999993,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "label": "blue cube",
+      "category": "cube",
+      "colour": "blue",
+      "center": [
+        0.62,
+        0.657
+      ],
+      "bbox": [
+        0.616,
+        0.648,
+        0.626,
+        0.665
+      ],
+      "graspable": true,
+      "pose_source": "Cosmos_reports_calibrated_image_pose",
+      "image_pose_measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.33968515614106637,
+          0.18782439617971322,
+          0.8999
+        ],
+        "yaw_deg": 11.0043,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9511904761904761,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      },
+      "pose_confidence": 0.9,
+      "top_edge_endpoints": [
+        [
+          0.6179814125915477,
+          0.6489380856171734
+        ],
+        [
+          0.619781619353358,
+          0.6582392966475417
+        ]
+      ],
+      "pose_reason": "visible cube geometry and colour",
+      "cosmos_reported_yaw_deg": 11.0,
+      "pose_world": {
+        "position_m": [
+          0.33968515614106637,
+          0.18782439617971322,
+          0.8999
+        ],
+        "yaw_deg": 11.0,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "label": "blue cube",
+      "category": "cube",
+      "colour": "blue",
+      "center": [
+        0.671,
+        0.681
+      ],
+      "bbox": [
+        0.666,
+        0.672,
+        0.677,
+        0.69
+      ],
+      "graspable": true,
+      "pose_source": "Cosmos_reports_calibrated_image_pose",
+      "image_pose_measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.3633429141436931,
+          0.27138005143377875,
+          0.8999
+        ],
+        "yaw_deg": -35.945,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9719387755102041,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      },
+      "pose_confidence": 0,
+      "top_edge_endpoints": null,
+      "pose_reason": "visible cube geometry and colour"
+    },
+    {
+      "label": "red cube",
+      "category": "cube",
+      "colour": "red",
+      "center": [
+        0.6258405565693431,
+        0.5761090835360909
+      ],
+      "bbox": [
+        0.621875,
+        0.5689814814814815,
+        0.6302083333333334,
+        0.5837962962962963
+      ],
+      "graspable": true,
+      "detail_crop": "cube_inventory_crops/red_candidate3.png",
+      "category_confidence": 0.9,
+      "localisation_source": "image_blob_confirmed_by_Cosmos",
+      "pose_source": "Cosmos_reports_calibrated_image_pose",
+      "image_pose_measurement": {
+        "expected_colour": "red",
+        "position_world_m": [
+          0.24934312920812965,
+          0.20753910472214254,
+          0.8999
+        ],
+        "yaw_deg": 35.2957,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.953519256308101,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      },
+      "pose_confidence": 0.99,
+      "top_edge_endpoints": [
+        [
+          0.6226725755081801,
+          0.5723859434983782
+        ],
+        [
+          0.6264436145129888,
+          0.5794413316374193
+        ]
+      ],
+      "pose_reason": "The cube is red and sits on the table with its top face tilted at an angle of about 35.3 degrees relative to the camera view.",
+      "cosmos_reported_yaw_deg": 35.3,
+      "pose_world": {
+        "position_m": [
+          0.24934312920812965,
+          0.20753910472214254,
+          0.8999
+        ],
+        "yaw_deg": 35.3,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "yaw_symmetry_deg": 90
+      }
+    }
+  ],
+  "coordinate_convention": "unit",
+  "model": "Cosmos3-Nano",
+  "task": "cube_stack"
+}

@@ -28,6 +28,11 @@
       "sha256": "59ec54ff7c264ea2e4edd9bc352bdbdca2234f9383cc957a0504b336a4ff6ccd"
     },
     {
+      "path": "STRESS_BATCH.md",
+      "size_bytes": 2712,
+      "sha256": "8160309013498340658565884b4c53c1dcafe790f98e5350b64ac918bb8a33be"
+    },
+    {
       "path": "assets/gripper/photo_finger_detail.json",
       "size_bytes": 346321,
       "sha256": "ec52b5277fe0c3b927bff614508358a9021cc2dd7dc0a11805310968de10566f"
@@ -124,8 +129,8 @@
     },
     {
       "path": "package_hackathon.py",
-      "size_bytes": 3327,
-      "sha256": "6c1ddf0c4a56ec2e9611658121a91931c086430e48e9aa29f234a80c1de64670"
+      "size_bytes": 3377,
+      "sha256": "b28c90e09505cc6bf583270491607b8aa6138b02929edbbd1a898287274c425f"
     },
     {
       "path": "perceive.py",
@@ -166,6 +171,11 @@
       "path": "run_sort_pipeline.sh",
       "size_bytes": 2054,
       "sha256": "4bd987275367b0e757d1e90fb2d8a51d943ab7afc9806cd9e36710005aebe8fd"
+    },
+    {
+      "path": "run_stress_batch.sh",
+      "size_bytes": 7617,
+      "sha256": "27e9c86c38159c75def6d05e0eacd156f85ca834a9afdafeb2e60f7205aa7ef4"
     },
     {
       "path": "scene_config.py",

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "experiment_class": "development",
+  "run_id": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
+  "batch_id": "20261022_042332_13174",
+  "batch_run_number": 1,
+  "batch_requested_runs": 4,
+  "started_at_utc": "2026-10-22T04:23:32Z",
+  "finished_at_utc": "2026-10-22T04:27:34Z",
+  "outcome": "failed_before_execution",
+  "classification": "failed_before_execution",
+  "failure_stage": "perception_pose_validation",
+  "pipeline_exit_status": 1,
+  "elapsed_seconds": 242,
+  "cube_layout_seed": 20261010,
+  "execution_report_present": false,
+  "task_complete": null,
+  "verified_pickups": null,
+  "verified_placements": null,
+  "abort_reason": null,
+  "planned_picks": 0,
+  "notes": [
+    "Missing measurements remain null.",
+    "Inspect saved reports and log for detailed diagnosis.",
+    "Ground truth is evaluation only. All validation gates unchanged."
+  ]
+}

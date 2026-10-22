@@ -1,0 +1,1 @@
+{"category": "cube", "colour": "red", "yaw_deg": -21.6, "pose_confidence": 0.99, "reason": "The cube is red and sits upright on the table with a slight rotation."}

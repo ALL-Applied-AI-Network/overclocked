@@ -1,0 +1,14 @@
+{
+  "expected_colour": "blue",
+  "position_world_m": [
+    0.36334423162652507,
+    0.2713937853646494,
+    0.8999
+  ],
+  "yaw_deg": -35.8843,
+  "roll_deg": 0,
+  "pitch_deg": 0,
+  "silhouette_iou": 0.9706632653061225,
+  "source": "calibrated_image_silhouette_fit",
+  "yaw_symmetry_deg": 90
+}

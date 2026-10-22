@@ -1,0 +1,1 @@
+{"category": "cube", "colour": "red", "yaw_deg": 35.3, "pose_confidence": 0.99, "reason": "The cube is red and sits on the table with its top face tilted at an angle of about 35.3 degrees relative to the camera view."}
