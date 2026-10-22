@@ -18,6 +18,11 @@
       "sha256": "40e83cbfef0adacc1996c9698d1b44f2543ab2f1119cf6ca1f9e7fe7cc64a4c2"
     },
     {
+      "path": "POSE_PROMPT_CHANGE.md",
+      "size_bytes": 1625,
+      "sha256": "18e4ab831fdcee12ef0b6c72248c66a7e23b9ae3312f4c0334075002ba8702c7"
+    },
+    {
       "path": "POSE_PROMPT_COMPARISON.md",
       "size_bytes": 4205,
       "sha256": "d3e17c46b369fa2543d316fec138617fda91ba47ca1267a75e013f4bdfadd93d"
@@ -139,13 +144,13 @@
     },
     {
       "path": "package_hackathon.py",
-      "size_bytes": 3476,
-      "sha256": "98bf7798fc0b5cc54807a8d3b3cf2984ed3632d27bee621688f2188e91a195ad"
+      "size_bytes": 3505,
+      "sha256": "8fdf3a1c0fe848a9de777ca92cf292d2de82c0984ead8df0b4558c108b0da124"
     },
     {
       "path": "perceive.py",
-      "size_bytes": 35130,
-      "sha256": "41f4eaaf46d8d3844ab3d89a4974bca25bf5e9b2617f8c490f5aa5af09156f74"
+      "size_bytes": 35374,
+      "sha256": "7a9834a45e9a85b5347fe19d6bfe7134b60bd68aca8bf2cbd898b1156fbfbc29"
     },
     {
       "path": "plan_grasps.py",

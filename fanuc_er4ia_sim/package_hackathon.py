@@ -13,6 +13,7 @@ CODE = (
     "capture_scene.py",
     "isaac_seed_entrypoint.py",
     "record_run_config.py",
+    "POSE_PROMPT_CHANGE.md",
     "compare_pose_prompts.py",
     "test_pose_prompt_compare.py",
     "POSE_PROMPT_COMPARISON.md",

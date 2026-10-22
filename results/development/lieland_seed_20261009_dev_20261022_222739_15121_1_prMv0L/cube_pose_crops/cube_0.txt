@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "blue",
+  "yaw_deg": -35.2738,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small blue cube with a matte finish, positioned upright on a flat surface. Its top face is oriented at an angle consistent with the measured yaw, and it appears stable and well-defined within the frame."
+}
+```

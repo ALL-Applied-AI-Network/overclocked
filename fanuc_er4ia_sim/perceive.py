@@ -301,9 +301,13 @@ pose; do not guess a new angle or regress pixel corners from this blurry crop.
 Check that the object is a cube of the expected colour. If inconsistent or
 ambiguous, report unknown and low confidence. Square yaw is modulo 90 degrees;
 roll and pitch are constrained by the cube resting upright on the table.
-Return only JSON: {"category":"cube","colour":"blue","yaw_deg":14.2,
-"pose_confidence":0.9,"reason":"visible cube geometry and colour"}.
-Use the measured yaw value from this query, not the example value above."""
+Return only one JSON object with these fields:
+- category: cube or unknown, based on the image.
+- colour: yellow, blue, red, or unknown, based on the image.
+- yaw_deg: a JSON number equal to the supplied measured yaw_deg, including its sign.
+- pose_confidence: a JSON number from 0 to 1 reflecting your assessment.
+- reason: a brief explanation of your visual assessment.
+Use the measured yaw value from THIS query. Do not invent an angle or confidence."""
 
 
 def inspect_cube_poses(model, processor, image_path, parsed, run):
