@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "blue",
+  "yaw_deg": 12.4,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small blue cube resting on a flat surface, matching the expected color and shape. The measured yaw angle of 12.4 degrees indicates a slight rotation relative to the camera, consistent with a stable tabletop pose. The high silhouette IoU (0.95) confirms the object's identity as a cube."
+}
+```
