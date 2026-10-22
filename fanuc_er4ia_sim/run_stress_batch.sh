@@ -63,7 +63,7 @@ if ((!YES)); then
     read -r -p 'Resources available for this batch? Type yes: ' ANSWER
     [[ "$ANSWER" == yes ]] || exit 0
 fi
-"$HOST_PYTHON" -B -m unittest test_sort_planning test_cube_perception test_cube_pose test_runtime_config
+"$HOST_PYTHON" -B -m unittest test_sort_planning test_cube_perception test_cube_pose test_runtime_config test_batch_progress
 export HOST_PYTHON CUBE_LAYOUT_SEED="$SEED"
 mkdir -p "$HERE/runs"
 BATCH=$(date -u +%Y%m%d_%H%M%S)_$$
@@ -78,8 +78,10 @@ for ((INDEX=1; INDEX<=COUNT; INDEX++)); do
     START_UTC=$(date -u +%Y-%m-%dT%H:%M:%SZ)
     printf 'Start UTC: %s\n' "$START_UTC" > "$RUN.timing.txt"
     # A separate process group lets an interruption stop the active pipeline.
-    setsid timeout --kill-after=30s 90m bash "$HERE/run_sort_pipeline.sh" "$RUN" > "$RUN.log" 2>&1 &
+    PYTHONUNBUFFERED=1 setsid timeout --kill-after=30s 90m bash "$HERE/run_sort_pipeline.sh" "$RUN" > "$RUN.log" 2>&1 &
     ACTIVE=$!
+    "$HOST_PYTHON" -u -B "$HERE/batch_progress.py" --log "$RUN.log" --run "$RUN" --pid "$ACTIVE" --index "$INDEX" --count "$COUNT" --seed "$SEED" --started "$START" --interval "${PROGRESS_INTERVAL_SECONDS:-5}" &
+    MONITOR=$!
     printf 'Live log (from another terminal): tail -f %s.log\n' "$RUN"
     STATUS=0
     wait "$ACTIVE" || STATUS=$?
@@ -87,6 +89,7 @@ for ((INDEX=1; INDEX<=COUNT; INDEX++)); do
     ACTIVE=
     ELAPSED=$(($(date +%s)-START))
     FINISH_UTC=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+    wait "$MONITOR" || echo 'Progress display stopped; pipeline status and saved reports remain authoritative.'
     printf 'Finish UTC: %s\nElapsed seconds: %s\nPipeline exit status: %s\n' "$FINISH_UTC" "$ELAPSED" "$STATUS" >> "$RUN.timing.txt"
     "$HOST_PYTHON" -B - "$RUN" "$STATUS" "$ELAPSED" "$BATCH" "$INDEX" "$COUNT" "$START_UTC" "$FINISH_UTC" <<'PY'
 import json, sys
@@ -138,7 +141,7 @@ with (run / 'development_outcome.json').open('x') as stream:
     stream.write('\n')
 print(json.dumps(record, indent=2))
 PY
-    printf '\n========== RUN ENDED - OUTCOME SAVED ==========\n'
+    printf '\n========== RUN %s OF %s ENDED - OUTCOME SAVED ==========\n' "$INDEX" "$COUNT"
     # Timeout/interruption may leave container children: never start a new run.
     if ((STATUS == 124 || STATUS == 137 || STATUS == 130 || STATUS == 143 || STOP)); then
         echo 'Batch stopped. Inspect processes and containers before any further run.'

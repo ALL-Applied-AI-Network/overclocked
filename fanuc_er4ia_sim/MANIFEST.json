@@ -39,8 +39,8 @@
     },
     {
       "path": "STRESS_BATCH.md",
-      "size_bytes": 2712,
-      "sha256": "8160309013498340658565884b4c53c1dcafe790f98e5350b64ac918bb8a33be"
+      "size_bytes": 4143,
+      "sha256": "b37723898851f0dbc4be65669d4550937f8294b30f52e4f7eee10679e6bc02af"
     },
     {
       "path": "assets/gripper/photo_finger_detail.json",
@@ -71,6 +71,11 @@
       "path": "backproject.py",
       "size_bytes": 3271,
       "sha256": "94017f60b3cb493ec647e6c41519914526c36e8653dbb304bc0d1c1cd1d037b0"
+    },
+    {
+      "path": "batch_progress.py",
+      "size_bytes": 8291,
+      "sha256": "b2f844e9973bd66fbb02d15b0f7e59747d76c6d70c07fb520c19813efcf5ab22"
     },
     {
       "path": "bootstrap.sh",
@@ -144,8 +149,8 @@
     },
     {
       "path": "package_hackathon.py",
-      "size_bytes": 3505,
-      "sha256": "8fdf3a1c0fe848a9de777ca92cf292d2de82c0984ead8df0b4558c108b0da124"
+      "size_bytes": 3560,
+      "sha256": "9f0c0a3b5416c1a5b91a3ba4df7ead56050a3b13f232af76bd4e637ce1cb377a"
     },
     {
       "path": "perceive.py",
@@ -184,13 +189,13 @@
     },
     {
       "path": "run_sort_pipeline.sh",
-      "size_bytes": 2054,
-      "sha256": "4bd987275367b0e757d1e90fb2d8a51d943ab7afc9806cd9e36710005aebe8fd"
+      "size_bytes": 2287,
+      "sha256": "a38ca204f09a067bf137990bf97f7dffdf45e287b1105fb8b965a1de70192893"
     },
     {
       "path": "run_stress_batch.sh",
-      "size_bytes": 7617,
-      "sha256": "27e9c86c38159c75def6d05e0eacd156f85ca834a9afdafeb2e60f7205aa7ef4"
+      "size_bytes": 8022,
+      "sha256": "f14327f47a074dec8c02e300c215d54cffeffc26974765d24c87fd4d271c64dc"
     },
     {
       "path": "scene_config.py",
@@ -206,6 +211,11 @@
       "path": "sort_scene.py",
       "size_bytes": 25715,
       "sha256": "0a51cf9f748e292debf84829b190df72397ec635d27e1980d93e9eb0d433541f"
+    },
+    {
+      "path": "test_batch_progress.py",
+      "size_bytes": 2374,
+      "sha256": "7c12b0c4a7060473dbf055448b67ea6a934c68fe1bd0cbd7b86538fced6a9344"
     },
     {
       "path": "test_cube_perception.py",

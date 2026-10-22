@@ -37,6 +37,8 @@ CODE = (
     "package_hackathon.py",
     "run_sort_pipeline.sh",
     "run_stress_batch.sh",
+    "batch_progress.py",
+    "test_batch_progress.py",
     "STRESS_BATCH.md",
     "share.sh",
     "requirements.txt",

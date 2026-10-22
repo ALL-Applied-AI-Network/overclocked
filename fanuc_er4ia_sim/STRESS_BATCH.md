@@ -40,3 +40,26 @@ small evidence in separate GitHub folders. It does not upload full logs or media
 The launcher never pushes Git, books trials or submits policies. These are
 development attempts, not formal protocol experiments. Later perturbations need
 their own validated controls before being added to this launcher.
+
+## Live progress display
+
+Each run now prints a heartbeat every five seconds, with the seed, run count,
+elapsed time, current stage and time since log activity. Stage transitions are
+explicit log markers; model-ready output advances the displayed perception
+substage when available. Latest log messages and reported pickup/placement
+events appear in the same terminal. Full logs remain saved unchanged apart
+from the new stage markers. The shared Isaac wrapper is not modified; buffered
+container output can delay visible pickup updates. No live counts are invented.
+
+The batch bar counts PREVIOUS finished attempts, including failures, and does
+not estimate percentage time remaining or successful runs. The active attempt
+is counted when its final outcome is saved. A heartbeat establishes that the
+monitor is alive and the pipeline PID exists, not that physics is advancing.
+A quiet log does not establish failure. Saved execution reports and final
+outcomes remain authoritative. Display failure does not change pipeline status.
+
+Set PROGRESS_INTERVAL_SECONDS to a number from 0.2 to 60 before launching to
+change refresh frequency. Default is 5. Demo: use the existing host interpreter
+to run batch_progress.py --demo. The demo emits synthetic logs only and does
+not use a model, GPU, Isaac, or real saved runs. test_batch_progress adds checks
+for partial lines, repeated pickup messages, final log draining and missing logs.
