@@ -83,5 +83,42 @@ class LayoutSeedTests(unittest.TestCase):
                 )
 
 
+class IsaacSeedBridgeTests(unittest.TestCase):
+    def test_bridge_sets_seed_before_script_import_and_preserves_arguments(self):
+        import subprocess
+        import sys
+
+        root = Path(__file__).resolve().parent
+        with tempfile.TemporaryDirectory() as directory:
+            probe = Path(directory) / "probe.py"
+            probe.write_text(
+                "import json, os, sys\n"
+                "print(json.dumps([os.environ['CUBE_LAYOUT_SEED'], sys.argv[1:]]))\n"
+            )
+            env = dict(os.environ, CUBE_LAYOUT_SEED="999")
+            result = subprocess.run(
+                [sys.executable, "-B", str(root / "isaac_seed_entrypoint.py"),
+                 "20261010", str(probe), "--out", "folder with spaces"],
+                env=env, capture_output=True, text=True,
+            )
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(
+                json.loads(result.stdout),
+                ["20261010", ["--out", "folder with spaces"]],
+            )
+
+    def test_bridge_rejects_invalid_seed_before_loading_script(self):
+        import subprocess
+        import sys
+
+        bridge = Path(__file__).resolve().parent / "isaac_seed_entrypoint.py"
+        result = subprocess.run(
+            [sys.executable, "-B", str(bridge), "banana", "missing_script.py"],
+            capture_output=True, text=True,
+        )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("CUBE_LAYOUT_SEED must be an integer", result.stderr)
+
+
 if __name__ == "__main__":
     unittest.main()

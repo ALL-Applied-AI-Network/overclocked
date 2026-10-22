@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "experiment_class": "development",
+  "run_id": "lieland_layout_20261010_dev_20261021_202502_5AVNZ1",
+  "configuration": "run_config.json",
+  "log": "../lieland_layout_20261010_dev_20261021_202502_5AVNZ1.log",
+  "timing": "../lieland_layout_20261010_dev_20261021_202502_5AVNZ1.timing.txt",
+  "cube_layout_seed": 20261010,
+  "execution_attempted": false,
+  "task_complete": null,
+  "verified_pickups": null,
+  "verified_placements": null,
+  "placement_errors": null,
+  "measurement_note": "No execution report; physical measurements are unavailable.",
+  "outcome": "user_interrupted",
+  "failure_stage": null,
+  "last_observed_stage": "perception",
+  "reason": "Lieland confirmed pressing Ctrl+C during perception.",
+  "elapsed_seconds": 254,
+  "pipeline_exit_status": 130
+}

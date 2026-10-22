@@ -46,3 +46,6 @@ Confidence, inventory, pose, pickup and support gates were not weakened.
 
 ## Current development status
 After the successful unchanged baseline, selectable CUBE_LAYOUT_SEED and regression tests were added. All four required host-test modules returned OK on YAAD. The shared Isaac wrapper does not yet forward CUBE_LAYOUT_SEED into its container. Alternate-layout simulator validation is pending. This code snapshot includes that unfinished feature; the successful baseline predates it. Yaw, camera-error and friction controls are not implemented.
+
+## Latest update: 2026-10-21
+The earlier container-forwarding limitation is now resolved using isaac_seed_entrypoint.py. Host and container configurations matched for seed 20261010. All four required host-test modules passed after the changes. The updated default, with the seed unset, completed 6 verified pickups and placements in 535 seconds. One uninterrupted alternate-seed attempt stopped at the inventory gate; repeatability is not established. A separate attempt was user-interrupted. Small evidence bundles for all five development attempts are in results/development at the repository root. Yaw, camera-error and friction controls remain pending. Batch outcome recording is not yet automatic.

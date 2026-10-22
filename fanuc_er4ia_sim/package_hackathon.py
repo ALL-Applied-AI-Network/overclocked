@@ -11,6 +11,8 @@ CODE = (
     "backproject.py",
     "build_scene.py",
     "capture_scene.py",
+    "isaac_seed_entrypoint.py",
+    "record_run_config.py",
     "cell.py",
     "cube_pose.py",
     "encode_video.py",

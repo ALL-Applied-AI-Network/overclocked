@@ -113,14 +113,19 @@
       "sha256": "6326a47a395c02944f4f2ae1231ee4bb082e5ceb06e039d79992f66d8673d795"
     },
     {
+      "path": "isaac_seed_entrypoint.py",
+      "size_bytes": 668,
+      "sha256": "26bfc7d1ddb8bf7bb92ac420b6633768a380ff3bbd6c6332acb12a5d351104dd"
+    },
+    {
       "path": "make_textures.py",
       "size_bytes": 4442,
       "sha256": "141b1c3bfe7e9f70d030ec4eb055d4c3eb1da8a547e4273fe60ad32e09bbf7ee"
     },
     {
       "path": "package_hackathon.py",
-      "size_bytes": 3267,
-      "sha256": "8c00e0bef7c98be481217ce1a29140ffc3c7bff0c9d8e6e29ab4ba145bfb24ea"
+      "size_bytes": 3327,
+      "sha256": "6c1ddf0c4a56ec2e9611658121a91931c086430e48e9aa29f234a80c1de64670"
     },
     {
       "path": "perceive.py",
@@ -136,6 +141,11 @@
       "path": "plan_sort.py",
       "size_bytes": 22340,
       "sha256": "b7045850f525d31dfb8d0b3ba3657db61ad2bf5567a977635eea75752a1d526d"
+    },
+    {
+      "path": "record_run_config.py",
+      "size_bytes": 1744,
+      "sha256": "89caaaf3b9143d313a28bbf842a6cd3976f4e317ecefca4127a48997e1ebeccd"
     },
     {
       "path": "render_settings.py",
@@ -154,8 +164,8 @@
     },
     {
       "path": "run_sort_pipeline.sh",
-      "size_bytes": 1715,
-      "sha256": "1f7df9e835ffec62b0ac68dab14149d8d946c56d3607e8d25b32f7d2671f9bd0"
+      "size_bytes": 2054,
+      "sha256": "4bd987275367b0e757d1e90fb2d8a51d943ab7afc9806cd9e36710005aebe8fd"
     },
     {
       "path": "scene_config.py",
@@ -184,8 +194,8 @@
     },
     {
       "path": "test_runtime_config.py",
-      "size_bytes": 3319,
-      "sha256": "57708d4572fe32869a3db7a6c7bfb8cd06e81e45471cb7266584d696e594bfd5"
+      "size_bytes": 4843,
+      "sha256": "69f5d200014350ca8dcb104ed13397226717381995ff79ff53ccc4fbc857db7d"
     },
     {
       "path": "test_sort_planning.py",

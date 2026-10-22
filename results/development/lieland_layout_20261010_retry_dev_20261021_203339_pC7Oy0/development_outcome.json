@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "experiment_class": "development",
+  "run_id": "lieland_layout_20261010_retry_dev_20261021_203339_pC7Oy0",
+  "configuration": "run_config.json",
+  "log": "../lieland_layout_20261010_retry_dev_20261021_203339_pC7Oy0.log",
+  "timing": "../lieland_layout_20261010_retry_dev_20261021_203339_pC7Oy0.timing.txt",
+  "cube_layout_seed": 20261010,
+  "execution_attempted": false,
+  "task_complete": null,
+  "verified_pickups": null,
+  "verified_placements": null,
+  "placement_errors": null,
+  "measurement_note": "No execution report; physical measurements are unavailable.",
+  "outcome": "failed_before_execution",
+  "failure_stage": "perception_inventory",
+  "reason": "Final detections contained two yellow and two blue cubes, but no red cubes. Planner rejected incomplete inventory.",
+  "diagnosis": {
+    "red_audit_count": 1,
+    "fallback_behavior": "Crop confirmations replace the red audit detections.",
+    "red_candidate1": "Rejected: colour orange, confidence 0.9.",
+    "red_candidate3": "Rejected: red cube but confidence field missing.",
+    "red_candidate4": "Rejected: red cube but confidence field missing."
+  },
+  "repeatability": "One uninterrupted attempt; repeatability not established.",
+  "elapsed_seconds": 255,
+  "pipeline_exit_status": 1,
+  "evidence": [
+    "detections.json",
+    "sort_plan.json",
+    "detections_raw.txt",
+    "detections_red_audit_raw.txt",
+    "cube_inventory_crops/red_candidate1.txt",
+    "cube_inventory_crops/red_candidate3.txt",
+    "cube_inventory_crops/red_candidate4.txt"
+  ]
+}

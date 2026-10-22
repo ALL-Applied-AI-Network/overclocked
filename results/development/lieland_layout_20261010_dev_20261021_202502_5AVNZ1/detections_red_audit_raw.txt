@@ -1,0 +1,22 @@
+```json
+{
+  "objects": [
+    {
+      "label": "red cube",
+      "category": "cube",
+      "colour": "red",
+      "center": [
+        623,
+        574
+      ],
+      "bbox": [
+        618,
+        562,
+        631,
+        585
+      ],
+      "graspable": true
+    }
+  ]
+}
+```

@@ -18,10 +18,13 @@ if [ -n "$(ls -A "$RUN")" ]; then
     echo "Use an empty run directory: $RUN" >&2
     exit 1
 fi
-"$ISAAC/python.sh" "$HERE/capture_scene.py" --out "$RUN"
+"$HOST_PYTHON" "$HERE/record_run_config.py" --run "$RUN"
+CUBE_LAYOUT_SEED="$("$HOST_PYTHON" -c 'import json, sys; print(json.load(open(sys.argv[1]))["effective"]["cube_layout_seed"])' "$RUN/run_config.json")"
+export CUBE_LAYOUT_SEED
+"$ISAAC/python.sh" "$HERE/isaac_seed_entrypoint.py" "$CUBE_LAYOUT_SEED" "$HERE/capture_scene.py" --out "$RUN"
 "$COSMOS" "$HERE/perceive.py" --run "$RUN" --stack-cubes
 "$HOST_PYTHON" "$HERE/plan_sort.py" --run "$RUN"
-"$ISAAC/python.sh" "$HERE/sort_scene.py" --run "$RUN"
+"$ISAAC/python.sh" "$HERE/isaac_seed_entrypoint.py" "$CUBE_LAYOUT_SEED" "$HERE/sort_scene.py" --run "$RUN"
 # Isaac shutdown can return zero even after an exception; check the result.
 "$HOST_PYTHON" - "$RUN" <<'PY'
 import json, sys
