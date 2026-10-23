@@ -253,13 +253,7 @@ left to right and y top to bottom. If none are visible, use {{"objects":[]}}."""
                         crop, None, fx=scale, fy=scale, interpolation=cv2.INTER_CUBIC
                     ),
                 )
-                detail_prompt = """Classify the object nearest the CENTRE of this crop.
-A cube is a small block with straight edges and square flat faces, possibly
-rounded corners. Yellow cubes can look beige/tan. A cap has a broad circular
-flange and a cylindrical plug or hollow cup. Use the visible geometry.
-Reply ONLY JSON: {"category":"cube","colour":"yellow","confidence":0.9}.
-Choose category cube, cap, or unknown; colour yellow, blue, red, or unknown.
-Use unknown and low confidence if the geometry is ambiguous."""
+                detail_prompt = 'Classify the object nearest the CENTRE of this crop using its visible\ngeometry and colour. A cube is a small block with straight edges and square flat\nfaces, possibly rounded corners. A cap has a broad circular flange and a\ncylindrical plug or hollow cup. Yellow cubes can look beige/tan.\nReturn ONLY one JSON object. Include ALL THREE required fields in every reply:\n- category: cube, cap, or unknown, based on visible geometry.\n- colour: yellow, blue, red, orange, another visible colour, or unknown.\n- confidence: a JSON number from 0 to 1 expressing your assessment of the\n  category and colour together. Assess it from this image; do not use a preset.\nIf the geometry or colour is ambiguous, report unknown and low confidence.\nDo not infer a colour from the task or invent missing objects. Check that\ncategory, colour, AND numeric confidence are all present before replying.\nDo not add prose outside the JSON object.'
                 raw = ask(model, processor, path, detail_prompt, 300)
                 path.with_suffix(".txt").write_text(raw)
                 answer = canonicalise(parse_json(raw) or {})

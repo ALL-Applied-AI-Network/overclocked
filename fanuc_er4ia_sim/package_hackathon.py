@@ -51,6 +51,9 @@ CODE = (
     ".gitignore",
     "docs/MODEL_NOTES.md",
     "docs/CALIBRATION_V05.md",
+    "compare_inventory.py",
+    "test_inventory_compare.py",
+    "INVENTORY_PROMPT_CHANGE.md",
 )
 ASSETS = (
     "assets/gripper/smc_mhzl2_16d2.json",

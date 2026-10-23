@@ -1,0 +1,342 @@
+{
+  "experiment_class": "development",
+  "outcome": "saved_crop_inventory_comparison_complete",
+  "completed_calls": 28,
+  "planned_calls": 28,
+  "results": [
+    {
+      "case_index": 0,
+      "variant": "original",
+      "accepted": false,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "orange",
+        "confidence": 0.9
+      },
+      "group": "inventory"
+    },
+    {
+      "case_index": 0,
+      "variant": "candidate",
+      "accepted": false,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "orange",
+        "confidence": 0.97
+      },
+      "group": "inventory"
+    },
+    {
+      "case_index": 1,
+      "variant": "candidate",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "red",
+        "confidence": 0.97
+      },
+      "group": "inventory"
+    },
+    {
+      "case_index": 1,
+      "variant": "original",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "red",
+        "confidence": 0.9
+      },
+      "group": "inventory"
+    },
+    {
+      "case_index": 2,
+      "variant": "original",
+      "accepted": false,
+      "correct_gate_decision": false,
+      "answer": {
+        "category": "cube",
+        "colour": "red"
+      },
+      "group": "inventory"
+    },
+    {
+      "case_index": 2,
+      "variant": "candidate",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "red",
+        "confidence": 0.98
+      },
+      "group": "inventory"
+    },
+    {
+      "case_index": 3,
+      "variant": "candidate",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "yellow",
+        "confidence": 0.97
+      },
+      "group": "colour_control"
+    },
+    {
+      "case_index": 3,
+      "variant": "original",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "yellow",
+        "confidence": 0.9
+      },
+      "group": "colour_control"
+    },
+    {
+      "case_index": 4,
+      "variant": "original",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "yellow",
+        "confidence": 0.9
+      },
+      "group": "colour_control"
+    },
+    {
+      "case_index": 4,
+      "variant": "candidate",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "yellow",
+        "confidence": 0.97
+      },
+      "group": "colour_control"
+    },
+    {
+      "case_index": 5,
+      "variant": "candidate",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "blue",
+        "confidence": 0.98
+      },
+      "group": "colour_control"
+    },
+    {
+      "case_index": 5,
+      "variant": "original",
+      "accepted": false,
+      "correct_gate_decision": false,
+      "answer": {
+        "category": "cube",
+        "colour": "blue"
+      },
+      "group": "colour_control"
+    },
+    {
+      "case_index": 6,
+      "variant": "original",
+      "accepted": false,
+      "correct_gate_decision": false,
+      "answer": {
+        "category": "cube",
+        "colour": "blue"
+      },
+      "group": "colour_control"
+    },
+    {
+      "case_index": 6,
+      "variant": "candidate",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "blue",
+        "confidence": 0.97
+      },
+      "group": "colour_control"
+    },
+    {
+      "case_index": 7,
+      "variant": "candidate",
+      "accepted": false,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "orange",
+        "confidence": 0.97
+      },
+      "group": "inventory"
+    },
+    {
+      "case_index": 7,
+      "variant": "original",
+      "accepted": false,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "orange",
+        "confidence": 0.9
+      },
+      "group": "inventory"
+    },
+    {
+      "case_index": 8,
+      "variant": "original",
+      "accepted": false,
+      "correct_gate_decision": false,
+      "answer": {
+        "category": "cube",
+        "colour": "red"
+      },
+      "group": "inventory"
+    },
+    {
+      "case_index": 8,
+      "variant": "candidate",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "red",
+        "confidence": 0.97
+      },
+      "group": "inventory"
+    },
+    {
+      "case_index": 9,
+      "variant": "candidate",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "red",
+        "confidence": 0.97
+      },
+      "group": "inventory"
+    },
+    {
+      "case_index": 9,
+      "variant": "original",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "red",
+        "confidence": 0.9
+      },
+      "group": "inventory"
+    },
+    {
+      "case_index": 10,
+      "variant": "original",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "yellow",
+        "confidence": 0.9
+      },
+      "group": "colour_control"
+    },
+    {
+      "case_index": 10,
+      "variant": "candidate",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "yellow",
+        "confidence": 0.97
+      },
+      "group": "colour_control"
+    },
+    {
+      "case_index": 11,
+      "variant": "candidate",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "yellow",
+        "confidence": 0.97
+      },
+      "group": "colour_control"
+    },
+    {
+      "case_index": 11,
+      "variant": "original",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "yellow",
+        "confidence": 0.9
+      },
+      "group": "colour_control"
+    },
+    {
+      "case_index": 12,
+      "variant": "original",
+      "accepted": false,
+      "correct_gate_decision": false,
+      "answer": {
+        "category": "cube",
+        "colour": "blue"
+      },
+      "group": "colour_control"
+    },
+    {
+      "case_index": 12,
+      "variant": "candidate",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "blue",
+        "confidence": 0.98
+      },
+      "group": "colour_control"
+    },
+    {
+      "case_index": 13,
+      "variant": "candidate",
+      "accepted": true,
+      "correct_gate_decision": true,
+      "answer": {
+        "category": "cube",
+        "colour": "blue",
+        "confidence": 0.97
+      },
+      "group": "colour_control"
+    },
+    {
+      "case_index": 13,
+      "variant": "original",
+      "accepted": false,
+      "correct_gate_decision": false,
+      "answer": {
+        "category": "cube",
+        "colour": "blue"
+      },
+      "group": "colour_control"
+    }
+  ],
+  "error": null,
+  "task_complete": null,
+  "verified_pickups": null,
+  "verified_placements": null
+}

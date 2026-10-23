@@ -1,0 +1,7 @@
+Classify the object nearest the CENTRE of this crop.
+A cube is a small block with straight edges and square flat faces, possibly
+rounded corners. Yellow cubes can look beige/tan. A cap has a broad circular
+flange and a cylindrical plug or hollow cup. Use the visible geometry.
+Reply ONLY JSON: {"category":"cube","colour":"yellow","confidence":0.9}.
+Choose category cube, cap, or unknown; colour yellow, blue, red, or unknown.
+Use unknown and low confidence if the geometry is ambiguous.

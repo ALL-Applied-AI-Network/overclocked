@@ -1,0 +1,13 @@
+Classify the object nearest the CENTRE of this crop using its visible
+geometry and colour. A cube is a small block with straight edges and square flat
+faces, possibly rounded corners. A cap has a broad circular flange and a
+cylindrical plug or hollow cup. Yellow cubes can look beige/tan.
+Return ONLY one JSON object. Include ALL THREE required fields in every reply:
+- category: cube, cap, or unknown, based on visible geometry.
+- colour: yellow, blue, red, orange, another visible colour, or unknown.
+- confidence: a JSON number from 0 to 1 expressing your assessment of the
+  category and colour together. Assess it from this image; do not use a preset.
+If the geometry or colour is ambiguous, report unknown and low confidence.
+Do not infer a colour from the task or invent missing objects. Check that
+category, colour, AND numeric confidence are all present before replying.
+Do not add prose outside the JSON object.

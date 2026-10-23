@@ -18,6 +18,11 @@
       "sha256": "40e83cbfef0adacc1996c9698d1b44f2543ab2f1119cf6ca1f9e7fe7cc64a4c2"
     },
     {
+      "path": "INVENTORY_PROMPT_CHANGE.md",
+      "size_bytes": 1914,
+      "sha256": "716cd2909a1d01574a33e54f8c797a2e05289f8588be6fba886d874829dd7b76"
+    },
+    {
       "path": "POSE_PROMPT_CHANGE.md",
       "size_bytes": 1625,
       "sha256": "18e4ab831fdcee12ef0b6c72248c66a7e23b9ae3312f4c0334075002ba8702c7"
@@ -98,6 +103,11 @@
       "sha256": "cfde65b149d4c87add24793734d65d968b79ea70563c169e2f46b458b32a4260"
     },
     {
+      "path": "compare_inventory.py",
+      "size_bytes": 7790,
+      "sha256": "4bdae131d697e6afb4840acf07d63067f758e3b4d44480252dd5c54517e73f56"
+    },
+    {
       "path": "compare_pose_prompts.py",
       "size_bytes": 11462,
       "sha256": "2a15a173bf701790cee620667700cd5dd5fc0dc069dfb9e20cef10e7c8f4ec93"
@@ -149,13 +159,13 @@
     },
     {
       "path": "package_hackathon.py",
-      "size_bytes": 3560,
-      "sha256": "9f0c0a3b5416c1a5b91a3ba4df7ead56050a3b13f232af76bd4e637ce1cb377a"
+      "size_bytes": 3655,
+      "sha256": "e222e3af037b2040ced711d03b160a2bf9f79f10a4d40dafe8f52c9fe0a93785"
     },
     {
       "path": "perceive.py",
-      "size_bytes": 35374,
-      "sha256": "7a9834a45e9a85b5347fe19d6bfe7134b60bd68aca8bf2cbd898b1156fbfbc29"
+      "size_bytes": 35816,
+      "sha256": "8153646193f099270addaf71af7d560f8cfc13d280f663f808be199882bd5c5f"
     },
     {
       "path": "plan_grasps.py",
@@ -226,6 +236,11 @@
       "path": "test_cube_pose.py",
       "size_bytes": 9345,
       "sha256": "f4e6af7acc464a5f6da86d5a28110f39ae47da7472350b5843dac6055fa1ecd3"
+    },
+    {
+      "path": "test_inventory_compare.py",
+      "size_bytes": 758,
+      "sha256": "5e860b43ece5435cd2a1fec67e17c899104caf7d9947508aa30ace821886008d"
     },
     {
       "path": "test_pose_prompt_compare.py",

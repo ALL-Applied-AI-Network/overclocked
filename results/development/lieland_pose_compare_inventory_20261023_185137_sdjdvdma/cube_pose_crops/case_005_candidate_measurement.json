@@ -1,0 +1,22 @@
+{
+  "case": {
+    "image": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR/cube_pose_crops/cube_2.png",
+    "sha256": "02cd98bb6611c2ae842702707fc56b39c21c0d802b3cd2aa32642fc67a12f8e0",
+    "expected_colour": "blue",
+    "should_accept": true,
+    "group": "colour_control",
+    "source_run": "lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR"
+  },
+  "result": {
+    "case_index": 5,
+    "variant": "candidate",
+    "accepted": true,
+    "correct_gate_decision": true,
+    "answer": {
+      "category": "cube",
+      "colour": "blue",
+      "confidence": 0.98
+    },
+    "group": "colour_control"
+  }
+}

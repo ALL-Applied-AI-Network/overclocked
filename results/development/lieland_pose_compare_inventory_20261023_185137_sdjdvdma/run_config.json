@@ -1,0 +1,127 @@
+{
+  "experiment_class": "development",
+  "condition": "saved_crop_inventory_comparison",
+  "cases": [
+    {
+      "image": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR/cube_inventory_crops/red_candidate1.png",
+      "sha256": "46832bbc6f071d0fd143d93d6768729da15eab49052e2560d95d51237beb018d",
+      "expected_colour": "red",
+      "should_accept": false,
+      "group": "inventory",
+      "source_run": "lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR"
+    },
+    {
+      "image": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR/cube_inventory_crops/red_candidate3.png",
+      "sha256": "68a7af95b21482b0174ef457de3103717d42d378c7dea2b9659a04dadccd53e3",
+      "expected_colour": "red",
+      "should_accept": true,
+      "group": "inventory",
+      "source_run": "lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR"
+    },
+    {
+      "image": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR/cube_inventory_crops/red_candidate4.png",
+      "sha256": "1aa1f5eec0e600c7a7ff08e70c834b642198dcd4535ddfc316118cd583f3b11a",
+      "expected_colour": "red",
+      "should_accept": true,
+      "group": "inventory",
+      "source_run": "lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR"
+    },
+    {
+      "image": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR/cube_pose_crops/cube_0.png",
+      "sha256": "d109fc0b409711586a3076445ade6e62b28db5d3cd23c31ad22d51902c0f728c",
+      "expected_colour": "yellow",
+      "should_accept": true,
+      "group": "colour_control",
+      "source_run": "lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR"
+    },
+    {
+      "image": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR/cube_pose_crops/cube_1.png",
+      "sha256": "ac8909ba9f6491eb38b03fdb138d498bcab50844bb3997c50a3b3ca5f6a88978",
+      "expected_colour": "yellow",
+      "should_accept": true,
+      "group": "colour_control",
+      "source_run": "lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR"
+    },
+    {
+      "image": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR/cube_pose_crops/cube_2.png",
+      "sha256": "02cd98bb6611c2ae842702707fc56b39c21c0d802b3cd2aa32642fc67a12f8e0",
+      "expected_colour": "blue",
+      "should_accept": true,
+      "group": "colour_control",
+      "source_run": "lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR"
+    },
+    {
+      "image": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR/cube_pose_crops/cube_3.png",
+      "sha256": "b719a10fa64ad96166b675fbdb0dc241842ca83725bf948c301a6cfe18e2a719",
+      "expected_colour": "blue",
+      "should_accept": true,
+      "group": "colour_control",
+      "source_run": "lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR"
+    },
+    {
+      "image": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261023_182630_17307_2_cR5X6i/cube_inventory_crops/red_candidate1.png",
+      "sha256": "d6f4442b6ea5c95ffdf0d7b62e49e21ceac4f68085a63da8eeda971d065cea83",
+      "expected_colour": "red",
+      "should_accept": false,
+      "group": "inventory",
+      "source_run": "lieland_seed_20261010_dev_20261023_182630_17307_2_cR5X6i"
+    },
+    {
+      "image": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261023_182630_17307_2_cR5X6i/cube_inventory_crops/red_candidate3.png",
+      "sha256": "634eafc60b92ba74649da1fc2cb290a19cc70ac3e812e02932ea287a5b18e2f7",
+      "expected_colour": "red",
+      "should_accept": true,
+      "group": "inventory",
+      "source_run": "lieland_seed_20261010_dev_20261023_182630_17307_2_cR5X6i"
+    },
+    {
+      "image": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261023_182630_17307_2_cR5X6i/cube_inventory_crops/red_candidate4.png",
+      "sha256": "67da463215417dde6131359cc56e94508f618ce2dd5f8a9dcf80f54f6c9b6d5b",
+      "expected_colour": "red",
+      "should_accept": true,
+      "group": "inventory",
+      "source_run": "lieland_seed_20261010_dev_20261023_182630_17307_2_cR5X6i"
+    },
+    {
+      "image": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261023_182630_17307_2_cR5X6i/cube_pose_crops/cube_0.png",
+      "sha256": "f3b2a4eb22438396f458805a91ea18146f6b2abf5e55effb429750e4b0d08778",
+      "expected_colour": "yellow",
+      "should_accept": true,
+      "group": "colour_control",
+      "source_run": "lieland_seed_20261010_dev_20261023_182630_17307_2_cR5X6i"
+    },
+    {
+      "image": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261023_182630_17307_2_cR5X6i/cube_pose_crops/cube_1.png",
+      "sha256": "07d8cd0ea4a8d5e88205a939d50470615bdf45c3dfd00fa522a0456b647d59f6",
+      "expected_colour": "yellow",
+      "should_accept": true,
+      "group": "colour_control",
+      "source_run": "lieland_seed_20261010_dev_20261023_182630_17307_2_cR5X6i"
+    },
+    {
+      "image": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261023_182630_17307_2_cR5X6i/cube_pose_crops/cube_2.png",
+      "sha256": "2bd758762bfcb99e7ffbe1c3472d353c5d32c10800c9d2977df213d7d429e9dd",
+      "expected_colour": "blue",
+      "should_accept": true,
+      "group": "colour_control",
+      "source_run": "lieland_seed_20261010_dev_20261023_182630_17307_2_cR5X6i"
+    },
+    {
+      "image": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261023_182630_17307_2_cR5X6i/cube_pose_crops/cube_3.png",
+      "sha256": "f9e9e3332b2924403989a4304ae6bed9e9f87aa259592e94d2b606b3d9dc8f68",
+      "expected_colour": "blue",
+      "should_accept": true,
+      "group": "colour_control",
+      "source_run": "lieland_seed_20261010_dev_20261023_182630_17307_2_cR5X6i"
+    }
+  ],
+  "prompts": {
+    "original": "Classify the object nearest the CENTRE of this crop.\nA cube is a small block with straight edges and square flat faces, possibly\nrounded corners. Yellow cubes can look beige/tan. A cap has a broad circular\nflange and a cylindrical plug or hollow cup. Use the visible geometry.\nReply ONLY JSON: {\"category\":\"cube\",\"colour\":\"yellow\",\"confidence\":0.9}.\nChoose category cube, cap, or unknown; colour yellow, blue, red, or unknown.\nUse unknown and low confidence if the geometry is ambiguous.",
+    "candidate": "Classify the object nearest the CENTRE of this crop using its visible\ngeometry and colour. A cube is a small block with straight edges and square flat\nfaces, possibly rounded corners. A cap has a broad circular flange and a\ncylindrical plug or hollow cup. Yellow cubes can look beige/tan.\nReturn ONLY one JSON object. Include ALL THREE required fields in every reply:\n- category: cube, cap, or unknown, based on visible geometry.\n- colour: yellow, blue, red, orange, another visible colour, or unknown.\n- confidence: a JSON number from 0 to 1 expressing your assessment of the\n  category and colour together. Assess it from this image; do not use a preset.\nIf the geometry or colour is ambiguous, report unknown and low confidence.\nDo not infer a colour from the task or invent missing objects. Check that\ncategory, colour, AND numeric confidence are all present before replying.\nDo not add prose outside the JSON object."
+  },
+  "source_sha256": "7a9834a45e9a85b5347fe19d6bfe7134b60bd68aca8bf2cbd898b1156fbfbc29",
+  "tool_sha256": "4bdae131d697e6afb4840acf07d63067f758e3b4d44480252dd5c54517e73f56",
+  "max_new_tokens": 300,
+  "planned_calls": 28,
+  "limits": "Correlated development crops, not a formal success rate. No physics or ground-truth use."
+}
