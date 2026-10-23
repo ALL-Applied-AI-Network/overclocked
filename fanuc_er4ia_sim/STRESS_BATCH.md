@@ -63,3 +63,6 @@ change refresh frequency. Default is 5. Demo: use the existing host interpreter
 to run batch_progress.py --demo. The demo emits synthetic logs only and does
 not use a model, GPU, Isaac, or real saved runs. test_batch_progress adds checks
 for partial lines, repeated pickup messages, final log draining and missing logs.
+
+
+Interactive terminals now redraw one progress panel in place and hide live log excerpts. Full logs remain saved. Redirected output or TERM=dumb prints only the final panel. Narrow displays clip long lines to avoid wrapping. No pipeline commands or outcome checks are changed.

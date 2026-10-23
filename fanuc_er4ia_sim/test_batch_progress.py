@@ -53,5 +53,35 @@ class ProgressTests(unittest.TestCase):
             self.assertIn('querying Cosmos', state.stage)
 
 
+import io
+import unittest
+from batch_progress import PanelOutput
+
+
+class PanelTests(unittest.TestCase):
+    def test_redraw_clears_previous_rows(self):
+        panel = PanelOutput()
+        panel.stream = io.StringIO()
+        panel.interactive = True
+        panel.write('first\nsecond\n')
+        panel.render()
+        panel.write('changed\n')
+        panel.render(final=True)
+        output = panel.stream.getvalue()
+        self.assertIn('\x1b[2A', output)
+        self.assertIn('\r\x1b[2Kchanged\n', output)
+        self.assertTrue(output.endswith('\r\x1b[2K\n'))
+
+    def test_redirected_output_only_has_final_panel(self):
+        panel = PanelOutput()
+        panel.stream = io.StringIO()
+        panel.interactive = False
+        panel.write('intermediate\n')
+        panel.render()
+        self.assertEqual(panel.stream.getvalue(), '')
+        panel.write('final\n')
+        panel.render(final=True)
+        self.assertEqual(panel.stream.getvalue(), 'final\n')
+
 if __name__ == '__main__':
     unittest.main()

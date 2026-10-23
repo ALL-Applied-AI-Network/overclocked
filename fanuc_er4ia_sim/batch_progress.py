@@ -1,12 +1,13 @@
 """Read-only live progress for an existing pipeline; never launches simulations."""
 import argparse
 from collections import deque
-from datetime import datetime
 import json
 import os
 from pathlib import Path
 import re
 import tempfile
+import sys
+import shutil
 import threading
 import time
 
@@ -91,45 +92,71 @@ class LogState:
         return [line for line in lines if line]
 
 
+class PanelOutput:
+    """Buffer each refresh and redraw it without accumulating terminal output."""
+    def __init__(self):
+        self.stream = sys.stdout
+        self.interactive = self.stream.isatty() and os.environ.get('TERM') != 'dumb'
+        self.rows = 0
+        self.lines = []
+
+    def write(self, value):
+        self.lines.append(value)
+
+    def flush(self):
+        pass
+
+    def render(self, final=False):
+        width, height = shutil.get_terminal_size((80, 24))
+        lines = ''.join(self.lines).splitlines()[:max(1, height - 2)]
+        lines = [clean(line)[:max(1, width - 1)] for line in lines]
+        self.lines.clear()
+        if self.interactive:
+            if self.rows:
+                self.stream.write(f'\x1b[{self.rows}A')
+            size = max(self.rows, len(lines))
+            for index in range(size):
+                self.stream.write('\r\x1b[2K' + (lines[index] if index < len(lines) else '') + '\n')
+            self.rows = size
+        elif final:
+            self.stream.write('\n'.join(lines) + '\n')
+        self.stream.flush()
+
+
 def watch(log, run, index, count, seed, started, alive, interval=5):
     state = LogState()
-    last_report = None
     print(f'[progress] Run folder: {run}', flush=True)
     print(f'[progress] Full log: {log}', flush=True)
     print('[progress] Heartbeats show process existence, not guaranteed forward progress. No ETA is assumed.', flush=True)
+    panel = PanelOutput()
+    def panel_print(*args, **kwargs):
+        print(*args, **kwargs, file=panel)
     while True:
         running = alive()
         lines = state.read(log)
-        # Show stage transitions even if startup emits many log messages at once.
-        events = [line for line in lines if line.startswith('[stage] ') or '[sort]' in line or '[perceive]' in line]
-        shown = list(dict.fromkeys(events + lines[-6:]))
-        if lines:
-            print(f'[log update] {len(lines)} new lines; showing stage/pickup events and latest messages:', flush=True)
-            for line in shown:
-                print('  ' + line[:240] + (' ... [full line in log]' if len(line) > 240 else ''), flush=True)
         completed = index - 1
         filled = int(20 * completed / count)
-        print(f"[{datetime.now().strftime('%H:%M:%S')}] Run {index}/{count} | seed {seed} | elapsed {duration(time.time()-started)} | PID {'exists' if running else 'ended'}", flush=True)
-        print(f"  Batch [{'#'*filled}{'.'*(20-filled)}] {completed}/{count} previous attempts finished (not success count)", flush=True)
-        print(f'  Stage: {state.stage} | observed stage time {duration(time.monotonic()-state.stage_since)}', flush=True)
-        print(f'  Last log activity: {duration(time.monotonic()-state.last_output)} ago', flush=True)
-        print('  ' + (state.summary or f'Pickups reported so far: {len(state.pickups)}/6; placement total awaiting simulator summary'), flush=True)
+        panel_print(f"Run {index}/{count} | seed {seed} | elapsed {duration(time.time()-started)} | PID {'exists' if running else 'ended'}", flush=True)
+        panel_print(f"  Batch [{'#'*filled}{'.'*(20-filled)}] {completed}/{count} previous attempts finished (not success count)", flush=True)
+        panel_print(f'  Stage: {state.stage} | observed stage time {duration(time.monotonic()-state.stage_since)}', flush=True)
+        panel_print(f'  Last log activity: {duration(time.monotonic()-state.last_output)} ago', flush=True)
+        panel_print('  ' + (state.summary or f'Pickups: {len(state.pickups)}/6; placements awaiting simulator summary'), flush=True)
         report_path = run / 'execution_report.json'
         try:
             report = json.loads(report_path.read_text())
             summary = (report.get('task_complete'), report.get('verified_pickups'), report.get('verified_placements'), report.get('abort_reason'))
-            if summary != last_report:
-                print(f'  SAVED REPORT: task_complete={summary[0]}, pickups={summary[1]}, placements={summary[2]}, abort={summary[3]!r}', flush=True)
-                last_report = summary
+            panel_print(f'  SAVED REPORT: task_complete={summary[0]}, pickups={summary[1]}, placements={summary[2]}, abort={summary[3]!r}', flush=True)
         except (FileNotFoundError, json.JSONDecodeError):
             pass
         if not running:
             if state.pending:
-                print('  [last partial log line] ' + clean(state.pending.decode(errors='replace'))[:240], flush=True)
-            print('[progress] Pipeline process ended. Batch launcher will save its authoritative outcome.', flush=True)
+                panel_print('  [last partial log line] ' + clean(state.pending.decode(errors='replace'))[:240], flush=True)
+            panel_print('[progress] Pipeline process ended. Batch launcher will save its authoritative outcome.', flush=True)
+            panel.render(final=True)
             return
         if not lines:
-            print('  Process exists; no new log output this refresh. This alone does not establish a stall or progress.', flush=True)
+            panel_print('  Process exists; no new log output this refresh. This alone does not establish a stall or progress.', flush=True)
+        panel.render()
         time.sleep(interval)
 
 

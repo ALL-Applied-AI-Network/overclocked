@@ -39,8 +39,8 @@
     },
     {
       "path": "STRESS_BATCH.md",
-      "size_bytes": 4143,
-      "sha256": "b37723898851f0dbc4be65669d4550937f8294b30f52e4f7eee10679e6bc02af"
+      "size_bytes": 4421,
+      "sha256": "75c466fb9b93ea5f6a1b44a725fc15895c785799ee5a6566096ac11e48273f56"
     },
     {
       "path": "assets/gripper/photo_finger_detail.json",
@@ -74,8 +74,8 @@
     },
     {
       "path": "batch_progress.py",
-      "size_bytes": 8291,
-      "sha256": "b2f844e9973bd66fbb02d15b0f7e59747d76c6d70c07fb520c19813efcf5ab22"
+      "size_bytes": 8883,
+      "sha256": "06a46c16cebe595879aab705c2f9800dc3d0b3266ccdb8a9c8aa31af8d9951bd"
     },
     {
       "path": "bootstrap.sh",
@@ -214,8 +214,8 @@
     },
     {
       "path": "test_batch_progress.py",
-      "size_bytes": 2374,
-      "sha256": "7c12b0c4a7060473dbf055448b67ea6a934c68fe1bd0cbd7b86538fced6a9344"
+      "size_bytes": 3346,
+      "sha256": "1939aad039ff23018ed028c21dd240f9ba241faac140d4e0ed79e8a9015effe9"
     },
     {
       "path": "test_cube_perception.py",
