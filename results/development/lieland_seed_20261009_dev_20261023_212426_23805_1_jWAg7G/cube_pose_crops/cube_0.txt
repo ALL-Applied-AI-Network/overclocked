@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "blue",
+  "yaw_deg": 43.1226,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small blue cube with a matte finish, positioned upright on a flat surface. Its top face is oriented at approximately 43 degrees relative to the camera, consistent with the measured yaw angle. The cube's edges are sharp, and it casts a subtle shadow, confirming its three-dimensional form. The color matches the expected blue hue, and there are no visual inconsistencies indicating misalignment or incorrect pose."
+}
+```
