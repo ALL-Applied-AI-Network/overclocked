@@ -200,3 +200,9 @@ PY
 done
 printf '\n========== BATCH ENDED - READY TO REVIEW AND UPLOAD ==========\n'
 echo 'Run the Windows Sync-Overclocked.ps1 -Publish helper after checking these results.'
+# Two terminal bells mean batch ended, not necessarily physics success.
+if [[ -t 1 ]]; then
+    printf '\a'
+    sleep 0.25
+    printf '\a'
+fi

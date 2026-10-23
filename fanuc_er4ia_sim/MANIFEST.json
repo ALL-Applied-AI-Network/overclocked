@@ -214,8 +214,8 @@
     },
     {
       "path": "run_stress_batch.sh",
-      "size_bytes": 10908,
-      "sha256": "6a57d7576d55031cef580b5a5bb03e963740b40ad8a514a1af06aeeba881ed4a"
+      "size_bytes": 11050,
+      "sha256": "7b03d07390bdfb6ddbc65e1a54bf6732b8ea00332d0d1789d0b3c7d8b1760b32"
     },
     {
       "path": "scene_config.py",
