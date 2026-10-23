@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "red",
+  "yaw_deg": -43.2732,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small red cube resting on a flat surface, matching the expected color and shape. The measured yaw angle indicates a slight rotation relative to the camera, while roll and pitch are near zero, consistent with an upright pose."
+}
+```

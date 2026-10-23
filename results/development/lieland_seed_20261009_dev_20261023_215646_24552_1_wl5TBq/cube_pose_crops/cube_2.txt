@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "yellow",
+  "yaw_deg": -42.0024,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small yellow cube resting on a flat surface, matching the expected color and shape. The measured yaw angle and high silhouette IoU confirm its orientation and pose."
+}
+```
