@@ -1,0 +1,337 @@
+{
+  "objects": [
+    {
+      "label": "blue cube",
+      "category": "cube",
+      "colour": "blue",
+      "center": [
+        0.444,
+        0.762
+      ],
+      "bbox": [
+        0.438,
+        0.747,
+        0.453,
+        0.775
+      ],
+      "graspable": true,
+      "pose_source": "Cosmos_reports_calibrated_image_pose",
+      "image_pose_measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.457152219314584,
+          -0.09893234718444287,
+          0.8999
+        ],
+        "yaw_deg": -35.1705,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9567567567567568,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      },
+      "pose_confidence": 0.97,
+      "top_edge_endpoints": [
+        [
+          0.44574330589541006,
+          0.7537655094576696
+        ],
+        [
+          0.4415795062559308,
+          0.7625489139834317
+        ]
+      ],
+      "pose_reason": "The object is a small blue cube with a matte finish, positioned upright on a flat surface. Its top face is oriented at an angle relative to the camera, consistent with the measured yaw. The cube's edges are sharp and well-defined, confirming its cubic shape. The lighting is even, and there are no visible distortions or artifacts that would suggest ambiguity in its pose.",
+      "cosmos_reported_yaw_deg": -35.1705,
+      "pose_world": {
+        "position_m": [
+          0.457152219314584,
+          -0.09893234718444287,
+          0.8999
+        ],
+        "yaw_deg": -35.1705,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "label": "blue cube",
+      "category": "cube",
+      "colour": "blue",
+      "center": [
+        0.523,
+        0.583
+      ],
+      "bbox": [
+        0.519,
+        0.573,
+        0.53,
+        0.593
+      ],
+      "graspable": true,
+      "pose_source": "Cosmos_reports_calibrated_image_pose",
+      "image_pose_measurement": {
+        "expected_colour": "blue",
+        "position_world_m": [
+          0.266893070271068,
+          0.02600631418077467,
+          0.8999
+        ],
+        "yaw_deg": 11.9051,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9653259361997226,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      },
+      "pose_confidence": 0.97,
+      "top_edge_endpoints": [
+        [
+          0.5222649999844738,
+          0.578031396060959
+        ],
+        [
+          0.5234729632852737,
+          0.586463369366912
+        ]
+      ],
+      "pose_reason": "The object is a small blue cube with a matte finish, positioned upright on a flat surface. Its top face is oriented at a slight angle relative to the camera, consistent with the measured yaw of approximately 11.9 degrees. The cube's edges appear sharp and well-defined, confirming its cubic shape. The lighting is even, and there are no visible distortions or ambiguities in the object's appearance.",
+      "cosmos_reported_yaw_deg": 11.9051,
+      "pose_world": {
+        "position_m": [
+          0.266893070271068,
+          0.02600631418077467,
+          0.8999
+        ],
+        "yaw_deg": 11.905099999999997,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "label": "yellow cube",
+      "category": "cube",
+      "colour": "yellow",
+      "center": [
+        0.553,
+        0.673
+      ],
+      "bbox": [
+        0.548,
+        0.665,
+        0.559,
+        0.684
+      ],
+      "graspable": true,
+      "pose_source": "Cosmos_reports_calibrated_image_pose",
+      "image_pose_measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.3658936622949241,
+          0.07268334235913707,
+          0.8999
+        ],
+        "yaw_deg": -1.9148,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9641025641025641,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      },
+      "pose_confidence": 0.97,
+      "top_edge_endpoints": [
+        [
+          0.5513744687621565,
+          0.6682925192966291
+        ],
+        [
+          0.5514126621114884,
+          0.6779970289671556
+        ]
+      ],
+      "pose_reason": "The object is a small yellow cube with a matte finish, positioned upright on a flat surface. Its top face is oriented slightly rotated relative to the camera, consistent with the measured yaw angle. The cube's edges appear sharp and well-defined, confirming its cubic shape.",
+      "cosmos_reported_yaw_deg": -1.9148,
+      "pose_world": {
+        "position_m": [
+          0.3658936622949241,
+          0.07268334235913707,
+          0.8999
+        ],
+        "yaw_deg": -1.9147999999999996,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "label": "yellow cube",
+      "category": "cube",
+      "colour": "yellow",
+      "center": [
+        0.619,
+        0.733
+      ],
+      "bbox": [
+        0.614,
+        0.723,
+        0.626,
+        0.743
+      ],
+      "graspable": true,
+      "pose_source": "Cosmos_reports_calibrated_image_pose",
+      "image_pose_measurement": {
+        "expected_colour": "yellow",
+        "position_world_m": [
+          0.41951154066911484,
+          0.1788488249883017,
+          0.8999
+        ],
+        "yaw_deg": 28.0166,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9559955995599559,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      },
+      "pose_confidence": 0.97,
+      "top_edge_endpoints": [
+        [
+          0.6177272763610117,
+          0.7292921659217255
+        ],
+        [
+          0.6213023533093929,
+          0.7387584291725513
+        ]
+      ],
+      "pose_reason": "The object is a small yellow cube resting on a flat surface, matching the expected color and shape. The measured yaw angle and high silhouette IoU confirm its orientation and pose.",
+      "cosmos_reported_yaw_deg": 28.0166,
+      "pose_world": {
+        "position_m": [
+          0.41951154066911484,
+          0.1788488249883017,
+          0.8999
+        ],
+        "yaw_deg": 28.016599999999997,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "label": "red cube",
+      "category": "cube",
+      "colour": "red",
+      "center": [
+        0.62,
+        0.584
+      ],
+      "bbox": [
+        0.616,
+        0.575,
+        0.626,
+        0.594
+      ],
+      "graspable": true,
+      "pose_source": "Cosmos_reports_calibrated_image_pose",
+      "image_pose_measurement": {
+        "expected_colour": "red",
+        "position_world_m": [
+          0.26067919132186373,
+          0.19956472455405644,
+          0.8999
+        ],
+        "yaw_deg": -23.0905,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9702380952380952,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      },
+      "pose_confidence": 0.97,
+      "top_edge_endpoints": [
+        [
+          0.6210477811007249,
+          0.5772393954477579
+        ],
+        [
+          0.6194667844527263,
+          0.5848597871475701
+        ]
+      ],
+      "pose_reason": "The object is a small red cube with a matte finish, positioned upright on a flat surface. Its top face is oriented at an angle relative to the camera, consistent with the measured yaw. The cube's edges are sharp and well-defined, confirming its cubic shape.",
+      "cosmos_reported_yaw_deg": -23.0905,
+      "pose_world": {
+        "position_m": [
+          0.26067919132186373,
+          0.19956472455405644,
+          0.8999
+        ],
+        "yaw_deg": -23.0905,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "yaw_symmetry_deg": 90
+      }
+    },
+    {
+      "label": "red cube",
+      "category": "cube",
+      "colour": "red",
+      "center": [
+        0.63,
+        0.671
+      ],
+      "bbox": [
+        0.625,
+        0.662,
+        0.637,
+        0.682
+      ],
+      "graspable": true,
+      "pose_source": "Cosmos_reports_calibrated_image_pose",
+      "image_pose_measurement": {
+        "expected_colour": "red",
+        "position_world_m": [
+          0.3579846025711698,
+          0.20437577555127104,
+          0.8999
+        ],
+        "yaw_deg": 34.6758,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "silhouette_iou": 0.9655990510083037,
+        "source": "calibrated_image_silhouette_fit",
+        "yaw_symmetry_deg": 90
+      },
+      "pose_confidence": 0.97,
+      "top_edge_endpoints": [
+        [
+          0.6286325925991071,
+          0.6694092190547843
+        ],
+        [
+          0.6326675202279638,
+          0.6775730086935544
+        ]
+      ],
+      "pose_reason": "The object is a small red cube with a matte finish, positioned upright on a flat surface. Its top face is oriented at approximately 34.7 degrees relative to the camera's forward axis, consistent with the measured yaw. The cube appears stable and does not exhibit any tilting or rolling, confirming a confident pose assessment.",
+      "cosmos_reported_yaw_deg": 34.6758,
+      "pose_world": {
+        "position_m": [
+          0.3579846025711698,
+          0.20437577555127104,
+          0.8999
+        ],
+        "yaw_deg": 34.67580000000001,
+        "roll_deg": 0,
+        "pitch_deg": 0,
+        "yaw_symmetry_deg": 90
+      }
+    }
+  ],
+  "coordinate_convention": "unit",
+  "model": "Cosmos3-Nano",
+  "task": "cube_stack"
+}
