@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "experiment_class": "development",
+  "condition": "layout_seed",
+  "run_id": "lieland_seed_20261010_dev_20261023_192612_20554_1_Y1mPPz",
+  "run_directory": "/home/yt-overclocked728b/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261023_192612_20554_1_Y1mPPz",
+  "started_at_utc": "2026-10-23T19:26:12.860497+00:00",
+  "source_sha256": {
+    "backproject.py": "94017f60b3cb493ec647e6c41519914526c36e8653dbb304bc0d1c1cd1d037b0",
+    "batch_progress.py": "06a46c16cebe595879aab705c2f9800dc3d0b3266ccdb8a9c8aa31af8d9951bd",
+    "bootstrap.sh": "0ed403fe4b9417ac130b62b9f567ae082e811ba8a83822660139a6d2c6fefafe",
+    "build_scene.py": "0b1011d6970f47aadf8c5e0896df16547593c2a658af9a8a2510f08ba6fb1e90",
+    "capture_scene.py": "b60ce6a62fa17439b6ece9a7573bf4389c4de4cfed119b8a84c5edb45da466c2",
+    "cell.py": "cfde65b149d4c87add24793734d65d968b79ea70563c169e2f46b458b32a4260",
+    "compare_inventory.py": "4bdae131d697e6afb4840acf07d63067f758e3b4d44480252dd5c54517e73f56",
+    "compare_pose_prompts.py": "2a15a173bf701790cee620667700cd5dd5fc0dc069dfb9e20cef10e7c8f4ec93",
+    "cube_pose.py": "d49f9d25aecbfefbb3a090f916b214a5c7614a5c679286e66c0afe655fd794bc",
+    "encode_video.py": "88e2afccb34bd473b9d0fdff1f2b8a5ebb51b4c43d37401e4509280b3edb1687",
+    "fk.py": "f7aa7df14c8d2b8c2a4838846caa302fcc0976276d616769aa6730bcbff2abed",
+    "gripper_geometry.py": "5ee8ff8c87d9a44f96f8af738b46fd9d2a586fa2ad3b8e0968c86161355007dc",
+    "ik.py": "6326a47a395c02944f4f2ae1231ee4bb082e5ceb06e039d79992f66d8673d795",
+    "isaac_seed_entrypoint.py": "26bfc7d1ddb8bf7bb92ac420b6633768a380ff3bbd6c6332acb12a5d351104dd",
+    "make_textures.py": "141b1c3bfe7e9f70d030ec4eb055d4c3eb1da8a547e4273fe60ad32e09bbf7ee",
+    "package_hackathon.py": "e222e3af037b2040ced711d03b160a2bf9f79f10a4d40dafe8f52c9fe0a93785",
+    "perceive.py": "8153646193f099270addaf71af7d560f8cfc13d280f663f808be199882bd5c5f",
+    "plan_grasps.py": "527a265c885ff3ddd9845a24484fcf1cfeca9f90f6d6cc143398d907dac7982d",
+    "plan_sort.py": "b7045850f525d31dfb8d0b3ba3657db61ad2bf5567a977635eea75752a1d526d",
+    "record_run_config.py": "89caaaf3b9143d313a28bbf842a6cd3976f4e317ecefca4127a48997e1ebeccd",
+    "render_settings.py": "4763a7a4b73e68485da3c806dc905174298cf9c7befe3103280ae907642581c9",
+    "run_sort_pipeline.sh": "a38ca204f09a067bf137990bf97f7dffdf45e287b1105fb8b965a1de70192893",
+    "run_stress_batch.sh": "f14327f47a074dec8c02e300c215d54cffeffc26974765d24c87fd4d271c64dc",
+    "scene_config.py": "89256e9f44cedb487a817b5658ec5d2a9b6f7dcf79746b1ab212bbb7d070f5ef",
+    "share.sh": "3e4ad489c37a38348baad7396b4753be56721021c3c1bf05a0282d86c7a1718d",
+    "sort_scene.py": "0a51cf9f748e292debf84829b190df72397ec635d27e1980d93e9eb0d433541f",
+    "test_batch_progress.py": "1939aad039ff23018ed028c21dd240f9ba241faac140d4e0ed79e8a9015effe9",
+    "test_cube_perception.py": "3f25fd0e622cdac4de7a14ec85a9d793f15b53bbf26c231b10ff865cb0d76270",
+    "test_cube_pose.py": "f4e6af7acc464a5f6da86d5a28110f39ae47da7472350b5843dac6055fa1ecd3",
+    "test_inventory_compare.py": "5e860b43ece5435cd2a1fec67e17c899104caf7d9947508aa30ace821886008d",
+    "test_pose_prompt_compare.py": "c8dd78a1c9d60e2d12a2ecd454dc3399e9195930508aa446c25a1e00f5138f5a",
+    "test_runtime_config.py": "69f5d200014350ca8dcb104ed13397226717381995ff79ff53ccc4fbc857db7d",
+    "test_sort_planning.py": "6f7f683d8efc95b87a48a19eb51cee567f858772204f30bca4b1be93cff39256",
+    "test_support.py": "8d3420ca756243570bb519761a5b6b4e229fac5da14df1824fd0df1a857fa22d"
+  },
+  "effective": {
+    "cube_layout_seed": 20261010,
+    "cube_yaws_deg": [
+      0.0,
+      26.0,
+      32.0,
+      -23.0,
+      14.0,
+      -36.0
+    ],
+    "layout": [
+      {
+        "name": "SortCube0",
+        "x_m": 0.365769,
+        "y_m": 0.072782,
+        "colour": "yellow"
+      },
+      {
+        "name": "SortCube1",
+        "x_m": 0.419421,
+        "y_m": 0.178986,
+        "colour": "yellow"
+      },
+      {
+        "name": "SortCube2",
+        "x_m": 0.24927965403712965,
+        "y_m": 0.20757585903984957,
+        "colour": "red"
+      },
+      {
+        "name": "SortCube3",
+        "x_m": 0.27819772807203264,
+        "y_m": 0.018870780980016932,
+        "colour": "red"
+      },
+      {
+        "name": "SortCube4",
+        "x_m": 0.33969945744101016,
+        "y_m": 0.18788943113896342,
+        "colour": "blue"
+      },
+      {
+        "name": "SortCube5",
+        "x_m": 0.3634262682467333,
+        "y_m": 0.2713412803919397,
+        "colour": "blue"
+      }
+    ]
+  },
+  "layout_scope": "Two yellow cubes remain fixed; four other cubes are seeded.",
+  "layout_and_yaw_usage": "Reproducibility/evaluation only; not grasp targets.",
+  "validation_status": "Host configuration recorded; simulator validation pending."
+}

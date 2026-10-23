@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "red",
+  "yaw_deg": -21.6098,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small red cube with a matte finish, positioned upright on a flat surface. Its top face is oriented at approximately -21.6 degrees relative to the camera's view, consistent with the measured yaw angle. The cube appears stable and does not exhibit any tilting or rotation beyond the specified yaw, confirming a straightforward tabletop pose."
+}
+```

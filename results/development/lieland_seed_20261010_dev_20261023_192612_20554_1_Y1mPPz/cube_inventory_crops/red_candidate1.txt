@@ -1,0 +1,7 @@
+```json
+{
+  "category": "cube",
+  "colour": "orange",
+  "confidence": 0.97
+}
+```

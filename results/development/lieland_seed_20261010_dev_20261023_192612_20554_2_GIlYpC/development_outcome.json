@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "experiment_class": "development",
+  "run_id": "lieland_seed_20261010_dev_20261023_192612_20554_2_GIlYpC",
+  "batch_id": "20261023_192612_20554",
+  "batch_run_number": 2,
+  "batch_requested_runs": 2,
+  "started_at_utc": "2026-10-23T19:35:52Z",
+  "finished_at_utc": "2026-10-23T19:45:09Z",
+  "outcome": "physics_success",
+  "classification": "physics_success",
+  "failure_stage": "complete",
+  "pipeline_exit_status": 0,
+  "elapsed_seconds": 557,
+  "cube_layout_seed": 20261010,
+  "execution_report_present": true,
+  "task_complete": true,
+  "verified_pickups": 6,
+  "verified_placements": 6,
+  "abort_reason": null,
+  "planned_picks": 6,
+  "notes": [
+    "Missing measurements remain null.",
+    "Inspect saved reports and log for detailed diagnosis.",
+    "Ground truth is evaluation only. All validation gates unchanged."
+  ]
+}
