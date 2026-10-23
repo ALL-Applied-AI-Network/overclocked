@@ -23,13 +23,13 @@ echo '[stage] CONFIGURATION'
 CUBE_LAYOUT_SEED="$("$HOST_PYTHON" -c 'import json, sys; print(json.load(open(sys.argv[1]))["effective"]["cube_layout_seed"])' "$RUN/run_config.json")"
 export CUBE_LAYOUT_SEED
 echo '[stage] CAPTURE'
-"$ISAAC/python.sh" "$HERE/isaac_seed_entrypoint.py" "$CUBE_LAYOUT_SEED" "$HERE/capture_scene.py" --out "$RUN"
+"$ISAAC/python.sh" "$HERE/isaac_run_entrypoint.py" "$RUN/run_config.json" "$HERE/capture_scene.py" --out "$RUN"
 echo '[stage] PERCEPTION'
 "$COSMOS" "$HERE/perceive.py" --run "$RUN" --stack-cubes
 echo '[stage] PLANNING'
 "$HOST_PYTHON" "$HERE/plan_sort.py" --run "$RUN"
 echo '[stage] EXECUTION'
-"$ISAAC/python.sh" "$HERE/isaac_seed_entrypoint.py" "$CUBE_LAYOUT_SEED" "$HERE/sort_scene.py" --run "$RUN"
+"$ISAAC/python.sh" "$HERE/isaac_run_entrypoint.py" "$RUN/run_config.json" "$HERE/sort_scene.py" --run "$RUN"
 echo '[stage] VERIFY_REPORT'
 # Isaac shutdown can return zero even after an exception; check the result.
 "$HOST_PYTHON" - "$RUN" <<'PY'

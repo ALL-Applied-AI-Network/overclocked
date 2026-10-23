@@ -6,6 +6,10 @@ SEED=20261009
 COUNT=
 PREVIEW=0
 YES=0
+YAW_MODE=original
+YAW_DEG=
+YAW_MAX=
+YAW_SEED=
 while (($#)); do
     case "$1" in
         --seed|--runs)
@@ -13,9 +17,20 @@ while (($#)); do
             case "$1" in --seed) SEED=$2;; --runs) COUNT=$2;; esac
             shift 2;;
         --preview) PREVIEW=1; shift;;
+        --yaw-mode|--yaw-deg|--yaw-max-deg|--yaw-seed)
+            [[ $# -ge 2 ]] || { echo "Missing value for $1" >&2; exit 2; }
+            [[ -n "$2" ]] || { echo "Empty value for $1" >&2; exit 2; }
+            case "$1" in
+                --yaw-mode) YAW_MODE=$2;;
+                --yaw-deg) YAW_DEG=$2;;
+                --yaw-max-deg) YAW_MAX=$2;;
+                --yaw-seed) YAW_SEED=$2;;
+            esac
+            shift 2;;
         --yes) YES=1; shift;;
         --help)
             echo 'Usage: bash run_stress_batch.sh [--seed INTEGER --runs COUNT] [--preview] [--yes]'
+            echo 'Yaw: --yaw-mode original | --yaw-mode fixed --yaw-deg 30 | --yaw-mode random --yaw-max-deg 45 --yaw-seed 20261009'
             echo 'No arguments: interactive prompts. --preview never launches or creates run folders.'
             exit 0;;
         *) echo "Unknown option: $1" >&2; exit 2;;
@@ -26,12 +41,41 @@ if [[ -z "$COUNT" ]]; then
     printf '\nChoose the layout seed:\n  20261009 = original baseline (press Enter)\n  20261010 = alternate layout requested by Gouri\n'
     read -r -p "Layout seed [$SEED]: " ANSWER
     SEED=${ANSWER:-$SEED}
+    read -r -p "Yaw mode: original, fixed, random [$YAW_MODE]: " ANSWER
+    YAW_MODE=${ANSWER:-$YAW_MODE}
+    if [[ "$YAW_MODE" == fixed ]]; then
+        read -r -p "Angle for ALL six cubes, 0-45 degrees [$YAW_DEG]: " ANSWER
+        YAW_DEG=${ANSWER:-$YAW_DEG}
+    elif [[ "$YAW_MODE" == random ]]; then
+        read -r -p "Maximum random yaw, 0-45 degrees [${YAW_MAX:-45}]: " ANSWER
+        YAW_MAX=${ANSWER:-${YAW_MAX:-45}}
+        read -r -p "Independent yaw seed [${YAW_SEED:-20261009}]: " ANSWER
+        YAW_SEED=${ANSWER:-${YAW_SEED:-20261009}}
+    fi
     read -r -p 'Number of runs: ' COUNT
 fi
 [[ "$SEED" =~ ^-?[0-9]+$ ]] || { echo 'Seed must be an integer.' >&2; exit 2; }
 [[ "$COUNT" =~ ^[1-9][0-9]*$ && ${#COUNT} -le 4 ]] || { echo 'Run count must be a whole number from 1 to 9999.' >&2; exit 2; }
+valid_angle() {
+    [[ "$1" =~ ^([0-9]+([.][0-9]*)?|[.][0-9]+)$ ]] && awk -v value="$1" 'BEGIN {exit !(value >= 0 && value <= 45)}'
+}
+case "$YAW_MODE" in
+    original)
+        [[ -z "$YAW_DEG$YAW_MAX$YAW_SEED" ]] || { echo 'Original yaw mode does not use angle/max/seed options.' >&2; exit 2; };;
+    fixed)
+        valid_angle "$YAW_DEG" || { echo 'Fixed yaw must be a number from 0 to 45 degrees.' >&2; exit 2; }
+        [[ -z "$YAW_MAX$YAW_SEED" ]] || { echo 'Fixed yaw mode does not use max/seed options.' >&2; exit 2; };;
+    random)
+        [[ -z "$YAW_DEG" ]] || { echo 'Random yaw mode does not use --yaw-deg.' >&2; exit 2; }
+        YAW_MAX=${YAW_MAX:-45}
+        YAW_SEED=${YAW_SEED:-20261009}
+        valid_angle "$YAW_MAX" || { echo 'Maximum yaw must be a number from 0 to 45 degrees.' >&2; exit 2; }
+        [[ "$YAW_SEED" =~ ^-?[0-9]+$ ]] || { echo 'Yaw seed must be an integer.' >&2; exit 2; };;
+    *) echo 'Yaw mode must be original, fixed, or random.' >&2; exit 2;;
+esac
 printf '\nDevelopment batch: %s sequential runs; layout seed %s\n' "$COUNT" "$SEED"
-echo 'Original cube yaw, calibration and physics; all existing gates preserved.'
+printf 'Yaw mode: %s; fixed degrees: %s; max degrees: %s; independent seed: %s\n' "$YAW_MODE" "${YAW_DEG:-unused}" "${YAW_MAX:-unused}" "${YAW_SEED:-unused}"
+echo 'Original mode preserves [0,26,32,-23,14,-36]. Calibration, physics and all gates unchanged.'
 echo 'Fresh capture and folder per attempt. Failures are saved, not retried.'
 echo 'Photos/videos stay on YAAD. Run the Windows upload helper after the batch.'
 if ((PREVIEW)); then echo 'PREVIEW ONLY: no tests, files or simulations started.'; exit 0; fi
@@ -63,8 +107,12 @@ if ((!YES)); then
     read -r -p 'Resources available for this batch? Type yes: ' ANSWER
     [[ "$ANSWER" == yes ]] || exit 0
 fi
-"$HOST_PYTHON" -B -m unittest test_sort_planning test_cube_perception test_cube_pose test_runtime_config test_batch_progress
+env -u CUBE_YAW_DEG -u CUBE_YAW_MAX_DEG -u CUBE_YAW_SEED CUBE_YAW_MODE=original CUBE_LAYOUT_SEED=20261009 "$HOST_PYTHON" -B -m unittest test_sort_planning test_cube_perception test_cube_pose test_runtime_config test_batch_progress test_yaw_config
 export HOST_PYTHON CUBE_LAYOUT_SEED="$SEED"
+unset CUBE_YAW_DEG CUBE_YAW_MAX_DEG CUBE_YAW_SEED
+export CUBE_YAW_MODE="$YAW_MODE"
+if [[ "$YAW_MODE" == fixed ]]; then export CUBE_YAW_DEG="$YAW_DEG"; fi
+if [[ "$YAW_MODE" == random ]]; then export CUBE_YAW_MAX_DEG="$YAW_MAX" CUBE_YAW_SEED="$YAW_SEED"; fi
 mkdir -p "$HERE/runs"
 BATCH=$(date -u +%Y%m%d_%H%M%S)_$$
 ACTIVE=
@@ -127,6 +175,8 @@ record = {
     'outcome': outcome, 'classification': outcome, 'failure_stage': stage,
     'pipeline_exit_status': status, 'elapsed_seconds': elapsed,
     'cube_layout_seed': config['effective']['cube_layout_seed'] if config else None,
+    'cube_yaw_control': config['effective'].get('cube_yaw_control') if config else None,
+    'cube_yaws_deg': config['effective'].get('cube_yaws_deg') if config else None,
     'execution_report_present': report is not None,
     'task_complete': report.get('task_complete') if report else None,
     'verified_pickups': report.get('verified_pickups') if report else None,

@@ -458,6 +458,7 @@ CALIBRATION_SNAPSHOT = True
 
 
 # Square yaw is observable modulo 90 degrees; these grasps require wrist turns.
-SORT_CUBE_YAWS_DEG = [0.0, 26.0, 32.0, -23.0, 14.0, -36.0]
+from yaw_config import resolve as _resolve_cube_yaw
+CUBE_YAW_CONTROL, SORT_CUBE_YAWS_DEG = _resolve_cube_yaw()
 
 assert abs(TOOL_LENGTH - 0.293) < 1e-9, "v0.5 calibrated TCP length"

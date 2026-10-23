@@ -4,9 +4,11 @@ Run `bash run_stress_batch.sh` inside tmux, from this project, after exporting
 the existing ISAAC, COSMOS, HOST_PYTHON and model-cache settings. No environments
 are installed or copied. No system paths are embedded in the launcher.
 
+Yaw controls: see CUBE_YAW.md. Original yaw is the default; fixed and random modes are opt-in.
+
 Blank seed selects baseline 20261009. Seed 20261010 selects the alternate layout.
 The script does not track completion across batches. Each attempt uses the same
-selected seed and original yaw, calibration and physics. Only four cube positions
+selected layout/yaw settings and original calibration and physics. Only four cube positions
 are seeded; the two yellow positions remain fixed.
 
 Preview without launching: `bash run_stress_batch.sh --seed 20261010 --runs 4 --preview`.

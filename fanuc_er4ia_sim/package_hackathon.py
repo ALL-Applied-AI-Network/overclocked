@@ -8,6 +8,10 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parent
 CODE = (
+    "yaw_config.py",
+    "isaac_run_entrypoint.py",
+    "test_yaw_config.py",
+    "CUBE_YAW.md",
     "backproject.py",
     "build_scene.py",
     "capture_scene.py",

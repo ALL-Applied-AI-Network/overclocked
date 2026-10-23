@@ -20,7 +20,11 @@ def main():
     record = {
         "schema_version": 1,
         "experiment_class": "development",
-        "condition": "nominal" if C.CUBE_LAYOUT_SEED == 20261009 else "layout_seed",
+        "condition": "+".join(
+            (["layout_seed"] if C.CUBE_LAYOUT_SEED != 20261009 else [])
+            + (["cube_yaw_" + C.CUBE_YAW_CONTROL["mode"]]
+               if C.CUBE_YAW_CONTROL["mode"] != "original" else [])
+        ) or "nominal",
         "run_id": run.name,
         "run_directory": str(run),
         "started_at_utc": datetime.now(timezone.utc).isoformat(),
@@ -28,6 +32,7 @@ def main():
         "effective": {
             "cube_layout_seed": C.CUBE_LAYOUT_SEED,
             "cube_yaws_deg": list(C.SORT_CUBE_YAWS_DEG),
+            "cube_yaw_control": dict(C.CUBE_YAW_CONTROL),
             "layout": [
                 {"name": f"SortCube{i}", "x_m": x, "y_m": y, "colour": colour}
                 for i, (x, y, colour) in enumerate(C.SORT_CUBES)

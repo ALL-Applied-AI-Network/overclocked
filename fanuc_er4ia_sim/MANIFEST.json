@@ -18,6 +18,11 @@
       "sha256": "40e83cbfef0adacc1996c9698d1b44f2543ab2f1119cf6ca1f9e7fe7cc64a4c2"
     },
     {
+      "path": "CUBE_YAW.md",
+      "size_bytes": 4665,
+      "sha256": "8b2330043589b1527221d7162f01d4c8142ea65c3f750cb7f8a9d71034cd3e80"
+    },
+    {
       "path": "INVENTORY_PROMPT_CHANGE.md",
       "size_bytes": 1914,
       "sha256": "716cd2909a1d01574a33e54f8c797a2e05289f8588be6fba886d874829dd7b76"
@@ -44,8 +49,8 @@
     },
     {
       "path": "STRESS_BATCH.md",
-      "size_bytes": 4421,
-      "sha256": "75c466fb9b93ea5f6a1b44a725fc15895c785799ee5a6566096ac11e48273f56"
+      "size_bytes": 4527,
+      "sha256": "8080edb1681dc008eeb09cdba2da39316b981c145dac7da49f4893c5f125045e"
     },
     {
       "path": "assets/gripper/photo_finger_detail.json",
@@ -148,6 +153,11 @@
       "sha256": "6326a47a395c02944f4f2ae1231ee4bb082e5ceb06e039d79992f66d8673d795"
     },
     {
+      "path": "isaac_run_entrypoint.py",
+      "size_bytes": 1362,
+      "sha256": "d53a563e30be6504857c5b7d4f3f70efd9aeb6ebe4f0ce5231c578cfc95c6445"
+    },
+    {
       "path": "isaac_seed_entrypoint.py",
       "size_bytes": 668,
       "sha256": "26bfc7d1ddb8bf7bb92ac420b6633768a380ff3bbd6c6332acb12a5d351104dd"
@@ -159,8 +169,8 @@
     },
     {
       "path": "package_hackathon.py",
-      "size_bytes": 3655,
-      "sha256": "e222e3af037b2040ced711d03b160a2bf9f79f10a4d40dafe8f52c9fe0a93785"
+      "size_bytes": 3752,
+      "sha256": "18d51d128141ec2c2d231060873af84b2554445b6b396b4099c184d9a0cafd52"
     },
     {
       "path": "perceive.py",
@@ -179,8 +189,8 @@
     },
     {
       "path": "record_run_config.py",
-      "size_bytes": 1744,
-      "sha256": "89caaaf3b9143d313a28bbf842a6cd3976f4e317ecefca4127a48997e1ebeccd"
+      "size_bytes": 1970,
+      "sha256": "f81a9ed3f9a8020fe97cbfbf9ced41b51917ad09e5e3918d8c1a734d56655bcd"
     },
     {
       "path": "render_settings.py",
@@ -199,18 +209,18 @@
     },
     {
       "path": "run_sort_pipeline.sh",
-      "size_bytes": 2287,
-      "sha256": "a38ca204f09a067bf137990bf97f7dffdf45e287b1105fb8b965a1de70192893"
+      "size_bytes": 2291,
+      "sha256": "272fc9c35c166b35ad53e50ef7c6684dd251e94012b2179a657a4bd83fd1a1e5"
     },
     {
       "path": "run_stress_batch.sh",
-      "size_bytes": 8022,
-      "sha256": "f14327f47a074dec8c02e300c215d54cffeffc26974765d24c87fd4d271c64dc"
+      "size_bytes": 10908,
+      "sha256": "6a57d7576d55031cef580b5a5bb03e963740b40ad8a514a1af06aeeba881ed4a"
     },
     {
       "path": "scene_config.py",
-      "size_bytes": 18619,
-      "sha256": "89256e9f44cedb487a817b5658ec5d2a9b6f7dcf79746b1ab212bbb7d070f5ef"
+      "size_bytes": 18671,
+      "sha256": "8a05547ee595c04033076974e1dfb40d50692d66385abd8a6e043725d3e0eddf"
     },
     {
       "path": "share.sh",
@@ -261,6 +271,16 @@
       "path": "test_support.py",
       "size_bytes": 879,
       "sha256": "8d3420ca756243570bb519761a5b6b4e229fac5da14df1824fd0df1a857fa22d"
+    },
+    {
+      "path": "test_yaw_config.py",
+      "size_bytes": 6267,
+      "sha256": "d6813eab8a9dd8273c366d11bb9194fd3d057af39846d74e631bf9cfb3788a16"
+    },
+    {
+      "path": "yaw_config.py",
+      "size_bytes": 2383,
+      "sha256": "87363d239d87fb48ee1e89b4d6056f75866a4b8026a05b4faeed36bc506f8ddd"
     }
   ]
 }
