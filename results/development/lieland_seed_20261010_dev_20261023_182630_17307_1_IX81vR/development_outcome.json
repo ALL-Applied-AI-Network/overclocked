@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "experiment_class": "development",
+  "run_id": "lieland_seed_20261010_dev_20261023_182630_17307_1_IX81vR",
+  "batch_id": "20261023_182630_17307",
+  "batch_run_number": 1,
+  "batch_requested_runs": 2,
+  "started_at_utc": "2026-10-23T18:26:30Z",
+  "finished_at_utc": "2026-10-23T18:31:17Z",
+  "outcome": "failed_before_execution",
+  "classification": "failed_before_execution",
+  "failure_stage": "planning_no_eligible_picks",
+  "pipeline_exit_status": 1,
+  "elapsed_seconds": 287,
+  "cube_layout_seed": 20261010,
+  "execution_report_present": false,
+  "task_complete": null,
+  "verified_pickups": null,
+  "verified_placements": null,
+  "abort_reason": null,
+  "planned_picks": 0,
+  "notes": [
+    "Missing measurements remain null.",
+    "Inspect saved reports and log for detailed diagnosis.",
+    "Ground truth is evaluation only. All validation gates unchanged."
+  ]
+}
