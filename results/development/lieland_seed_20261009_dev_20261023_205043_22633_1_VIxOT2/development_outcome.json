@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "experiment_class": "development",
+  "run_id": "lieland_seed_20261009_dev_20261023_205043_22633_1_VIxOT2",
+  "batch_id": "20261023_205043_22633",
+  "batch_run_number": 1,
+  "batch_requested_runs": 1,
+  "started_at_utc": "2026-10-23T20:50:43Z",
+  "finished_at_utc": "2026-10-23T21:00:36Z",
+  "outcome": "physics_success",
+  "classification": "physics_success",
+  "failure_stage": "complete",
+  "pipeline_exit_status": 0,
+  "elapsed_seconds": 593,
+  "cube_layout_seed": 20261009,
+  "cube_yaw_control": {
+    "mode": "random",
+    "fixed_deg": null,
+    "max_deg": 45.0,
+    "seed": 20261023
+  },
+  "cube_yaws_deg": [
+    11.382658793761973,
+    35.04871729086073,
+    24.014872542583603,
+    10.832110016014418,
+    16.514895342515505,
+    18.324876825970293
+  ],
+  "execution_report_present": true,
+  "task_complete": true,
+  "verified_pickups": 6,
+  "verified_placements": 6,
+  "abort_reason": null,
+  "planned_picks": 6,
+  "notes": [
+    "Missing measurements remain null.",
+    "Inspect saved reports and log for detailed diagnosis.",
+    "Ground truth is evaluation only. All validation gates unchanged."
+  ]
+}

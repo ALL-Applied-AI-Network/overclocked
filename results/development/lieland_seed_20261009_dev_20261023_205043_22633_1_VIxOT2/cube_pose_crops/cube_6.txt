@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "yellow",
+  "yaw_deg": 38.6615,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small yellow cube with a matte finish, positioned upright on a flat surface. Its top face is oriented at approximately 38.66 degrees relative to the camera, consistent with the measured yaw angle. The cube's edges and corners are well-defined, and it appears stable on the tabletop."
+}
+```
