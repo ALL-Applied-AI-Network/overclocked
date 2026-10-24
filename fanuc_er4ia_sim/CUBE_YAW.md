@@ -1,8 +1,8 @@
 # Cube yaw controls (degrees)
 
-Implementation-stage feature. Host checks and a host/container bridge probe
-must pass before the first development simulation. No yaw physics results are
-claimed by this document. Actual run reports remain authoritative.
+Yaw controls have passed host and container transport checks, with development
+physics results recorded below. Fixed 45 degrees has mixed outcomes; it is not
+an established reliability boundary. Actual run reports remain authoritative.
 
 Modes:
 
@@ -85,3 +85,57 @@ All four saved execution reports were inspected: task_complete=true,
 verified_pickups=6, verified_placements=6, abort_reason=null. These establish
 pre-yaw development validation, including the installed inventory prompt;
 they do not validate the new yaw implementation. Earlier failures are retained.
+
+
+## Observed yaw development results - 2026-10-23
+
+All three attempts used default layout seed 20261009. Camera calibration,
+friction and existing validation gates were unchanged. They are development
+attempts, not formal protocol trials. Ground-truth/tracked poses remain
+evaluation-only; no controller repair or recovery was implemented.
+
+| Condition | Run ID | Pickups / placements | Outcome | Duration |
+| --- | --- | --- | --- | --- |
+| Random 0-45 deg, yaw seed 20261023 | lieland_seed_20261009_dev_20261023_205043_22633_1_VIxOT2 | 6 / 6 | physics_success | 9m53s |
+| Fixed 45 deg, attempt 1 | lieland_seed_20261009_dev_20261023_212426_23805_1_jWAg7G | 4 / 4 | execution_incomplete | 7m56s |
+| Fixed 45 deg, attempt 2 | lieland_seed_20261009_dev_20261023_215646_24552_1_wl5TBq | 6 / 6 | physics_success | 9m13s |
+
+Random run effective initial angles, in cube-index order:
+
+`[11.382658793761973, 35.04871729086073, 24.014872542583603, 10.832110016014418, 16.514895342515505, 18.324876825970293]` degrees.
+
+The first fixed-45 attempt failed on the fifth pickup (stack_level 4), the
+first red cube, tracked as SortCube3. The first four picks passed pickup,
+placement and stack-support checks. The failed attempt had objects_lifted=[],
+pickup_verified=false, and zero reported trajectory IK failures. The cube
+remained on the table during lift. The immediate failure is a failed pickup;
+the exact contact/grasp cause is unresolved. No stack-collapse cause is proven.
+
+The repeat was a fresh full pipeline run, not recovery within the failed run.
+It completed six pickups and six placements with no abort. Both attempts count:
+one failure and one success, not a demonstrated fix or recovery and not a
+formal success-rate estimate. No further pass-seeking repeats are planned.
+
+Recorded top-level Python/shell source hashes match between the two fixed-45 attempts.
+
+Validation scope: installation reported 65 host tests passed. Container-only
+probes matched original, fixed-30 and random settings in
+/workspace/lieland/yaw_bridge_check_ru1znwyb, without SimulationApp. The runs
+above separately establish observed physical outcomes. Original-mode behavior
+after the bridge change has host/container coverage; no new original-mode full
+simulation was performed after installing yaw controls.
+
+All source run folders and failures are preserved. Full reports, images and
+frames remain in runs/<run ID>; selected JSON/text evidence is uploaded under
+results/development/<run ID> on lieland-stress-tests. Main was not changed.
+The failed-run side video was encoded afterward from saved side_frames at 30
+fps: 1379 frames, about 46 seconds, yaw45_failure_side.mp4. It was downloaded
+and shared by the user in Teams; media is excluded from the GitHub sync bundle.
+
+Checkpoint uploads: random success c85f21e; first fixed-45 failure a27ce7f;
+successful fixed-45 repeat 6cd1e35. These identify evidence snapshots, not
+different controller fixes. Sai/Gouri received the grasp-failure report; the
+team's physical-grasp investigation remains separate from this harness work.
+
+Next harness feature: deliberate assumed camera-calibration mismatch, off by
+default, with true calibration preserved for evaluation. Not implemented yet.
