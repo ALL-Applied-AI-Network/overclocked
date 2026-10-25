@@ -18,6 +18,11 @@
       "sha256": "40e83cbfef0adacc1996c9698d1b44f2543ab2f1119cf6ca1f9e7fe7cc64a4c2"
     },
     {
+      "path": "CAMERA_MISMATCH.md",
+      "size_bytes": 3350,
+      "sha256": "5fdce56ae4f78b1919a0835cdaa67b7a8a6a27770a25189c3731402ff064e702"
+    },
+    {
       "path": "CUBE_YAW.md",
       "size_bytes": 7900,
       "sha256": "213c6cc078099065f76b6268341bcab5a62d32efd01c24f908d0ebb7c7ffa5b4"
@@ -98,9 +103,14 @@
       "sha256": "0b1011d6970f47aadf8c5e0896df16547593c2a658af9a8a2510f08ba6fb1e90"
     },
     {
+      "path": "calibration_mismatch.py",
+      "size_bytes": 2311,
+      "sha256": "39237a2e94fb593616d217f60b913b96ddddd49036a3f230ca61e38656d6e00f"
+    },
+    {
       "path": "capture_scene.py",
-      "size_bytes": 5805,
-      "sha256": "b60ce6a62fa17439b6ece9a7573bf4389c4de4cfed119b8a84c5edb45da466c2"
+      "size_bytes": 5799,
+      "sha256": "f418f1764a9185ce50f5916e5dde322576ade6944c09887f5e62e68f6d8345db"
     },
     {
       "path": "cell.py",
@@ -154,8 +164,8 @@
     },
     {
       "path": "isaac_run_entrypoint.py",
-      "size_bytes": 1362,
-      "sha256": "d53a563e30be6504857c5b7d4f3f70efd9aeb6ebe4f0ce5231c578cfc95c6445"
+      "size_bytes": 1586,
+      "sha256": "4d7553a47022f26a28b8e279c6068aff7068c2e86dec640b663426d61a13849e"
     },
     {
       "path": "isaac_seed_entrypoint.py",
@@ -169,8 +179,8 @@
     },
     {
       "path": "package_hackathon.py",
-      "size_bytes": 3752,
-      "sha256": "18d51d128141ec2c2d231060873af84b2554445b6b396b4099c184d9a0cafd52"
+      "size_bytes": 3845,
+      "sha256": "500a86c5932559de47cd8b164049701a52249f548524e44d696fe66870210f50"
     },
     {
       "path": "perceive.py",
@@ -189,8 +199,8 @@
     },
     {
       "path": "record_run_config.py",
-      "size_bytes": 1970,
-      "sha256": "f81a9ed3f9a8020fe97cbfbf9ced41b51917ad09e5e3918d8c1a734d56655bcd"
+      "size_bytes": 2215,
+      "sha256": "06d8699215dd974bfa8e074999ede966a74b3a5593daaa5ccf30677df750cf26"
     },
     {
       "path": "render_settings.py",
@@ -214,8 +224,8 @@
     },
     {
       "path": "run_stress_batch.sh",
-      "size_bytes": 11050,
-      "sha256": "7b03d07390bdfb6ddbc65e1a54bf6732b8ea00332d0d1789d0b3c7d8b1760b32"
+      "size_bytes": 12635,
+      "sha256": "34b6922d6a90efe807cf0efcac694151bb642e5e45bdff7510de77e21c823e48"
     },
     {
       "path": "scene_config.py",
@@ -236,6 +246,11 @@
       "path": "test_batch_progress.py",
       "size_bytes": 3346,
       "sha256": "1939aad039ff23018ed028c21dd240f9ba241faac140d4e0ed79e8a9015effe9"
+    },
+    {
+      "path": "test_calibration_mismatch.py",
+      "size_bytes": 4501,
+      "sha256": "c11e87abf40e5550986f0323f03c8363af6fd336476c95c1709ce5da4b76be0e"
     },
     {
       "path": "test_cube_perception.py",

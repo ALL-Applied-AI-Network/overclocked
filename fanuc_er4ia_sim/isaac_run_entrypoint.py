@@ -5,6 +5,7 @@ from pathlib import Path
 import runpy
 import sys
 from yaw_config import ENV_NAMES, environment
+import calibration_mismatch as calibration
 
 
 def main():
@@ -12,6 +13,9 @@ def main():
         raise SystemExit('Usage: isaac_run_entrypoint.py RUN_CONFIG_JSON SCRIPT [ARGS]')
     config = json.loads(Path(sys.argv[1]).read_text())['effective']
     script = Path(sys.argv[2]).resolve()
+    for key in calibration.ENV_NAMES:
+        os.environ.pop(key, None)
+    os.environ.update(calibration.environment(config.get('camera_mismatch', calibration.configuration({}))))
     for key in ENV_NAMES:
         os.environ.pop(key, None)
     os.environ.update(environment(config['cube_yaw_control']))

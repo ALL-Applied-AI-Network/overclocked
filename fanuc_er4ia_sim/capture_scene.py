@@ -108,8 +108,8 @@ cam_json = {
     "table_top_z": float(C.TABLE_TOP_Z + C.SURFACE_DZ),
     "robot_base_xy": [0.0, 0.0],
 }
-with open(os.path.join(args.out, "camera.json"), "w") as f:
-    json.dump(cam_json, f, indent=2)
+from calibration_mismatch import write_calibrations
+write_calibrations(args.out, cam_json)
 
 # ---- ground truth, for scoring the VLM later
 from isaacsim.core.prims import SingleXFormPrim

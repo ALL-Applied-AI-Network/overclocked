@@ -8,6 +8,9 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parent
 CODE = (
+    "calibration_mismatch.py",
+    "test_calibration_mismatch.py",
+    "CAMERA_MISMATCH.md",
     "yaw_config.py",
     "isaac_run_entrypoint.py",
     "test_yaw_config.py",

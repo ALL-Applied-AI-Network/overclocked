@@ -10,8 +10,17 @@ YAW_MODE=original
 YAW_DEG=
 YAW_MAX=
 YAW_SEED=
+CAMERA_TRANSLATION=0
+CAMERA_ROTATION=0
 while (($#)); do
     case "$1" in
+        --camera-translation-mm|--camera-rotation-deg)
+            [[ $# -ge 2 ]] || { echo "Missing value for $1" >&2; exit 2; }
+            case "$1" in
+                --camera-translation-mm) CAMERA_TRANSLATION=$2;;
+                --camera-rotation-deg) CAMERA_ROTATION=$2;;
+            esac
+            shift 2;;
         --seed|--runs)
             [[ $# -ge 2 ]] || { echo "Missing value for $1" >&2; exit 2; }
             case "$1" in --seed) SEED=$2;; --runs) COUNT=$2;; esac
@@ -31,6 +40,7 @@ while (($#)); do
         --help)
             echo 'Usage: bash run_stress_batch.sh [--seed INTEGER --runs COUNT] [--preview] [--yes]'
             echo 'Yaw: --yaw-mode original | --yaw-mode fixed --yaw-deg 30 | --yaw-mode random --yaw-max-deg 45 --yaw-seed 20261009'
+            echo 'Camera: --camera-translation-mm 0|1|2|3 (world +X) OR --camera-rotation-deg 0|0.5 (world +Z, optical-centre pivot)'
             echo 'No arguments: interactive prompts. --preview never launches or creates run folders.'
             exit 0;;
         *) echo "Unknown option: $1" >&2; exit 2;;
@@ -52,8 +62,15 @@ if [[ -z "$COUNT" ]]; then
         read -r -p "Independent yaw seed [${YAW_SEED:-20261009}]: " ANSWER
         YAW_SEED=${ANSWER:-${YAW_SEED:-20261009}}
     fi
+    read -r -p "Assumed camera translation in world +X, mm: 0,1,2,3 [$CAMERA_TRANSLATION]: " ANSWER
+    CAMERA_TRANSLATION=${ANSWER:-$CAMERA_TRANSLATION}
+    read -r -p "Assumed camera rotation about world +Z at optical centre, degrees: 0,0.5 [$CAMERA_ROTATION]: " ANSWER
+    CAMERA_ROTATION=${ANSWER:-$CAMERA_ROTATION}
     read -r -p 'Number of runs: ' COUNT
 fi
+[[ "$CAMERA_TRANSLATION" =~ ^[0123]$ ]] || { echo 'Camera translation must be 0,1,2,3 mm.' >&2; exit 2; }
+[[ "$CAMERA_ROTATION" == 0 || "$CAMERA_ROTATION" == 0.5 ]] || { echo 'Camera rotation must be 0 or 0.5 degrees.' >&2; exit 2; }
+[[ "$CAMERA_TRANSLATION" == 0 || "$CAMERA_ROTATION" == 0 ]] || { echo 'Choose camera translation OR rotation.' >&2; exit 2; }
 [[ "$SEED" =~ ^-?[0-9]+$ ]] || { echo 'Seed must be an integer.' >&2; exit 2; }
 [[ "$COUNT" =~ ^[1-9][0-9]*$ && ${#COUNT} -le 4 ]] || { echo 'Run count must be a whole number from 1 to 9999.' >&2; exit 2; }
 valid_angle() {
@@ -75,7 +92,8 @@ case "$YAW_MODE" in
 esac
 printf '\nDevelopment batch: %s sequential runs; layout seed %s\n' "$COUNT" "$SEED"
 printf 'Yaw mode: %s; fixed degrees: %s; max degrees: %s; independent seed: %s\n' "$YAW_MODE" "${YAW_DEG:-unused}" "${YAW_MAX:-unused}" "${YAW_SEED:-unused}"
-echo 'Original mode preserves [0,26,32,-23,14,-36]. Calibration, physics and all gates unchanged.'
+echo 'Original mode preserves [0,26,32,-23,14,-36]. Physics and all gates unchanged.'
+printf 'Assumed camera error: world +X translation %s mm; world +Z rotation %s degrees at optical centre. Rendered camera unchanged.\n' "$CAMERA_TRANSLATION" "$CAMERA_ROTATION"
 echo 'Fresh capture and folder per attempt. Failures are saved, not retried.'
 echo 'Photos/videos stay on YAAD. Run the Windows upload helper after the batch.'
 if ((PREVIEW)); then echo 'PREVIEW ONLY: no tests, files or simulations started.'; exit 0; fi
@@ -107,7 +125,8 @@ if ((!YES)); then
     read -r -p 'Resources available for this batch? Type yes: ' ANSWER
     [[ "$ANSWER" == yes ]] || exit 0
 fi
-env -u CUBE_YAW_DEG -u CUBE_YAW_MAX_DEG -u CUBE_YAW_SEED CUBE_YAW_MODE=original CUBE_LAYOUT_SEED=20261009 "$HOST_PYTHON" -B -m unittest test_sort_planning test_cube_perception test_cube_pose test_runtime_config test_batch_progress test_yaw_config
+env -u CUBE_YAW_DEG -u CUBE_YAW_MAX_DEG -u CUBE_YAW_SEED CAMERA_TRANSLATION_MM=0 CAMERA_ROTATION_DEG=0 CUBE_YAW_MODE=original CUBE_LAYOUT_SEED=20261009 "$HOST_PYTHON" -B -m unittest test_sort_planning test_cube_perception test_cube_pose test_runtime_config test_batch_progress test_yaw_config test_calibration_mismatch
+export CAMERA_TRANSLATION_MM="$CAMERA_TRANSLATION" CAMERA_ROTATION_DEG="$CAMERA_ROTATION"
 export HOST_PYTHON CUBE_LAYOUT_SEED="$SEED"
 unset CUBE_YAW_DEG CUBE_YAW_MAX_DEG CUBE_YAW_SEED
 export CUBE_YAW_MODE="$YAW_MODE"
@@ -175,6 +194,7 @@ record = {
     'outcome': outcome, 'classification': outcome, 'failure_stage': stage,
     'pipeline_exit_status': status, 'elapsed_seconds': elapsed,
     'cube_layout_seed': config['effective']['cube_layout_seed'] if config else None,
+    'camera_mismatch': config['effective'].get('camera_mismatch') if config else None,
     'cube_yaw_control': config['effective'].get('cube_yaw_control') if config else None,
     'cube_yaws_deg': config['effective'].get('cube_yaws_deg') if config else None,
     'execution_report_present': report is not None,
