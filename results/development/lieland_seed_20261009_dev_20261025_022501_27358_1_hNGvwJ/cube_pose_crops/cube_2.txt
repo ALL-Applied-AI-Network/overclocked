@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "red",
+  "yaw_deg": -23.2238,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small red cube with a clear top face, positioned upright on a flat surface, matching the expected color and pose."
+}
+```
