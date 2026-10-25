@@ -7,12 +7,23 @@ import argparse
 import json
 import os
 from pathlib import Path
+import faulthandler
+
+
+def _startup(message):
+    if __name__ == '__main__':
+        print('[execution startup] ' + message, flush=True)
+
+
+_startup('Importing numerical libraries')
 
 import numpy as np
 import scene_config as C
 import fk
 import ik
+_startup('Importing cube_pose (OpenCV/SciPy)')
 from cube_pose import square_yaw
+_startup('Pre-simulator imports complete')
 
 
 def ease(t):
@@ -179,6 +190,7 @@ def main():
         raise SystemExit(
             f"Output already contains PNGs: {out}. Choose a fresh run directory."
         )
+    _startup('Reading and validating saved plan')
     plan = json.loads((run / "sort_plan.json").read_text())
     validate_plan(plan)
     if not plan["picks"]:
@@ -187,9 +199,13 @@ def main():
         )
     state = json.loads((run / "scene_state.json").read_text())
     # Resolve paths and validate before Kit changes the working directory.
+    _startup('Importing SimulationApp')
     from isaacsim import SimulationApp
 
+    _startup('Constructing SimulationApp')
     app = SimulationApp({"headless": True})
+    faulthandler.cancel_dump_traceback_later()
+    _startup('SimulationApp ready; startup watchdog cancelled')
     try:
         import cv2
         import omni.usd

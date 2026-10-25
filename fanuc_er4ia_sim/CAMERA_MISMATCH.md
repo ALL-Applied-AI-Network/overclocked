@@ -1,7 +1,32 @@
 # Deliberate camera-calibration mismatch
 
-Local implementation candidate, October 24, 2026. YAAD host tests, container
-transport, Cosmos and physics validation are pending. No experiments launched.
+Installed October 24, 2026. Both isolated-candidate and installed host suites
+passed 71 tests. Five configuration-only Isaac container probes passed: nominal,
+1/2/3 mm translation, and 0.5 degree rotation. Probe evidence:
+`/workspace/lieland/camera_bridge_check_eucutk4_`. These checks did not load Cosmos,
+SimulationApp or physics. Physics validation remains pending.
+
+First attempt: `lieland_seed_20261009_dev_20261025_015210_26073_1_eydoGZ`.
+Default layout, original yaw, +1 mm world-X assumed camera translation, unchanged
+physics. Capture and Cosmos perception completed; planning produced six picks
+and skipped one outside-work-surface detection. Execution log stopped after
+the configuration bridge. GPU was idle; the Python process was sleeping in a
+futex wait. A separate bounded import probe passed numpy, fk, ik, cv2,
+scipy.optimize and cube_pose, but did not locate the original wait.
+User interrupted at 2026-10-25 02:14:25 UTC after 1335 seconds (22m15s), exit 130.
+Saved outcome is interrupted, with no execution report and null physics counts.
+Cause remains unresolved: no demonstrated calibration/grasp failure or success.
+Container removal was verified. Code/evidence uploaded at
+`6c79a27feabcfd8094b67a75673a868e69016816`.
+
+Startup diagnostics added afterward: execution prints import, plan-validation,
+and SimulationApp startup milestones. The Isaac bridge arms a diagnostic-only
+120-second repeating Python traceback dump to `execution_startup_traceback.txt`.
+It does not stop/retry execution. The timer is cancelled when SimulationApp
+construction returns, or when the target exits. No controller or gate changes.
+These diagnostics have not yet been exercised in a fresh physics attempt.
+The Windows sync helper now includes true/assumed calibration metadata and
+the exact startup traceback filename, retaining existing size/credential checks.
 
 The rendered camera and its intrinsics remain nominal. Capture writes actual
 USD calibration to `camera_true.json` (evaluation only), and a separate assumed

@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import runpy
 import sys
+import faulthandler
 from yaw_config import ENV_NAMES, environment
 import calibration_mismatch as calibration
 
@@ -11,7 +12,8 @@ import calibration_mismatch as calibration
 def main():
     if len(sys.argv) < 3:
         raise SystemExit('Usage: isaac_run_entrypoint.py RUN_CONFIG_JSON SCRIPT [ARGS]')
-    config = json.loads(Path(sys.argv[1]).read_text())['effective']
+    config_path = Path(sys.argv[1]).resolve()
+    config = json.loads(config_path.read_text())['effective']
     script = Path(sys.argv[2]).resolve()
     for key in calibration.ENV_NAMES:
         os.environ.pop(key, None)
@@ -30,7 +32,17 @@ def main():
     print('[configuration] Simulator layout and all six yaws match run_config.json', flush=True)
     sys.argv = [str(script), *sys.argv[3:]]
     sys.path.insert(0, str(script.parent))
-    runpy.run_path(str(script), run_name='__main__')
+    trace = None
+    if script.name == 'sort_scene.py':
+        trace = (Path(config_path).parent / 'execution_startup_traceback.txt').open('a')
+        faulthandler.dump_traceback_later(120, repeat=True, file=trace)
+        print('[execution startup] Traceback watchdog armed: 120 seconds; diagnostics only', flush=True)
+    try:
+        runpy.run_path(str(script), run_name='__main__')
+    finally:
+        if trace is not None:
+            faulthandler.cancel_dump_traceback_later()
+            trace.close()
 
 
 if __name__ == '__main__':

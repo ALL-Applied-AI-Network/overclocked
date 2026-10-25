@@ -879,6 +879,8 @@
       "abort_reason": null,
       "included_files": [
         "camera.json",
+        "camera_mismatch.json",
+        "camera_true.json",
         "cube_inventory_crops/yellow_candidate1.txt",
         "cube_inventory_crops/yellow_candidate10.txt",
         "cube_inventory_crops/yellow_candidate11.txt",

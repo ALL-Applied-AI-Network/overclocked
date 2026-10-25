@@ -78,6 +78,27 @@ class CalibrationMismatchTests(unittest.TestCase):
                                         cwd=project, env=env, check=True, capture_output=True, text=True)
                 self.assertEqual(json.loads(result.stdout.splitlines()[-1]), [expected,['argument with spaces']])
 
+    def test_execution_watchdog_arms_for_target_and_allows_clean_exit(self):
+        project = Path(__file__).resolve().parent
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            env = dict(os.environ, CUBE_LAYOUT_SEED='20261009', CUBE_YAW_MODE='original',
+                       CAMERA_TRANSLATION_MM='0', CAMERA_ROTATION_DEG='0')
+            for key in ('CUBE_YAW_DEG','CUBE_YAW_MAX_DEG','CUBE_YAW_SEED'):
+                env.pop(key, None)
+            subprocess.run([sys.executable,'-B',str(project/'record_run_config.py'),
+                            '--run',folder], cwd=project, env=env, check=True, capture_output=True)
+            # Synthetic target with the execution filename; never imports Isaac.
+            target = root/'sort_scene.py'
+            target.write_text("print('SYNTHETIC TARGET FINISHED', flush=True)\n")
+            result = subprocess.run([sys.executable,'-B',str(project/'isaac_run_entrypoint.py'),
+                                     str(root/'run_config.json'),str(target)],
+                                    cwd=project, env=env, check=True, capture_output=True, text=True,
+                                    timeout=15)
+            self.assertIn('Traceback watchdog armed', result.stdout)
+            self.assertIn('SYNTHETIC TARGET FINISHED', result.stdout)
+            self.assertEqual((root/'execution_startup_traceback.txt').read_text(), '')
+
 
 if __name__ == '__main__':
     unittest.main()
