@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "red",
+  "yaw_deg": -23.3159,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small red cube with a clear silhouette matching the expected shape, positioned upright on the table with a measured yaw angle consistent with the provided data."
+}
+```

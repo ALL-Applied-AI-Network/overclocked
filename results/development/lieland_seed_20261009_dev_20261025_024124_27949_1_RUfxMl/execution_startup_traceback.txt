@@ -1,0 +1,22 @@
+Timeout (0:02:00)!
+Thread 0x0000ed707593c460 (most recent call first):
+  File "/isaac-sim/exts/isaacsim.simulation_app/isaacsim/simulation_app/simulation_app.py", line 574 in _start_app
+  File "/isaac-sim/exts/isaacsim.simulation_app/isaacsim/simulation_app/simulation_app.py", line 287 in __init__
+  File "/workspace/lieland/fanuc_er4ia_sim/sort_scene.py", line 206 in main
+  File "/workspace/lieland/fanuc_er4ia_sim/sort_scene.py", line 615 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 98 in _run_module_code
+  File "<frozen runpy>", line 287 in run_path
+  File "/workspace/lieland/fanuc_er4ia_sim/isaac_run_entrypoint.py", line 41 in main
+  File "/workspace/lieland/fanuc_er4ia_sim/isaac_run_entrypoint.py", line 49 in <module>
+Timeout (0:02:00)!
+Thread 0x0000ed707593c460 (most recent call first):
+  File "/isaac-sim/exts/isaacsim.simulation_app/isaacsim/simulation_app/simulation_app.py", line 574 in _start_app
+  File "/isaac-sim/exts/isaacsim.simulation_app/isaacsim/simulation_app/simulation_app.py", line 287 in __init__
+  File "/workspace/lieland/fanuc_er4ia_sim/sort_scene.py", line 206 in main
+  File "/workspace/lieland/fanuc_er4ia_sim/sort_scene.py", line 615 in <module>
+  File "<frozen runpy>", line 88 in _run_code
+  File "<frozen runpy>", line 98 in _run_module_code
+  File "<frozen runpy>", line 287 in run_path
+  File "/workspace/lieland/fanuc_er4ia_sim/isaac_run_entrypoint.py", line 41 in main
+  File "/workspace/lieland/fanuc_er4ia_sim/isaac_run_entrypoint.py", line 49 in <module>

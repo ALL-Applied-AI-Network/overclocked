@@ -1,0 +1,9 @@
+{
+  "translation_mm": 0.0,
+  "rotation_deg": 0.0,
+  "translation_axis": "+X",
+  "rotation_axis": "+Z",
+  "frame": "world",
+  "rotation_pivot": "camera optical centre",
+  "relationship": "assumed = true plus specified extrinsic error"
+}

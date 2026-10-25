@@ -1,0 +1,9 @@
+```json
+{
+  "category": "cube",
+  "colour": "blue",
+  "yaw_deg": 13.5,
+  "pose_confidence": 0.97,
+  "reason": "The object is a small blue cube resting upright on a flat surface, matching the expected color and pose measurements."
+}
+```
