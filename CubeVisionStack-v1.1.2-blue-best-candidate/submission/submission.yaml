@@ -1,0 +1,12 @@
+team: Overclocked
+contact: Gourilakshmi Neerajkumar, neerajk2@uwm.edu
+policy: CubeVisionStack-v1.1.2-blue-best-candidate
+model_type: Hybrid
+
+task_id: blue-best-candidate-O
+task: Detect blue 10 mm cubes, select the cube with the most strongly confirmed position, and place it into the fixed bin.
+
+objects: same
+layout: different
+rollouts: 10
+custom_hardware: none
