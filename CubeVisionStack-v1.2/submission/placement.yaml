@@ -1,0 +1,22 @@
+rollouts:
+  - objects:
+      cube: [[295, -55, 0], [380, -62, 0], [425, -63, 0]]
+      bin: [430, 80]
+    prompt: Find all three blue 10 mm cubes and place them into the yellow bin one at a time.
+  - objects:
+      cube: [[290, -165, 0], [365, -105, 0], [440, -45, 0]]
+      bin: [430, 80]
+    prompt: Find all three blue 10 mm cubes and place them into the yellow bin one at a time.
+  - objects:
+      cube: [[300, -40, 0], [380, -120, 0], [445, -175, 0]]
+      bin: [430, 80]
+    prompt: Find all three blue 10 mm cubes and place them into the yellow bin one at a time.
+  - objects:
+      cube: [[285, -130, 0], [360, -45, 0], [440, -130, 0]]
+      bin: [430, 80]
+    prompt: Find all three blue 10 mm cubes and place them into the yellow bin one at a time.
+  - objects:
+      cube: [[300, -170, 0], [375, -80, 0], [445, -35, 0]]
+      bin: [430, 80]
+    prompt: Find all three blue 10 mm cubes and place them into the yellow bin one at a time.
+
