@@ -19,8 +19,8 @@
     },
     {
       "path": "CAMERA_MISMATCH.md",
-      "size_bytes": 5060,
-      "sha256": "18444d6a30ffa2bf8319b9941902fee5d96b3ce6bc674f3379e7e8a60e8b5599"
+      "size_bytes": 8487,
+      "sha256": "00ca91119483281368344217af19902547181b175c82d8d63e4f641e66c06cbf"
     },
     {
       "path": "CUBE_YAW.md",
@@ -164,8 +164,8 @@
     },
     {
       "path": "isaac_run_entrypoint.py",
-      "size_bytes": 2105,
-      "sha256": "ed1df892a885e2f0632eae6b41415cb2688b442cd1f5a8dbb81ee8b67a793fc9"
+      "size_bytes": 2486,
+      "sha256": "e93626cd4e754d816903faaca36097433405c6f744319046799168eccc1a52e5"
     },
     {
       "path": "isaac_seed_entrypoint.py",
@@ -249,8 +249,8 @@
     },
     {
       "path": "test_calibration_mismatch.py",
-      "size_bytes": 5933,
-      "sha256": "deabdecaa84f13291010cd7f85c6a872a6787bb519b0bd21d1531185f53d6a71"
+      "size_bytes": 6170,
+      "sha256": "98f8d2f8e0c6a4af4c39cf2ff384273de45824176c2149fa23236644e1db5b1a"
     },
     {
       "path": "test_cube_perception.py",

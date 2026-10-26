@@ -1,5 +1,60 @@
 # Deliberate camera-calibration mismatch
 
+## Startup investigation update (October 26)
+
+This is an unresolved startup problem, not a demonstrated calibration/grasp
+failure. A nominal current-code run also stalled with camera errors zero.
+`lieland_seed_20261009_dev_20261025_024124_27949_1_RUfxMl` was interrupted
+after 594 seconds, exit 130, six planned picks, no execution report.
+Historical post-yaw source at `674ad6c` then completed a nominal full run:
+`lieland_seed_20261009_dev_20261025_025632_28578_1_GvojBg`, 539 seconds,
+complete, six pickups, six placements, null abort. All 37 recorded top-level
+Python/shell hashes matched that commit. These results were uploaded at
+`db1a8bc2a745478e9df23001eb9701f11f93f710`.
+
+A requested three-attempt current-code nominal batch stopped during its first
+attempt, `lieland_seed_20261009_dev_20261026_170700_29891_1_pHZlWK`.
+It completed capture/perception and planned six picks, then waited in native
+Kit startup (`simulation_app.py:574`, `self.app.startup`). User interrupted
+after 2376 seconds (39m36s), exit 130; no execution report. Attempts two and
+three never started. GPU was idle; process status and loaded libraries were
+saved. No log files were found under `/isaac-sim/kit/logs` in the live container.
+Evidence uploaded at `5e62853b9f74e8526f3ba1d921d791d81fe57e97`.
+
+Isolated startup diagnostics are NOT task/physics attempts. They execute a
+transformed copy of the selected source that exits after SimulationApp startup,
+using a common working directory, inputs and wrapper. A common 120-second
+watchdog ends stalled probes. Under `/workspace/lieland/startup_compare_20261025`:
+
+- `old_ttjdnw9p`, `old_cfpl5jp5`: old source timed out at 121.1s each.
+- `current_rwrmypj4`: current source started in 26.0s; no extra logging.
+- `old_native_3hrlwoz5`: old source with Python flushing plus native log settings
+  started in 26.1s.
+- `current_native_dp77rozh`: current source with the same diagnostic changes
+  started in 26.0s.
+- `current_40xhmf1_`: current source without extra logging timed out at 121.1s.
+- `current_stdout_hcrtidk5`: current source with ONLY Python stdout/stderr
+  line buffering and write-through enabled started in 26.1s.
+
+The earlier successes without flushing mean output flushing is only a candidate
+workaround; root cause and reliability are unproven. Instrumentation/time effects
+remain possible. Plugin-path inspection showed the apparent telemetry copies of
+core Carbonite plugins are the normal Kit symlink targets with identical hashes;
+there was no evidence of a conflicting copy, and no image/library changes were made.
+
+Candidate change: the project Isaac entrypoint configures stdout/stderr with
+`line_buffering=True, write_through=True` before loading its target script.
+No shared wrapper, simulator, calibration math, controller, or gate changes.
+The synthetic-target host test asserts both stream settings before target work.
+Full nominal pipeline validation and subsequent 1 mm physics validation are pending.
+The 72-test installed and explicitly isolated diagnostic suites previously passed;
+an earlier 71-vs-72 isolation issue was traced to compare_inventory's hardcoded
+import-path insertion and corrected in the verification runner.
+
+Windows upload helper accepts exact native-log/process-map/status filenames;
+50 local helper checks passed. Detailed standalone probes remain separate from
+the main project's run folders and are not automatically uploaded by that helper.
+
 Installed October 24, 2026. Both isolated-candidate and installed host suites
 passed 71 tests. Five configuration-only Isaac container probes passed: nominal,
 1/2/3 mm translation, and 0.5 degree rotation. Probe evidence:

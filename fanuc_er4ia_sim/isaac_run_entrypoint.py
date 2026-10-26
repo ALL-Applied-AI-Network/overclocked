@@ -30,6 +30,12 @@ def main():
     if actual_layout != config['layout']:
         raise SystemExit('Recorded and simulator cube layout disagree; target not loaded')
     print('[configuration] Simulator layout and all six yaws match run_config.json', flush=True)
+    # Startup probes passed with Python output flushing enabled and also
+    # stalled without it. Candidate workaround; full-pipeline validation needed.
+    # Configure both streams before Kit can create logging threads.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, 'reconfigure'):
+            stream.reconfigure(line_buffering=True, write_through=True)
     sys.argv = [str(script), *sys.argv[3:]]
     sys.path.insert(0, str(script.parent))
     trace = None

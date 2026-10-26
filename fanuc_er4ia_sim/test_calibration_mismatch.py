@@ -90,7 +90,10 @@ class CalibrationMismatchTests(unittest.TestCase):
                             '--run',folder], cwd=project, env=env, check=True, capture_output=True)
             # Synthetic target with the execution filename; never imports Isaac.
             target = root/'sort_scene.py'
-            target.write_text("print('SYNTHETIC TARGET FINISHED', flush=True)\n")
+            target.write_text("import sys\n"
+                              "assert sys.stdout.line_buffering and sys.stdout.write_through\n"
+                              "assert sys.stderr.line_buffering and sys.stderr.write_through\n"
+                              "print('SYNTHETIC TARGET FINISHED', flush=True)\n")
             result = subprocess.run([sys.executable,'-B',str(project/'isaac_run_entrypoint.py'),
                                      str(root/'run_config.json'),str(target)],
                                     cwd=project, env=env, check=True, capture_output=True, text=True,

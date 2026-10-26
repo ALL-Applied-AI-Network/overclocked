@@ -1107,6 +1107,28 @@
       "note": "Missing reports are unavailable, not zero-error measurements."
     },
     {
+      "run_id": "lieland_seed_20261009_dev_20261026_180059_31019_1_tMuZbO",
+      "original_folder": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261009_dev_20261026_180059_31019_1_tMuZbO",
+      "outcome": "interrupted",
+      "timing": {
+        "Start UTC": "2026-10-26T18:00:59Z",
+        "Finish UTC": "2026-10-26T18:06:03Z",
+        "Elapsed seconds": "304",
+        "Pipeline exit status": "130"
+      },
+      "task_complete": null,
+      "verified_pickups": null,
+      "verified_placements": null,
+      "abort_reason": null,
+      "included_files": [
+        "development_outcome.json",
+        "run_config.json",
+        "timing.txt"
+      ],
+      "execution_report_present": false,
+      "note": "Missing reports are unavailable, not zero-error measurements."
+    },
+    {
       "run_id": "lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
       "original_folder": "/workspace/lieland/fanuc_er4ia_sim/runs/lieland_seed_20261010_dev_20261022_042332_13174_1_RGop4y",
       "outcome": "failed_before_execution",
