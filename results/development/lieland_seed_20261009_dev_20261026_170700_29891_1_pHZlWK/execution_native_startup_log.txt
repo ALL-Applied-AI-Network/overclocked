@@ -1,0 +1,1 @@
+No *.log files found under /isaac-sim/kit/logs while execution was waiting.
