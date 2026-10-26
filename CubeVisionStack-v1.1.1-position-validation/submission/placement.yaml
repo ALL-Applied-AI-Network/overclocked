@@ -1,0 +1,21 @@
+rollouts:
+  - &center
+    objects: {cube: [390, -105, 0], bin: [430, 80]}
+    prompt: Detect one blue 10 mm cube from live table-camera images at varied positions and place it into a fixed bin.
+  - &front_left
+    objects: {cube: [345, -55, 0], bin: [430, 80]}
+    prompt: Detect one blue 10 mm cube from live table-camera images at varied positions and place it into a fixed bin.
+  - &front_right
+    objects: {cube: [435, -55, 0], bin: [430, 80]}
+    prompt: Detect one blue 10 mm cube from live table-camera images at varied positions and place it into a fixed bin.
+  - &back_left
+    objects: {cube: [345, -155, 0], bin: [430, 80]}
+    prompt: Detect one blue 10 mm cube from live table-camera images at varied positions and place it into a fixed bin.
+  - &back_right
+    objects: {cube: [435, -155, 0], bin: [430, 80]}
+    prompt: Detect one blue 10 mm cube from live table-camera images at varied positions and place it into a fixed bin.
+  - *center
+  - *front_left
+  - *front_right
+  - *back_left
+  - *back_right
