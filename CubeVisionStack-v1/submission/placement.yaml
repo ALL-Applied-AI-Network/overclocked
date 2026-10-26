@@ -1,0 +1,6 @@
+rollouts:
+  - objects:
+      cube: [400, -100, 0]
+      bin: [430, 80]
+    prompt: Pick up the blue cube and place it into the yellow bin.
+
