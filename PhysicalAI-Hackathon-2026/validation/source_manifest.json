@@ -1,0 +1,239 @@
+{
+  "source_branch": "Saai",
+  "source_commit": "fc55bfec203ff5147377ea6aa8690f7ce7fd00e7",
+  "reviewed_text_files": [
+    {
+      "path": "PhysicalAI-Hackathon-2026/.gitignore",
+      "git_blob_sha1": "8004617a115c3409ed7011521fa3fee6dbb39fcf",
+      "size": 93
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/LICENSE",
+      "git_blob_sha1": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "size": 11358
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/README.md",
+      "git_blob_sha1": "398fbcc22b9c0a4069a1f875707b10f8dc17b69a",
+      "size": 7233
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/RUN_SLOT.md",
+      "git_blob_sha1": "431afcffa200eb793d217bdf860296574ad3b656",
+      "size": 1874
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/TEAM_HANDOFF.md",
+      "git_blob_sha1": "8890db207f41539dd2561724660d2652908e8230",
+      "size": 6551
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/calibration/FRAMES.md",
+      "git_blob_sha1": "09339a63fb41e0a3cea0b9d3e98b646f726f1651",
+      "size": 2457
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/calibration/__init__.py",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/calibration/cameras.json",
+      "git_blob_sha1": "a5938157fa3e22b9ecd74d987286c58e73a954b1",
+      "size": 4090
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/calibration/geometry.py",
+      "git_blob_sha1": "cef7a3fa6bd12081d4165a99f70d985c3c5bd5f0",
+      "size": 5170
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/cell_client.py",
+      "git_blob_sha1": "49bb7fc3602b9554d944d80ff889f96bdc88b125",
+      "size": 7861
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/compare_detectors.py",
+      "git_blob_sha1": "e17ab32131c9bc6ad3e1ad5e5c5835c25d254dc8",
+      "size": 2123
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/cosmos_client.py",
+      "git_blob_sha1": "d6c258b4c3b7b65dd5cc28679f0ba4db81365b98",
+      "size": 1139
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/cube_vision.py",
+      "git_blob_sha1": "269ba6b85592ae8f26d30ff69206e8938be432b5",
+      "size": 23209
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/depth_sim.py",
+      "git_blob_sha1": "7f02f78b1b994e2035c53eb550b9482966f5930a",
+      "size": 11966
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/detect_client.py",
+      "git_blob_sha1": "762134301d1b26697050fec084fbe84015ff5fff",
+      "size": 1346
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/grasp_offset_table.json",
+      "git_blob_sha1": "6d1f822e495ca15c8a03768fe046951e1f7bf5b1",
+      "size": 62
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/keep_running.sh",
+      "git_blob_sha1": "4cf0418b360d2c21dd6c77ebbde9376f03136938",
+      "size": 430
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/keep_running_cfg.sh",
+      "git_blob_sha1": "bbd104300601d8b084b124fa9ad9893c63b30060",
+      "size": 381
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/logs_summary/trials_27oct.txt",
+      "git_blob_sha1": "4feaa8873c65586b4702dc1b2223a95a5aa396be",
+      "size": 4688
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/manual_offset.txt",
+      "git_blob_sha1": "a999f93897000e4973c3c468a6fcf01b613e3abc",
+      "size": 5
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/mock_cell.py",
+      "git_blob_sha1": "a4de16f10985df2bbfcd880dd952eb538c81379f",
+      "size": 15188
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/mode_A.env",
+      "git_blob_sha1": "109c6a321896168e9730dac15279aaa5d75abd80",
+      "size": 189
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/mode_AB.env",
+      "git_blob_sha1": "f6c078b61f4cfd071c41cb8a0149467ee8ede4f2",
+      "size": 202
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/mode_B.env",
+      "git_blob_sha1": "4456157be8af267b72ecc63173496a79c89d3891",
+      "size": 207
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/mode_Bbat.env",
+      "git_blob_sha1": "51d71665392feaf25e8e6cbbadc0071eb764b36b",
+      "size": 228
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/policy.py",
+      "git_blob_sha1": "eb41d7a7c83c7b9f4071629940c1270b7cb8525d",
+      "size": 41535
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/policy_battery_experiments.py",
+      "git_blob_sha1": "46262a95118d1257abbd6c8ff5c7e6b2225bf70f",
+      "size": 38229
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/pyproject.toml",
+      "git_blob_sha1": "dc28c98a3674c8e4ab75ab679ae2be860a86c8fb",
+      "size": 340
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/run.py",
+      "git_blob_sha1": "b283d6fa20583af8dfff5dc383ae31de050d0a2d",
+      "size": 12526
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/sim/deploy.sh",
+      "git_blob_sha1": "3d43a7e013365c9a963b4b4cfac9d0d06189ca77",
+      "size": 386
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/sim/isaac_cell.py",
+      "git_blob_sha1": "eb95679b8e9bad6d75ccb923ec03d96b7eefbf57",
+      "size": 17297
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/spark/cosmos_server.py",
+      "git_blob_sha1": "357d1458ef5f2998723f4d34272228841d019cec",
+      "size": 3559
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/spark/detect_server.py",
+      "git_blob_sha1": "e242786cd57e303221cc2a86bfa558c1a6124b63",
+      "size": 4374
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/submission/placement.cube.yaml",
+      "git_blob_sha1": "be7f5914968d5ca80d4a45f15ee0dd848d07c0b8",
+      "size": 1451
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/submission/placement.yaml",
+      "git_blob_sha1": "13a93441bab774734e9a8a141237d06f317fdcf3",
+      "size": 1323
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/submission/submission.cube.yaml",
+      "git_blob_sha1": "fec623eb92159da0f05afc30a9f1febdff9e2fb7",
+      "size": 1568
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/submission/submission.yaml",
+      "git_blob_sha1": "f142a59bf1237d7343485d4ca3d2ec2d0d8e85a5",
+      "size": 1567
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/switch_mode.sh",
+      "git_blob_sha1": "34623dffbe4c1900d570e526d278beb02651c01b",
+      "size": 964
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/test_vision.py",
+      "git_blob_sha1": "5fe01ede64d9ab43bd81d9d9861a380c52fc382c",
+      "size": 5302
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/use_request.sh",
+      "git_blob_sha1": "901a1e895238bff5fc0892efe43274a3e0ee6307",
+      "size": 434
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/uv.lock",
+      "git_blob_sha1": "a0ac7233cf54dc0f2ba9fcc301e8631da71f0fe5",
+      "size": 139889
+    }
+  ],
+  "frames": [
+    {
+      "path": "PhysicalAI-Hackathon-2026/debug_samples/20261027-152847_r2_look0_raw.png",
+      "git_blob_sha1": "b87abb64a4f938fd9ac68ff224e0fd64a3c30294",
+      "size": 2701081,
+      "pixels_reviewed": false
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/debug_samples/20261027-153110_r2_look0_raw.png",
+      "git_blob_sha1": "d2d37fcd10fcee7d974dd4c17dbcdaf977ebc7fc",
+      "size": 2722766,
+      "pixels_reviewed": false
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/debug_samples/20261027-153133_r2_peek0_wrist.png",
+      "git_blob_sha1": "70737c36b5f390ae696c38d6fc74be5b9f571492",
+      "size": 383686,
+      "pixels_reviewed": true
+    },
+    {
+      "path": "PhysicalAI-Hackathon-2026/debug_samples/20261027-153205_r2_look1_raw.png",
+      "git_blob_sha1": "6191eb627d9c775d0cfe5dcda78970b16a0c57e6",
+      "size": 2731288,
+      "pixels_reviewed": false
+    }
+  ],
+  "new_real_trials_started": 0,
+  "python_checks_executed": false
+}
