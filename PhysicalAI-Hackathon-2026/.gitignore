@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.request*.json
+debug/
+testdata/
+logs/
+sim_runs/
+.pytest_cache/
+.DS_Store
