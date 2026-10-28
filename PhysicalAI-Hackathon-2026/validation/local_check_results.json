@@ -1,0 +1,71 @@
+{
+  "validation_date": "2026-10-28",
+  "source_commit": "fc55bfec203ff5147377ea6aa8690f7ce7fd00e7",
+  "policy_modified": false,
+  "original_source_files_hash_verified": 41,
+  "uv_version": "0.13.6",
+  "python_version": "3.12.16",
+  "platform": "Windows x86_64",
+  "packages": {
+    "numpy": "2.5.4",
+    "opencv-python-headless": "5.0.0.93",
+    "PyYAML": "6.0.3",
+    "requests": "2.34.2"
+  },
+  "environment_notes": {
+    "offline": true,
+    "detector_service_reachable": false,
+    "cosmos_service_reachable": false,
+    "python_utf8": "1",
+    "python_io_encoding": "utf-8"
+  },
+  "checks": [
+    {
+      "command": "uv sync",
+      "exit_code": 0,
+      "packages_checked": 8
+    },
+    {
+      "command": "uv run test_vision.py",
+      "exit_code": 0,
+      "synthetic_cubes": 18,
+      "passed": 18,
+      "max_printed_position_error_mm": 0.43,
+      "max_printed_yaw_error_deg": 2.8
+    },
+    {
+      "command": "uv run run.py --mock --trials 1 --trial-s 40",
+      "exit_code": 0,
+      "rollouts": 1,
+      "actions": 357,
+      "rejected": 0,
+      "physical_task_success_measured": false
+    },
+    {
+      "command": "uv run run.py --mock --trials 1 --trial-s 40",
+      "configuration": "Bbat",
+      "environment": {
+        "TRIAL_MODES": "B",
+        "TARGET_OBJECT": "battery",
+        "ADAPTIVE_OFFSET": "1",
+        "GRASP_FRAME": "gripper"
+      },
+      "manual_offset_mm": -5,
+      "exit_code": 0,
+      "rollouts": 1,
+      "actions": 356,
+      "rejected": 0,
+      "physical_task_success_measured": false
+    }
+  ],
+  "initial_user_run": {
+    "vision": "PASS",
+    "mock_actions": 354,
+    "mock_rejected": 0,
+    "mock_exit": "nonzero",
+    "reason": "UnicodeEncodeError printing check-mark under cp1252",
+    "battery_mock_executed": false
+  },
+  "new_real_trials_started": 0,
+  "private_log_directory": "logs/validation-local-20261028-132904/"
+}

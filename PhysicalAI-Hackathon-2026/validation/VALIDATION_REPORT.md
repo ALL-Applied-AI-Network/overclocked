@@ -1,6 +1,6 @@
 # Battery validation — 28 October 2026
 
-Status: **baseline prepared; local Python checks and new real trials blocked. No repeatability claim.**
+Status: **local setup and compatibility checks passed; new real trials still blocked. No physical repeatability claim.**
 
 Source: Saai commit `fc55bfec203ff5147377ea6aa8690f7ce7fd00e7`.
 Working branch: `lieland/battery-validation`. Policy, calibration, modes, offsets and submissions are unchanged.
@@ -43,18 +43,24 @@ The wrist frame was visually inspected: a battery is partly cut off by the botto
 
 ## Local reproduction
 
-41 text files were copied to an isolated local snapshot and verified against their Git blob SHA-1 values.
-The requested commands were each attempted in the project directory:
+41 original text files were copied to an isolated local snapshot and verified against their Git blob SHA-1 values again after the checks. Policy, calibration, mode files, offsets and uv.lock remain byte-for-byte unchanged.
 
-| Command | Result |
+Installed locally: uv 0.13.6; CPython 3.12.16; numpy 2.5.4; opencv-python-headless 5.0.0.93; PyYAML 6.0.3; requests 2.34.2. The user ran the official installer/setup helper because downloads from the agent shell were blocked. Dependencies are now installed and cached. Subsequent checks below ran with UV_OFFLINE=true.
+
+| Command | Verified result |
 |---|---|
-| `uv sync` | blocked before execution: uv is not installed/on PATH |
-| `uv run test_vision.py` | blocked before execution: uv is not installed/on PATH |
-| `uv run run.py --mock --trials 1 --trial-s 40` | blocked before execution: uv is not installed/on PATH |
+| `uv sync` | PASS, exit 0; 8 installed packages checked |
+| `uv run test_vision.py` | PASS, exit 0; 18/18 synthetic cube detections, maximum printed position error 0.43 mm and yaw error 2.8 degrees |
+| `uv run run.py --mock --trials 1 --trial-s 40` | PASS, exit 0; 1 rollout, 357 actions, zero rejected |
+| Same mock with Bbat environment | PASS, exit 0; 1 rollout, 356 actions, zero rejected |
 
-Python was also absent from PATH. Downloading the official uv installer failed because the shell could not connect to the server. Git shell fetch likewise could not connect; branch creation and commits use the authenticated GitHub connector. No package installation, Python test pass, mock pass, model inference or real-robot execution is claimed. Use [local_checks.ps1](local_checks.ps1) or [local_checks.sh](local_checks.sh) on an internet-connected development laptop. They only run local checks; they do not start the real client.
+Both mocks ended with “Ready for the real robot.” This is the client's format/API verdict, **not physical readiness certification or battery success**. Their synthetic scenes did not contain a detected bin or pickable target; the policy held after moving to the look pose. Neither grasp nor release was tested. Detector/Cosmos services were unreachable; fallback ran.
 
-The default vision test uses synthetic cube frames, not batteries. A passing mock checks action/API compatibility, not grasp physics or task success.
+An initial user-run mock sent 354 actions with zero rejections, then failed in `run.py:98` while printing the check-mark under Windows cp1252. This was a genuine nonzero process exit, not a policy rejection. The Windows validation launcher now sets PYTHONUTF8=1 and PYTHONIOENCODING=utf-8 for its child processes and restores prior settings afterward. Separate stdout/stderr files prevent PowerShell 5.1 from presenting ordinary native stderr as a misleading RemoteException. No policy or client implementation was changed.
+
+The launcher was exercised end to end after the fix. [local_check_results.json](local_check_results.json) contains sanitized outcomes. Private stdout/stderr, combined logs and summary remain in ignored `logs/validation-local-20261028-132904/`. No raw private logs are committed.
+
+The default vision test uses synthetic cube frames, not batteries. Use [local_checks.ps1](local_checks.ps1) with `-BatteryMock` or [local_checks.sh](local_checks.sh) with `--battery-mock` to reproduce checks. These helpers do not start the real client.
 
 ## Provisional recommendation and next work
 
@@ -64,11 +70,10 @@ Follow [TRIAL_PROTOCOL.md](TRIAL_PROTOCOL.md). The next highest-priority validat
 
 ## Exact blockers
 
-1. Internet-connected Python/uv runtime to execute the local checks and return their summaries.
-2. Authenticated access/local copies for the three large table frames.
-3. The active approved request/run and remaining rollout budget, confirmed by the operator; the handoff's “3 of 10 used” is stale relative to later t03 log entries.
-4. The private request file available **locally on the one designated client laptop**. Do not paste keys, tokens or result links into chat or Git.
-5. Confirmed CSI operator/slot, no competing client, unchanged gripper/tool/camera setup, and the operator's measured baseline battery/bin placement.
-6. Official scores plus private recorded video/dataset to confirm delivery and reconcile repeated IDs.
+1. Authenticated access/local copies for the three large table frames.
+2. The active approved request/run and remaining rollout budget, confirmed by the operator; the handoff's “3 of 10 used” is stale relative to later t03 log entries.
+3. The private request file available **locally on the one designated client laptop**. Do not paste keys, tokens or result links into chat or Git.
+4. Confirmed CSI operator/slot, no competing client, unchanged gripper/tool/camera setup, and the operator's measured baseline battery/bin placement.
+5. Official scores plus private recorded video/dataset to confirm delivery and reconcile repeated IDs.
 
 No booking, new submission, client restart or real trial was performed. Public-safe report entries use IDs and relative filenames only; raw client/status logs and request files remain private.

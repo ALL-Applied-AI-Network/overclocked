@@ -235,5 +235,6 @@
     }
   ],
   "new_real_trials_started": 0,
-  "python_checks_executed": false
+  "python_checks_executed": true,
+  "local_check_results": "local_check_results.json"
 }
