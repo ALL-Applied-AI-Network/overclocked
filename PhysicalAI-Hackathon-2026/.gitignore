@@ -25,6 +25,23 @@ video/final/hf/snaps/
 video/final/hf/.thumbnails/
 verifier_data/2026*
 verifier_data/mined/
+# Generated datasets, evaluation exports, private run metadata, and model artifacts
+verifier_data/
+recorded_runs/
+results/
+debug_samples/
+logs_summary/
+run_metadata*.json
+video_metadata*.json
+result*.json
+*.npz
+*.npy
+*.onnx
+*.engine
+*.pt
+*.pth
+*.ckpt
+*.safetensors
 # Local secrets written by `elevenlabs onboard`
 /.env
 *.mp3

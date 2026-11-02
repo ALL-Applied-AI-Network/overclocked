@@ -85,7 +85,7 @@ uv run run.py --submit
 ```
 
 Then pick a 30-minute slot in the **Calendar** tab of [hackathon.sidclab.org](https://hackathon.sidclab.org/#calendar)
-with the request id it prints, such as `q3ac71f`; we approve your request for that slot. We keep adding
+with the request id it prints, such as `<request-id>`; we approve your request for that slot. We keep adding
 available slots.
 In `placement.yaml`, list where each object goes and optionally a `prompt`, the instruction your policy gets in
 `obs["trial"]["instruction"]`: one entry for a scene that stays the same, or one entry per rollout if objects or layout

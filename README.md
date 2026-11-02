@@ -1,57 +1,54 @@
-# Rockwell Automation + NVIDIA Innovation Lab · Fall 2026
+# Team Overclocked - adaptive robot picking on the FANUC ER-4iA
 
-This is your team's repository for the four-week physical AI hackathon run by Rockwell Automation, NVIDIA, the MSOE AI Club and UWM's Connected Systems Institute. Build everything here. Sponsors can follow your work as it progresses, and your final submission links straight to this repository.
+Team Overclocked built a perception-driven pick-and-place system for the Rockwell Automation + NVIDIA Physical AI Hackathon. The system finds loose parts and the destination bin from camera observations, commands the FANUC ER-4iA, checks whether a grasp succeeded, and re-observes the workcell when recovery is needed.
 
-**Full event guide** (datasets, compute, rules, judging, prizes): <https://msoe-maic.com/library/?article=Rockwell-NVIDIA-Fall-2026>
-**Your team workspace** (team, repository access, submissions): <https://dashboard.all-ai-network.org/j/L36HEH>
-**Questions:** [join the hackathon Slack](https://join.slack.com/t/rockwellnvidi-wq82211/shared_invite/zt-4bp05nsn9-UW3afFtM9wjzWtZiQoJBHg) and ask in the channel that matches your question. The event guide's "Getting help" section says who to ping for what.
+## Manufacturing problem
 
-## Key dates
+Fixed taught positions become stale when a part, fixture, camera, or gripper moves. That creates missed picks, collisions, scrap, rework, downtime, and repeated manual re-teaching. Our project replaces a single fixed pick coordinate with a closed perception-decision-action loop and explicitly measures where that approach still fails.
 
-| When | What |
-|---|---|
-| Thu Oct 8, 4:00–6:00 PM | Kickoff at Rockwell Automation HQ, 1201 S 2nd St, Milwaukee |
-| **Wed Oct 14, 11:59 PM CT** | **Team plan due:** [submit it here](https://dashboard.all-ai-network.org/s/V28NHK) |
-| **Sun Nov 1, 11:59 PM CT** | **Final submission due:** [submit it here](https://dashboard.all-ai-network.org/s/V28NHK) |
-| Thu Nov 5, 5:00–8:00 PM | Finals at MSOE Diercks Hall: live presentations and prizes |
+## Approach
 
-## First week
+- Table-camera colour and silhouette perception provides a dependable cube baseline.
+- OWLv2 on an NVIDIA DGX Spark provides open-vocabulary detections when available.
+- Wrist RGB/depth observations re-centre the gripper near the target.
+- A C-RADIOv2-B feature backbone plus a small learned head checks held versus empty grasps.
+- Recovery logic skips unsafe carries, re-observes the table, and retries moved or dropped parts.
+- Calibration tools record and fit camera-to-gripper offsets instead of hiding day-to-day drift.
 
-- [ ] Everyone on the team has an ALL AI Network account and has joined this team in the [workspace](https://dashboard.all-ai-network.org/j/L36HEH).
-- [ ] Everyone has connected GitHub and accepted the repository invitation (check your GitHub email, or open the workspace and press the check button).
-- [ ] Pick your dataset. We recommend one strong solution around a single dataset.
-- [ ] Download the data and make sure everyone who needs it can open it.
-- [ ] Read the compute guide and decide what you'll need.
-- [ ] Join Slack, open `#hackathon-announcements`, and find your dataset's channel.
-- [ ] Submit the [team plan](https://dashboard.all-ai-network.org/s/V28NHK) by Wednesday, October 14. It's a short resource request, not a graded paper, and any teammate can update it before the deadline.
+The implementation is in [`PhysicalAI-Hackathon-2026/`](PhysicalAI-Hackathon-2026/). The one-page evidence summary is [`EXEC_SUMMARY.md`](PhysicalAI-Hackathon-2026/EXEC_SUMMARY.md).
 
-## The three datasets
+## Measured results
 
-1. **[Final Vial Inspection](https://msoe-maic.com/library?article=Rockwell-NVIDIA-Fall-2026-Vial-Inspection):** find missing caps, crooked caps, damaged vials and unexpected empty positions after the robot fills a fixture.
-2. **[Fluid Mixing Station 3](https://msoe-maic.com/library?article=Rockwell-NVIDIA-Fall-2026-Fluid-Mixing):** use synchronized camera views to detect fill and color problems caused by recipes and fluid carryover.
-3. **[Grasping and Sorting](https://msoe-maic.com/library?article=Rockwell-NVIDIA-Fall-2026-Grasping-Sorting):** use a digital twin and multiple cameras to make a standalone FANUC arm grasp and sort objects more reliably.
+| Measure | Result | Baseline or limitation |
+|---|---:|---|
+| Cube placement after recalibration | 12/12 across three clean real-cell runs | Stale calibration: 0/3 attempts and three controller faults |
+| Held-out grasp check | AUC 0.958; 50/56 held grasps retained; 3/51 empty grasps passed | A staged empty grasp still produced a false pass |
+| TensorRT FP16 grasp-check latency | 1.39 ms | Side-camera crop drift reduced fresh-run reliability until realigned |
+| Recovery demonstrations | Dropped or manually moved cube was re-detected, re-picked, and placed | Cubes worked; batteries were intermittent and several other parts did not fit the jaws |
 
-## Read before your team plan
+These are small-sample results from one operator-watched cell. Private run, request, and video identifiers are not stored in Git; the submission video and authorized CSI result views provide the supporting visual record.
 
-- **[Compute: Brev, DGX Spark and build.nvidia.com](https://msoe-maic.com/library?article=Rockwell-NVIDIA-Fall-2026-Compute).** Brev credits are spent whenever an instance is running, so stop instances you aren't using.
-- **[Collect and test your own data](https://msoe-maic.com/library?article=Rockwell-NVIDIA-Fall-2026-Data-Collection):** visits, extra data, digital twins, and booking a supervised test on the real equipment.
-- **[Tools and resources](https://msoe-maic.com/library?article=Rockwell-NVIDIA-Fall-2026-Resources):** AI coding tools, vision-language models, NVIDIA Cosmos and more. Start with a simple baseline.
+## Run locally
 
-## Final submission (Sun Nov 1)
-
-- A video of about five minutes
-- A one-page project summary
-- A link to this repository
-- References and credits for data, models, code and tools
-
-## Working in this repository
+Install [uv](https://docs.astral.sh/uv/), then:
 
 ```bash
-git clone <this repository's URL from the green "Code" button>
+cd PhysicalAI-Hackathon-2026
+uv sync
+uv run test_vision.py
+uv run run.py --mock
 ```
 
-- Commit early and push often. Mentors and judges see what's here.
-- **Don't commit large datasets or model weights.** Keep them out with `.gitignore` and note in this README where to download them.
-- Before the finals, replace this README with your project: the problem, your approach, results, how to run it, and credits.
+Real-cell submission and execution require CSI authorization and the private request file generated by the platform. See the project directory for the client workflow and mode configurations.
 
-**Can't push or see this repository?** Open the [team workspace](https://dashboard.all-ai-network.org/j/L36HEH) and press the GitHub check button. If it still doesn't work, ping Brett Storoe in `#hackathon-general` on Slack.
+## Data and model artifacts
+
+Large datasets, videos, result exports, private run metadata, and trained model artifacts are intentionally excluded by `.gitignore`.
+
+- Authorized team members can retrieve recorded CSI runs with `uv run run.py --download` after selecting their private request file.
+- Public backbone weights are downloaded at runtime by Hugging Face for `nvidia/C-RADIOv2-B`, `google/owlv2-base-patch16-ensemble`, and the optional comparison models referenced in the verifier scripts.
+- The small trained grasp head (`head_cradio.npz`) must be regenerated from authorized verifier data with `spark/verifier/train_head.py`; it is not committed.
+
+## Credits
+
+Built by Team Overclocked; individual contributions are preserved in the Git history and team branches. The hardware and evaluation platform were provided by UW-Milwaukee Connected Systems Institute and SIDC Lab with Rockwell Automation, NVIDIA, MSOE AI Club, and the ALL AI Network. This repository retains the organizers' Apache-2.0 client license and credits the upstream models in code.

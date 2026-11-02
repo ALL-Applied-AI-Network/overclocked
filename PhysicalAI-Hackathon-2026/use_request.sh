@@ -1,5 +1,5 @@
 #!/bin/sh
-# Point the client at one of the saved requests before its slot:  ./use_request.sh qd44e20
+# Point the client at one of the saved requests before its slot:  ./use_request.sh <request-id>
 # Each request's key file is kept as .request.<id>.json (private, like .request.json).
 set -e
 cd "$(dirname "$0")"
