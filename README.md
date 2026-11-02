@@ -54,4 +54,10 @@ git clone <this repository's URL from the green "Code" button>
 - **Don't commit large datasets or model weights.** Keep them out with `.gitignore` and note in this README where to download them.
 - Before the finals, replace this README with your project: the problem, your approach, results, how to run it, and credits.
 
+## CubeVisionStack policy history
+
+The versioned robot policies, their physical/mock results, and the reason for each follow-up are documented in
+[VERSION_HISTORY.md](VERSION_HISTORY.md). Each version was added in its own commit so teammates can review or
+cherry-pick the progression independently.
+
 **Can't push or see this repository?** Open the [team workspace](https://dashboard.all-ai-network.org/j/L36HEH) and press the GitHub check button. If it still doesn't work, ping Brett Storoe in `#hackathon-general` on Slack.

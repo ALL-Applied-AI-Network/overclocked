@@ -1,0 +1,12 @@
+team: Overclocked
+contact: Gourilakshmi Neerajkumar, neerajk2@uwm.edu
+policy: CubeVisionStack-v1.1.1-position-validation
+model_type: Hybrid
+
+task_id: single-blue-cube-position-validation-O
+task: Detect one blue 10 mm cube from live table-camera images at varied positions and place it into a fixed bin.
+
+objects: same
+layout: different
+rollouts: 10
+custom_hardware: none

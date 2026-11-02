@@ -1,0 +1,13 @@
+team: Overclocked
+contact: Gourilakshmi Neerajkumar, neerajk2@uwm.edu
+policy: FirstPhysicalPickV1
+model_type: Hybrid
+
+task_id: first-blue-cube-O
+task: Pick up one blue 10 mm cube and place it into the yellow bin.
+
+objects: same
+layout: same
+rollouts: 5
+custom_hardware: none
+

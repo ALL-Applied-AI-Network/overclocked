@@ -1,0 +1,21 @@
+rollouts:
+  - &layout1
+    objects: {cube: [[390, -105, 0], [345, -55, 0], [435, -155, 0]], bin: [430, 80]}
+    prompt: Detect the blue 10 mm cubes, pick the one whose position is most strongly confirmed, and place it into the yellow bin.
+  - &layout2
+    objects: {cube: [[390, -105, 0], [435, -55, 0], [345, -155, 0]], bin: [430, 80]}
+    prompt: Detect the blue 10 mm cubes, pick the one whose position is most strongly confirmed, and place it into the yellow bin.
+  - &layout3
+    objects: {cube: [[345, -55, 0], [435, -55, 0], [390, -105, 0]], bin: [430, 80]}
+    prompt: Detect the blue 10 mm cubes, pick the one whose position is most strongly confirmed, and place it into the yellow bin.
+  - &layout4
+    objects: {cube: [[345, -155, 0], [435, -155, 0], [390, -105, 0]], bin: [430, 80]}
+    prompt: Detect the blue 10 mm cubes, pick the one whose position is most strongly confirmed, and place it into the yellow bin.
+  - &layout5
+    objects: {cube: [[345, -55, 0], [435, -55, 0], [345, -155, 0]], bin: [430, 80]}
+    prompt: Detect the blue 10 mm cubes, pick the one whose position is most strongly confirmed, and place it into the yellow bin.
+  - *layout1
+  - *layout2
+  - *layout3
+  - *layout4
+  - *layout5

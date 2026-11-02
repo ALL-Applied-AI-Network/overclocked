@@ -1,0 +1,13 @@
+team: Overclocked
+contact: Gourilakshmi Neerajkumar, neerajk2@uwm.edu
+policy: CubeVisionStack-v1.1
+model_type: Hybrid
+
+task_id: three-blue-cubes-O
+task: Pick up three blue 10 mm cubes one at a time and place all three into the yellow bin.
+
+objects: same
+layout: different
+rollouts: 5
+custom_hardware: none
+
