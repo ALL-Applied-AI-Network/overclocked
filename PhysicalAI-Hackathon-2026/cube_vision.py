@@ -15,7 +15,7 @@ from __future__ import annotations
 import cv2
 import numpy as np
 
-from calibration.geometry import SURFACE_Z, flange_pose, load, pixel_to_base, project
+from calibration.geometry import SURFACE_Z, depth_to_base, flange_pose, load, pixel_to_base, project
 
 # Hue (OpenCV 0-179), minimum saturation and value. Starting points from the v0.5 twin; retune on real frames.
 COLOUR_GATES = {
@@ -34,7 +34,7 @@ ELONGATED_ASPECT = 1.6   # long/short side from which an object has one right wa
 MAX_GRASP_SHORT_MM = 26.0  # a measured short side wider than this will not fit the ~12 mm jaws. 27 real cubes measured 12-19.7 mm
 # (median 15.8) with object_mask at dist 30. Lying AA batteries (14.5 mm) measured 20-24 mm in table_blobs and the fingers went
 # below the top of one without a fault (27 Oct), so the limit is 26, not the 22 that would have refused half of them
-MIN_IOU = {"yellow": 0.75, "blue": 0.40, "red": 0.40}
+MIN_IOU = {"yellow": 0.62, "blue": 0.40, "red": 0.40}  # yellow was 0.75: a plain yellow cube scores 0.67-0.74 and was never picked (30 Oct)
 BIN_MID_M = 0.025  # half the bin's wall height: where the yellow blob's centroid is
 CUBE_EDGE_M = 0.010
 REACH_MM = 540.0  # stay inside the ~550 mm reach the cell enforces
@@ -177,6 +177,9 @@ def detect_cubes(rgb: np.ndarray, colours=("yellow", "blue", "red"), cams: dict 
     return sorted(found, key=lambda c: -c["iou"])
 
 
+LAST_BIN_YAW = [0.0]  # the last detected bin's angle in UF0 (deg, mod 90), set by detect_bin
+
+
 def detect_bin(rgb: np.ndarray, cams: dict | None = None) -> tuple[float, float] | None:
     """The yellow bin's (x, y) mm on the table in a table-camera RGB image, or None.
 
@@ -197,7 +200,7 @@ def detect_bin(rgb: np.ndarray, cams: dict | None = None) -> tuple[float, float]
         if not (3500 <= area_full <= 12000):
             continue
         pts = cv2.findNonZero((labels[y0:y0 + h, x0:x0 + w] == i).astype(np.uint8)) + np.array([x0, y0])
-        (_, _), (rw, rh), _ = cv2.minAreaRect(pts)  # the rotated box: fill does not depend on how the bin is turned
+        (_, _), (rw, rh), rect_ang = cv2.minAreaRect(pts)  # the rotated box: fill does not depend on how the bin is turned
         if rw < 1 or rh < 1 or area / (rw * rh) < 0.6 or not 0.7 <= rw / rh <= 1.4:
             continue
         xy = pixel_to_base(cam, tuple(cents[i] * scale), z=SURFACE_Z + BIN_MID_M)[:2] * 1000  # the blob's centroid is mid-wall
@@ -205,6 +208,11 @@ def detect_bin(rgb: np.ndarray, cams: dict | None = None) -> tuple[float, float]
                 and np.hypot(*xy) <= REACH_MM + 10.0):  # the drop point may sit at the cell's ~550 mm limit
             continue
         if best is None or area > best[0]:
+            t = np.radians(rect_ang)
+            c = cents[i] * scale
+            a2 = pixel_to_base(cam, tuple(c), z=SURFACE_Z + BIN_MID_M)[:2]
+            p2 = pixel_to_base(cam, tuple(c + 20 * np.array([np.cos(t), np.sin(t)])), z=SURFACE_Z + BIN_MID_M)[:2]
+            LAST_BIN_YAW[0] = float((np.degrees(np.arctan2(p2[1] - a2[1], p2[0] - a2[0])) + 45.0) % 90.0 - 45.0)  # the bin's own angle, mod 90
             best = (area, (float(xy[0]), float(xy[1])))
     return best[1] if best else None
 
@@ -224,7 +232,8 @@ def object_mask(rgb: np.ndarray, box, ring: int = 14, dist: float = 30.0) -> np.
     return (d > dist).astype(np.uint8)
 
 
-def table_blobs(rgb: np.ndarray, cams: dict | None = None, dist: float = 24.0, height_mm: float = 8.0) -> list[dict]:
+def table_blobs(rgb: np.ndarray, cams: dict | None = None, dist: float = 24.0, height_mm: float = 8.0,
+                max_short: float = 30.0, max_long: float = 70.0) -> list[dict]:
     """Everything on the table that is not the table, whatever it is: blobs whose Lab colour differs from the local table
     colour (a big median blur at quarter resolution, so uneven light does not matter). Each is returned like
     objects_from_detections' targets, with colour "any" and a score of 0; only blobs a gripper could plausibly hold
@@ -255,13 +264,17 @@ def table_blobs(rgb: np.ndarray, cams: dict | None = None, dist: float = 24.0, h
         if rw < rh:
             ang, rw, rh = ang + 90.0, rh, rw
         long_mm, short_mm = float(rw * mm_px * scale), float(rh * mm_px * scale)
-        if not (4 <= short_mm <= 30 and long_mm <= 70):  # only the short side has to fit the jaws; the bin is dropped by position
+        if not (4 <= short_mm <= max_short and long_mm <= max_long):  # only the short side has to fit the jaws; the bin is dropped by position
             continue
         xy = a
         if not (TCP_BOX_XY[0][0] <= xy[0] <= TCP_BOX_XY[0][1] and TCP_BOX_XY[1][0] <= xy[1] <= TCP_BOX_XY[1][1]
                 and np.hypot(*xy) <= REACH_MM):
             continue
         t = np.radians(ang)
+        u_im = np.array([np.cos(t), np.sin(t)])
+        rel = pts - np.array(cents[i] - [x0, y0], np.float32)
+        along, across = rel @ u_im, rel @ np.array([-u_im[1], u_im[0]])
+        wide = [float(np.ptp(across[m])) if m.sum() > 5 else 0.0 for m in (along > 0, along <= 0)]  # the head end is the wider half
         p1 = pixel_to_base(cam, tuple(c + 20 * np.array([np.cos(t), np.sin(t)])), z=z)[:2] * 1000
         axis = (np.degrees(np.arctan2(p1[1] - a[1], p1[0] - a[0])) + 90.0) % 180.0 - 90.0
         elongated = long_mm / max(short_mm, 1e-6) >= ELONGATED_ASPECT
@@ -269,7 +282,7 @@ def table_blobs(rgb: np.ndarray, cams: dict | None = None, dist: float = 24.0, h
         out.append({"colour": "any", "label": "table blob", "contrast": contrast, "xy_mm": (float(xy[0]), float(xy[1])),
                     "yaw_deg": float(axis if elongated else square_yaw(axis)), "iou": 0.0, "px": (float(c[0]), float(c[1])),
                     "size_mm": (long_mm, short_mm), "long_mm": long_mm, "short_mm": short_mm, "elongated": bool(elongated),
-                    "area_px": int(area)})
+                    "area_px": int(area), "head_sign": (1.0 if wide[0] >= wide[1] else -1.0), "head_dir": ((p1 - a) / max(np.hypot(*(p1 - a)), 1e-6)).tolist()})
     return out
 
 
@@ -361,6 +374,99 @@ def draw(rgb: np.ndarray, cubes: list[dict], cams: dict | None = None, edge: flo
 # against 3.7 mm), and the gap turns with the wrist angle. wrist_locate subtracts it, turned by the wrist angle R = J1 + J6. Off unless set.
 _ws = [float(v) for v in __import__("os").environ.get("WRIST_SHIFT", "").replace(",", " ").split()]
 WRIST_SHIFT = tuple(_ws[:2]) if len(_ws) >= 2 else None
+
+
+
+def wrist_locate_depth(depth, joints, guess_xy_mm, cams: dict | None = None, min_h: float = 6.0, max_h: float = 45.0,
+                       radius: float = 40.0) -> dict | None:
+    """Whatever stands on the table under the wrist camera, from the wrist depth stream: the raised blob nearest the guess.
+    Unlike the colour view it ignores shadows and sees a shiny battery. depth: obs["depth"]["wrist"] (848x480 uint16 mm),
+    joints: obs["joints"] from the same observation. Returns x, y (mm, UF0) of the blob's centre, its long axis (deg, UF0),
+    its long/short sizes (mm) and height (mm above the table around it); None if nothing raised is near the guess."""
+    cams = cams or load()
+    dep = cv2.medianBlur(np.asarray(depth, np.uint16), 5)
+    pts = depth_to_base(cams["wrist_depth"], dep, stride=1, joints=joints) * 1000.0
+    g = np.asarray(guess_xy_mm, float)
+    near = pts[np.hypot(pts[:, 0] - g[0], pts[:, 1] - g[1]) < radius + 25.0]
+    if len(near) < 500:
+        return None
+    surf = float(np.median(near[:, 2]))  # most of what is near the guess is table
+    h = near[:, 2] - surf
+    top = near[(h > min_h) & (h < max_h)]
+    if len(top) < 40:
+        return None
+    x0, y0 = g - radius
+    n = int(2 * radius) + 1
+    ij = np.floor(top[:, :2] - [x0, y0]).astype(int)
+    ok = (ij >= 0).all(1) & (ij < n).all(1)
+    ras = np.zeros((n, n), np.uint8)
+    ras[ij[ok, 1], ij[ok, 0]] = 1
+    ras = cv2.morphologyEx(ras, cv2.MORPH_OPEN, np.ones((3, 3), np.uint8))
+    ras = cv2.morphologyEx(ras, cv2.MORPH_CLOSE, np.ones((3, 3), np.uint8))
+    k, lab, st, ce = cv2.connectedComponentsWithStats(ras, connectivity=8)
+    best = None
+    for i in range(1, k):
+        if st[i, 4] < 60:  # a few mm^2 of depth noise
+            continue
+        c = np.array(ce[i]) + [x0, y0] + 0.5
+        d = float(np.hypot(*(c - g)))
+        if best is None or d < best[0]:
+            best = (d, i)
+    if best is None:
+        return None
+    i = best[1]
+    sel = (np.column_stack(np.nonzero(lab == i))[:, ::-1] + [x0, y0] + 0.5).astype(np.float32)
+    (cx, cy), (bw, bh), ang = cv2.minAreaRect(sel)
+    if bw < bh:
+        ang, bw, bh = ang + 90.0, bh, bw
+    hz = h[(h > min_h) & (h < max_h)]
+    return {"xy_mm": (float(cx), float(cy)), "axis_deg": float((ang + 90.0) % 180.0 - 90.0), "long_mm": float(bw), "short_mm": float(bh),
+            "height_mm": float(np.percentile(hz, 90)), "n_px": int(len(sel))}
+
+
+
+BIN_TOP_M = 0.050  # the bin's rim above the table: what the wrist camera sees outlined from above
+
+
+def wrist_locate_bin(rgb: np.ndarray, joints, guess_xy_mm, cams: dict | None = None, max_shift_mm: float = 25.0) -> tuple[float, float] | None:
+    """The yellow bin's (x, y) mm (UF0) from the wrist camera hovering above it: the centre of the yellow blob's outline (the pocket's hole filled),
+    taken at the rim's height. The blob nearest the guess that is bin-sized and roughly square; None if there is none within max_shift_mm."""
+    cams = cams or load()
+    w = cams["wrist"]
+    cam = dict(w)
+    cam["T"] = flange_pose(joints) @ w["T"]
+    H, W = rgb.shape[:2]
+    scale = w["size"][0] / W
+    mask = colour_mask(cv2.cvtColor(rgb, cv2.COLOR_RGB2HSV), "yellow")
+    mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, np.ones((7, 7), np.uint8))
+    n, labels, stats, _ = cv2.connectedComponentsWithStats(mask, connectivity=8)
+    top_z = SURFACE_Z + BIN_TOP_M
+
+    def to_table(uv):
+        xd, yd = (np.asarray(uv, float) * scale - np.array(w["size"]) / 2) / w["fx"]
+        x, y = xd, yd
+        for _ in range(10):
+            d = 1 + w["k1"] * (x * x + y * y)
+            x, y = xd / d, yd / d
+        ray = cam["T"][:3, :3] @ np.array([x, y, 1.0])
+        o = cam["T"][:3, 3]
+        return (o + ray * (top_z - o[2]) / ray[2])[:2] * 1000
+
+    best = None
+    for i in range(1, n):
+        if stats[i, cv2.CC_STAT_AREA] < 4000:
+            continue
+        pts = np.column_stack(np.nonzero(labels == i))[:, ::-1].astype(np.float32)
+        hull = cv2.convexHull(pts)
+        (_, _), (rw, rh), _ = cv2.minAreaRect(hull)
+        if rw < 1 or rh < 1 or not 0.6 <= rw / rh <= 1.67 or cv2.contourArea(hull) / (rw * rh) < 0.7:
+            continue
+        m = cv2.moments(hull)
+        xy = to_table((m["m10"] / m["m00"], m["m01"] / m["m00"]))
+        shift = float(np.hypot(*(xy - np.asarray(guess_xy_mm))))
+        if shift <= max_shift_mm and (best is None or shift < best[0]):
+            best = (shift, (float(xy[0]), float(xy[1])))
+    return best[1] if best else None
 
 
 def wrist_r_deg(joints) -> float:

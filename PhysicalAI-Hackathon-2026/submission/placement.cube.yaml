@@ -18,8 +18,5 @@
 #       bin: [480, -150]
 #   ...                                            # up to rollout 10
 
-rollouts:
-  - objects:                                     # every rollout (objects and layout "same")
-      cube: [420, -100, 30]                      # one 10 mm cube, yawed 30 deg
-      bin: [510, 110]
-    prompt: Put the cube into the yellow bin.
+# No coordinates: the team places the cubes and the bin by hand for each rollout; the policy finds them from the cameras.
+rollouts: []

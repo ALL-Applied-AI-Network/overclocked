@@ -18,8 +18,5 @@
 #       bin: [480, -150]
 #   ...                                            # up to rollout 10
 
-rollouts:
-  - objects:
-      battery: [330, -90, 0]
-      bin: [375, 205]
-    prompt: Put the battery into the yellow bin.
+# No coordinates: the team places the cubes and the bin by hand for each rollout; the policy finds them from the cameras.
+rollouts: []

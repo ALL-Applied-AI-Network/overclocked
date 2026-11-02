@@ -2,7 +2,7 @@
 
 team: Overclocked
 contact: Gourilakshmi Neerajkumar, neerajk2@uwm.edu
-policy: CubeVisionPick-v1        # Give your policy a name (e.g., GraspV1)
+policy: CubeVisionPick-v2        # Give your policy a name (e.g., GraspV1)
 
 # Choose the closest model type. This does not affect scoring.
 model_type: Hybrid
@@ -14,8 +14,8 @@ model_type: Hybrid
 # Hybrid      Combines multiple approaches, or choose this if unsure
 
 # --- Task ---
-task_id: pick-battery-O             # Short task name ending with your team letter
-task: Put the battery into the yellow bin.
+task_id: pick-cubes-O              # Short task name ending with your team letter
+task: Put the cubes into the yellow bin.
                                   # Describe your task in one short sentence
 
 # --- Test Setup ---
@@ -31,7 +31,7 @@ layout: same
 # different: May change object positions across rollouts.
 
 # --- Evaluation ---
-rollouts: 10                      # Number of attempts in this test
+rollouts: 20                      # Number of attempts in this test
                                   # Each attempt is scored success or failure
 
 # --- Hardware ---

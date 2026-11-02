@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import base64
 import json
+import time
 import urllib.request
 
 import cv2
@@ -14,8 +15,13 @@ import cv2
 URL = "http://127.0.0.1:8765/understand"
 
 
-def understand(rgb, instruction: str, timeout: float = 20.0) -> dict | None:
+_DOWN_UNTIL = [0.0]  # circuit breaker: after one failure or timeout, skip the server for 2 minutes (a hung tunnel must not stall a rollout)
+
+
+def understand(rgb, instruction: str, timeout: float = 8.0) -> dict | None:
     """{"objects": [...], "pick_colour": str | None, "raw": str}, or None if Cosmos is unreachable."""
+    if time.time() < _DOWN_UNTIL[0]:
+        return None
     try:
         ok, png = cv2.imencode(".png", cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR))
         if not ok:
@@ -25,5 +31,6 @@ def understand(rgb, instruction: str, timeout: float = 20.0) -> dict | None:
         with urllib.request.urlopen(req, timeout=timeout) as r:
             out = json.loads(r.read())
         return out if "error" not in out else None
-    except Exception:  # noqa: BLE001  # tunnel down, server loading, timeout: the policy does not need it
+    except Exception:  # noqa: BLE001
+        _DOWN_UNTIL[0] = time.time() + 120.0  # tunnel down, server loading, timeout: the policy does not need it
         return None
