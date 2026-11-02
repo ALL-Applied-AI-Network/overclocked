@@ -7,3 +7,40 @@ logs/
 sim_runs/
 .pytest_cache/
 .DS_Store
+
+# submission: big media and render scratch stay out of git (videos go in the upload, not the repo)
+*.mp4
+*.MOV
+*.mov
+*.wav
+*.aiff
+video/final/_v2/
+video/final/_seg/
+video/final/out/
+video/final/handoff_inputs/
+video/final/hf/node_modules/
+video/hyperframes_plugin/
+.request
+video/final/hf/snaps/
+video/final/hf/.thumbnails/
+verifier_data/2026*
+verifier_data/mined/
+# Local secrets written by `elevenlabs onboard`
+/.env
+*.mp3
+*.m4a
+video/final/hf/assets/
+video/final/hf/.media/
+video/final/hf/.waveform-cache/
+video/final/hf/_v1/
+video/final/hf/.hyperframes/artifacts/
+video/final/hf/.hyperframes/preview/
+video/final/voice_v4/audio/
+video/final/voice_v4/placeholder/
+video/final/voice_v4/samples/
+video/final/voice_in/
+
+# secrets: never commit
+.env
+.env.*
+!mode_*.env
